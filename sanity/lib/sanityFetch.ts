@@ -1,7 +1,9 @@
 import 'server-only';
 
-import type { QueryParams } from '@sanity/client';
 import { draftMode } from 'next/headers';
+
+import type { QueryParams } from '@sanity/client';
+
 import { client } from '@/sanity/lib/client';
 
 const DEFAULT_PARAMS = {} as QueryParams;
