@@ -69,6 +69,8 @@ module.exports = {
     'react/display-name': 'off',
     'react/no-children-prop': 'off',
     'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],

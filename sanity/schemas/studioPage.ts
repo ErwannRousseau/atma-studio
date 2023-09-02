@@ -6,9 +6,18 @@ export const studioPage = defineType({
   title: 'Le Studio',
   fields: [
     defineField({
-      name: 'studioDescription',
+      name: 'content',
       title: 'Description du Studio',
-      type: 'text',
+      type: 'array',
+      of: [{ type: 'block' }],
+    }),
+    defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'studioEquipment',

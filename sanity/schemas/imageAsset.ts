@@ -14,6 +14,11 @@ export const imageAsset = defineType({
       },
       fields: [
         {
+          name: 'name',
+          title: 'Nom',
+          type: 'string',
+        },
+        {
           name: 'alt',
           title: 'Description',
           type: 'string',

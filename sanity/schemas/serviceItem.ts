@@ -18,8 +18,10 @@ export const serviceItem = defineType({
     defineField({
       name: 'images',
       title: 'Image du service',
-      type: 'reference',
-      to: [{ type: 'imageAsset' }],
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
   ],
 });

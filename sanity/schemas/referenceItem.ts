@@ -23,8 +23,10 @@ export const referenceItem = defineType({
     defineField({
       name: 'image',
       title: 'Image de la Référence',
-      type: 'reference',
-      to: [{ type: 'imageAsset' }],
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
   ],
 });

@@ -12,10 +12,12 @@ export const homePage = defineType({
       of: [{ type: 'block' }],
     }),
     defineField({
-      name: 'imageHome',
+      name: 'image',
       title: 'Image Page Accueil',
-      type: 'reference',
-      to: [{ type: 'imageAsset' }],
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
     defineField({
       name: 'newsSection',

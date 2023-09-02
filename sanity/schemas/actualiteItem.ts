@@ -21,10 +21,12 @@ export const actualiteItem = defineType({
       type: 'date',
     }),
     defineField({
-      name: 'imageRef', // Renommé en "imageRef"
+      name: 'image',
       title: "Image de l'actualité",
-      type: 'reference',
-      to: [{ type: 'imageAsset' }],
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
   ],
 });

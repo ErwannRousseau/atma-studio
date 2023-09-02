@@ -18,8 +18,10 @@ export const equipmentItem = defineType({
     defineField({
       name: 'image',
       title: "Photo de l'Équipement",
-      type: 'reference',
-      to: [{ type: 'imageAsset' }],
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     }),
   ],
 });
