@@ -90,7 +90,7 @@ export default function ActualityCarousel() {
                     {/* Particles animation */}
                     <Particles
                       className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
-                      quantity={3}
+                      quantity={5}
                       refresh={swiperInitialized}
                     />
                     {/* Radial gradient */}

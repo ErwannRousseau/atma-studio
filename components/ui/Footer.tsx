@@ -47,9 +47,9 @@ export default function Footer() {
                   44100 Nantes
                 </p>
                 <p className=" bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text text-sm text-transparent"></p>
-                <Link className="text-sm text-buttercup-500 hover:text-buttercup-600" href="tel:0695157355">
+                <a className="text-sm text-buttercup-500 hover:text-buttercup-600" href="tel:0695157355">
                   0695157355
-                </Link>
+                </a>
               </div>
             </div>
             {/* Social links */}
