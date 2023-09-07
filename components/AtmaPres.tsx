@@ -10,7 +10,6 @@ export default function AtmaPres() {
     <section>
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <Particles className="absolute inset-0 -z-10" />
-
         {/* Illustration */}
         <div
           className="pointer-events-none absolute inset-0 -z-10 -mx-28 overflow-hidden rounded-t-[3rem]"
@@ -46,7 +45,7 @@ export default function AtmaPres() {
                   <div className="flex items-center justify-center">
                     <div className="relative flex h-48 w-48 items-center justify-center">
                       <div
-                        className="absolute h-[325px] w-[325px] rounded-2xl border border-transparent bg-cover bg-center shadow-2xl before:absolute before:inset-0 before:rounded-2xl"
+                        className="absolute h-[320px] w-[320px] rounded-2xl border border-transparent bg-cover bg-center shadow-2xl before:absolute before:inset-0 before:rounded-2xl"
                         style={{
                           backgroundImage: `url(${Photo.src})`,
                         }}
