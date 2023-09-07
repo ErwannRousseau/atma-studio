@@ -7,7 +7,7 @@ import Features04 from '@/components/features-04';
 import Hero from '@/components/Hero';
 import SwipperCarousel from '@/components/IconsCarousel';
 import Pricing from '@/components/pricing';
-import Testimonials from '@/components/testimonials';
+import Testimonials from '@/components/Team';
 
 export default function Home() {
   return (

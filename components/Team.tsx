@@ -17,7 +17,7 @@ interface Item {
   role: string;
 }
 
-export default function Testimonials() {
+export default function Team() {
   const [active, setActive] = useState<number>(0);
   const [autorotate, setAutorotate] = useState<boolean>(true);
   const [autorotateTiming] = useState<number>(7000);
@@ -67,7 +67,7 @@ export default function Testimonials() {
 
   return (
     <section>
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+      <div className="mx-auto max-w-3xl px-4 pt-8 sm:px-6 md:pt-20">
         <div className="relative pb-12 md:pb-20">
           {/* Particles animation */}
           <div className="absolute left-1/2 top-0 -z-10 -mt-6 h-80 w-80 -translate-x-1/2">
@@ -78,7 +78,7 @@ export default function Testimonials() {
           <div className="text-center">
             {/* Testimonial image */}
             <div className="relative h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_40%,theme(colors.white))]">
-              <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[480px] w-[480px] -translate-x-1/2 rounded-full before:absolute before:inset-0 before:-z-20 before:rounded-full before:bg-gradient-to-b before:from-slate-400/20 before:to-transparent before:to-20% after:absolute after:inset-0 after:-z-20 after:m-px after:rounded-full after:bg-slate-900">
+              <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[480px] w-[480px] -translate-x-1/2 rounded-full before:absolute before:inset-0 before:-z-20 before:rounded-full before:bg-gradient-to-b before:from-buttercup-200/50 before:to-transparent before:to-20% after:absolute after:inset-0 after:-z-20 after:m-px after:rounded-full after:bg-buttercup-500/20">
                 {items.map((item, index) => (
                   <Transition
                     key={index}
@@ -129,7 +129,7 @@ export default function Testimonials() {
             <div className="-m-1.5 flex flex-wrap justify-center">
               {items.map((item, index) => (
                 <button
-                  className={`btn-sm relative m-1.5 py-1.5 text-xs text-slate-300 transition duration-150 ease-in-out [background:linear-gradient(theme(colors.slate.900),_theme(colors.slate.900))_padding-box,_conic-gradient(theme(colors.slate.400),_theme(colors.slate.700)_25%,_theme(colors.slate.700)_75%,_theme(colors.slate.400)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-slate-800/30 ${
+                  className={`btn-sm relative m-1.5 py-1.5 text-xs text-slate-300 transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 ${
                     active === index ? 'opacity-100' : 'opacity-30 hover:opacity-60'
                   }`}
                   key={index}
