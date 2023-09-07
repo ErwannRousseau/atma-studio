@@ -44,7 +44,7 @@ export default function StudioPres() {
               <h3 className="h3 inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent">
                 Notre vision
               </h3>
-              <p className="mb-8 text-lg text-slate-100">
+              <p className="mb-8 text-justify text-lg text-slate-100 md:text-left">
                 Le confort est primordial pour stimuler la créativité. Le salle de mixage et la cabine forment un
                 véritable cocon insonorisé avec lumières ajustables pour vous plonger dans l’atmosphère qui vous
                 convient. Nous disposons d’une salle de pause (Break Room) et d’une salle d’accueil. <br />

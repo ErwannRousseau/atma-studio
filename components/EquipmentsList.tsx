@@ -3,7 +3,7 @@ export default function EquipmentsList() {
     <section>
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div className=" pointer-events-none absolute inset-0 -z-10 overflow-hidden " aria-hidden="true">
-          <div className="absolute left-1/2 flex aspect-square w-1/3 -translate-x-1/2 -translate-y-1/2 items-center justify-center sm:-bottom-1/4 md:-bottom-1/3 lg:-bottom-[55%]">
+          <div className="absolute bottom-1/2 left-1/2 flex  aspect-square w-1/2 items-center justify-center sm:-bottom-1/2 sm:w-1/3 sm:-translate-x-1/2 sm:-translate-y-1/2 ">
             <div className="translate-z-0 absolute inset-0 rounded-full bg-buttercup-500 opacity-50 blur-[120px]" />
           </div>
         </div>
@@ -11,13 +11,16 @@ export default function EquipmentsList() {
           {/* Section header */}
 
           <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
-            <h2 className="h2 bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text text-transparent">
+            <h2
+              className="h2 bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text text-transparent"
+              data-aos="fade-down"
+            >
               Liste des équipements
             </h2>
           </div>
           {/* Equipments list */}
           {/* <div className="grid place-items-center"> */}
-          <div className="ml-8 grid gap-8 sm:ml-0 sm:grid-cols-3 sm:gap-12">
+          <div className="ml-8 grid gap-8 sm:ml-0 sm:grid-cols-3 sm:gap-12" data-aos="fade-up" data-aos-delay="300">
             {/* Equipement */}
             <div className="place-items-center sm:grid">
               <div>

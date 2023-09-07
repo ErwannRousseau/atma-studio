@@ -20,7 +20,7 @@ export default function HeroStudio() {
         </div>
         {/* Particles animation */}
         <Particles className="absolute inset-0 -z-10" />
-        <div className="pb-12 pt-32 md:pb-32 md:pt-52">
+        <div className="md:pb-26 pb-12 pt-32 md:pt-52">
           {/* Hero content */}
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6" data-aos="fade-down">

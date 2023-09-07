@@ -6,9 +6,8 @@ import { useState, useRef, useEffect } from 'react';
 
 import Particles from './Particles';
 
-import TestimonialImg01 from '@/public/images/testimonial-01.jpg';
-import TestimonialImg02 from '@/public/images/testimonial-02.jpg';
-import TestimonialImg03 from '@/public/images/testimonial-03.jpg';
+import Bhim from '@/public/images/bhim.png';
+import Theo from '@/public/images/theo.png';
 
 interface Item {
   img: StaticImageData;
@@ -24,25 +23,16 @@ export default function Team() {
 
   const items: Item[] = [
     {
-      img: TestimonialImg01,
-      quote:
-        "The ability to capture responses is a game-changer. If a user gets tired of the sign up and leaves, that data is still persisted. Additionally, it's great to be able to select between formats.ture responses is a game-changer.",
-      name: 'Jessie J',
-      role: 'Ltd Head of Product',
+      img: Theo,
+      quote: "Je m'occupe du management",
+      name: 'Theo',
+      role: 'Management',
     },
     {
-      img: TestimonialImg02,
-      quote:
-        'I have been using this product for a few weeks now and I am blown away by the results. My skin looks visibly brighter and smoother, and I have received so many compliments on my complexion.',
-      name: 'Mark Luk',
-      role: 'Spark Founder & CEO',
-    },
-    {
-      img: TestimonialImg03,
-      quote:
-        "As a busy professional, I don't have a lot of time to devote to working out. But with this fitness program, I have seen amazing results in just a few short weeks. The workouts are efficient and effective.",
-      name: 'Jeff Kahl',
-      role: 'Appy Product Lead',
+      img: Bhim,
+      quote: "Je m'occupe du mix",
+      name: 'Bhim',
+      role: 'Mix',
     },
   ];
 
@@ -113,7 +103,7 @@ export default function Team() {
                     enter="transition ease-in-out duration-500 delay-200 order-first"
                     enterFrom="opacity-0 -translate-x-4"
                     enterTo="opacity-100 translate-x-0"
-                    leave="transition ease-out duration-300 delay-300 absolute"
+                    leave="transition ease-out duration-500 delay-300 absolute hidden"
                     leaveFrom="opacity-100 translate-x-0"
                     leaveTo="opacity-0 translate-x-4"
                     beforeEnter={() => heightFix()}
@@ -126,10 +116,10 @@ export default function Team() {
               </div>
             </div>
             {/* Buttons */}
-            <div className="-m-1.5 flex flex-wrap justify-center">
+            <div className="sm: -m-1.5 flex flex-col justify-center gap-2 sm:flex-row sm:flex-wrap">
               {items.map((item, index) => (
                 <button
-                  className={`btn-sm relative m-1.5 py-1.5 text-xs text-slate-300 transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 ${
+                  className={`btn-sm relative m-1.5 mx-auto py-1.5 text-xs text-slate-300 transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 sm:mx-0 ${
                     active === index ? 'opacity-100' : 'opacity-30 hover:opacity-60'
                   }`}
                   key={index}
