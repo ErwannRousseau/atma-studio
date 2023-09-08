@@ -13,7 +13,7 @@ export const servicesPage = defineType({
     }),
     defineField({
       name: 'servicesList',
-      title: 'Liste de Services',
+      title: 'Liste des services',
       type: 'array',
       of: [
         defineArrayMember({
@@ -32,17 +32,17 @@ export const serviceItem = defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Titre du Service',
+      title: 'Titre du service',
       type: 'string',
     }),
     defineField({
       name: 'description',
-      title: 'Description du Service',
+      title: 'Description du service',
       type: 'text',
     }),
     defineField({
       name: 'images',
-      title: 'Image du service',
+      title: 'Illustration du service',
       type: 'image',
       options: {
         hotspot: true,
