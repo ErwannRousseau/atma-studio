@@ -66,6 +66,10 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--gradient-color-stops))',
       },
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '4/3.5': '4 / 3.5',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],

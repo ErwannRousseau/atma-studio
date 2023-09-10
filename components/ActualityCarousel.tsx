@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Swiper, { Navigation } from 'swiper';
 
@@ -11,7 +12,7 @@ import CarouselImg02 from '@/public/images/carousel-icon-02.svg';
 import CarouselImg03 from '@/public/images/carousel-icon-03.svg';
 import CarouselImg04 from '@/public/images/carousel-icon-04.svg';
 import CarouselImg05 from '@/public/images/carousel-icon-05.svg';
-import ImageCoursel1 from '@/public/images/cover-tay1an.webp';
+import ImageCarousel from '@/public/images/cover-tay1an.webp';
 
 // Import Swiper
 import 'swiper/swiper.min.css';
@@ -84,8 +85,8 @@ export default function ActualityCarousel() {
                 {/* Carousel items */}
                 <HighlighterItem className="swiper-slide group/slide h-max">
                   <div
-                    className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-cover bg-center "
-                    style={{ backgroundImage: `url(${ImageCoursel1.src})` }}
+                    className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-cover bg-center bg-no-repeat "
+                    style={{ backgroundImage: `url(${ImageCarousel.src})` }}
                   >
                     {/* Particles animation */}
                     <Particles
@@ -108,15 +109,15 @@ export default function ActualityCarousel() {
                         </p>
                       </div>
                       <div className="group/arrow absolute bottom-5 right-6 text-right">
-                        <a
+                        <Link
                           className="group inline-flex items-center text-sm font-medium text-buttercup-50 transition duration-150 ease-in-out hover:text-white"
                           href="#0"
                         >
                           Découvrir{' '}
-                          <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-0.5">
+                          <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
                             -&gt;
                           </span>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
