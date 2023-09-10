@@ -4,7 +4,7 @@ import Particles from './Particles';
 
 import Illustration from '@/public/images/glow-bottom.svg';
 
-export default function Hero() {
+export default function HeroHome() {
   return (
     <section>
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">

@@ -19,20 +19,22 @@ export default function HeroStudio() {
           </svg>
         </div>
         {/* Particles animation */}
-        <Particles className="absolute inset-0 -z-10" />
-        <div className="md:pb-26 pb-12 pt-32 md:pt-52">
-          {/* Hero content */}
+        <Particles quantity={8} className="absolute inset-0 -z-10" />
+        {/* Hero content */}
+        <div className="pt-32 md:pb-12 md:pt-32">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6" data-aos="fade-down">
-              <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <div className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-slate-800/50 hover:text-white">
-                  <span className="relative inline-flex items-center">Votre son, notre technologie.</span>
-                </div>
+            <div>
+              <div
+                data-aos="fade-down"
+                className="inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 font-medium text-transparent"
+              >
+                Votre son, notre technologie.
               </div>
             </div>
             <h1
               className="h1 bg-gradient-to-r from-buttercup-50 via-slate-200 to-slate-200/60 bg-clip-text pb-4 text-transparent"
               data-aos="fade-down"
+              data-aos-delay="100"
             >
               Studio & Matériel
             </h1>

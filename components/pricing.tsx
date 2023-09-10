@@ -1,10 +1,4 @@
-'use client';
-
-import { useState } from 'react';
-
 export default function Pricing() {
-  const [annual, setAnnual] = useState<boolean>(true);
-
   return (
     <section className="relative">
       {/* Radial gradient */}
@@ -19,13 +13,13 @@ export default function Pricing() {
           <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
             <div>
               <div className="inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 font-medium text-transparent">
-                Pricing plans
+                Nos tarifs.
               </div>
             </div>
-            <h2 className="h2 bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text pb-4 text-transparent">
-              Flexible plans and features
-            </h2>
-            <p className="text-lg text-slate-400">
+            <h3 className="h3 bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text pb-4 text-transparent">
+              Plusieurs tarifs pour tous les budgets
+            </h3>
+            <p className="text-slate-400">
               All the lorem ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this
               the first true generator on the Internet.
             </p>
@@ -40,8 +34,8 @@ export default function Pricing() {
               <svg xmlns="http://www.w3.org/2000/svg" width="434" height="427">
                 <defs>
                   <linearGradient id="bs5-a" x1="19.609%" x2="50%" y1="14.544%" y2="100%">
-                    <stop offset="0%" stopColor="#A855F7" />
-                    <stop offset="100%" stopColor="#6366F1" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#f3a710" />
+                    <stop offset="100%" stopColor="#fce98b" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 <path
@@ -62,13 +56,7 @@ export default function Pricing() {
                     <div className="inline-flex items-center whitespace-nowrap">
                       <div className="mr-2 text-sm font-medium text-slate-500 md:max-lg:hidden">Monthly</div>
                       <div className="relative">
-                        <input
-                          type="checkbox"
-                          id="toggle"
-                          className="peer sr-only"
-                          checked={annual}
-                          onChange={() => setAnnual(!annual)}
-                        />
+                        <input type="checkbox" id="toggle" className="peer sr-only" />
                         <label
                           htmlFor="toggle"
                           className="relative flex h-6 w-11 cursor-pointer items-center rounded-full bg-slate-400 px-0.5 outline-slate-400 transition-colors before:h-5 before:w-5 before:rounded-full before:bg-white before:shadow-sm before:transition-transform before:duration-150 peer-checked:bg-buttercup-500 peer-checked:before:translate-x-full peer-focus-visible:outline peer-focus-visible:outline-offset-2 peer-focus-visible:outline-gray-400 peer-checked:peer-focus-visible:outline-buttercup-500"
@@ -91,7 +79,7 @@ export default function Pricing() {
                   </div>
                   <div className="mb-1">
                     <span className="text-lg font-medium text-slate-500">$</span>
-                    <span className="text-3xl font-bold text-slate-50">{annual ? '24' : '29'}</span>
+                    <span className="text-3xl font-bold text-slate-50">29</span>
                     <span className="text-sm font-medium text-slate-600">/mo</span>
                   </div>
                   <div className="text-slate-500">Everything at your fingertips.</div>
@@ -116,7 +104,7 @@ export default function Pricing() {
                   </div>
                   <div className="mb-1">
                     <span className="text-lg font-medium text-slate-500">$</span>
-                    <span className="text-3xl font-bold text-slate-50">{annual ? '49' : '54'}</span>
+                    <span className="text-3xl font-bold text-slate-50">54</span>
                     <span className="text-sm font-medium text-slate-600">/mo</span>
                   </div>
                   <div className="text-slate-500">Everything at your fingertips.</div>
@@ -141,7 +129,7 @@ export default function Pricing() {
                   </div>
                   <div className="mb-1">
                     <span className="text-lg font-medium text-slate-500">$</span>
-                    <span className="text-3xl font-bold text-slate-50">{annual ? '79' : '85'}</span>
+                    <span className="text-3xl font-bold text-slate-50">85</span>
                     <span className="text-sm font-medium text-slate-600">/mo</span>
                   </div>
                   <div className="text-slate-500">Everything at your fingertips.</div>

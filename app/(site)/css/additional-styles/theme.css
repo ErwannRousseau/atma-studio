@@ -74,6 +74,23 @@
   @apply opacity-100;
 }
 
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  @apply !bottom-0;
+}
+
+.swiper-wrapper {
+  @apply pb-4;
+}
+
+.swiper-pagination-bullet {
+  @apply !bg-buttercup-100/70;
+}
+
+.swiper-pagination-bullet-active {
+  @apply !bg-buttercup-500;
+}
+
 /* Pulsing animation */
 @keyframes pulseLoop {
   0% {
