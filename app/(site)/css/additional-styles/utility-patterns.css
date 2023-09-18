@@ -28,7 +28,6 @@
     @apply text-4xl;
   }
 }
-
 /* Buttons */
 .btn,
 .btn-sm {
@@ -57,7 +56,7 @@ input[type='search']::-webkit-search-results-decoration {
 .form-select,
 .form-checkbox,
 .form-radio {
-  @apply border border-transparent bg-slate-800 focus:border-buttercup-500;
+  @apply border border-transparent bg-slate-600/50 focus:border-buttercup-500;
 }
 
 .form-input,
