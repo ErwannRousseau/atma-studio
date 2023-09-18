@@ -1,7 +1,7 @@
 export default function Pricing() {
   return (
     <section className="relative">
-      {/* Radial gradient */}
+      {/* Radial gradient  */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
         <div className="absolute left-1/2 top-0 flex aspect-square w-1/3 -translate-x-1/2 -translate-y-1/2 items-center justify-center">
           <div className="translate-z-0 absolute inset-0 rounded-full bg-buttercup-500 opacity-50 blur-[120px]" />
