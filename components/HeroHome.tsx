@@ -15,7 +15,6 @@ export default function HeroHome() {
           className="pointer-events-none absolute inset-0 -z-10 -mx-28 overflow-hidden rounded-b-[3rem]"
           aria-hidden="true"
         >
-          {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
           <div className="absolute bottom-0 left-1/2 -z-10 -translate-x-1/2">
             <Image src={Illustration} className="max-w-none" width={2146} priority alt="Hero Illustration" />
           </div>

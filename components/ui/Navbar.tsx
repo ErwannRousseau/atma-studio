@@ -53,7 +53,6 @@ export default function Navbar() {
         </svg>
       </button>
 
-      {/*Mobile navigation */}
       <div ref={mobileNav}>
         <Transition
           show={mobileNavOpen}

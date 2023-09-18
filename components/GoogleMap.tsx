@@ -4,6 +4,7 @@ import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import { useMemo } from 'react';
 
 import customMarkerIcon from '@/public/images/custom-marker.svg';
+import { openMapsApp } from '@/utils/openMapApp';
 
 type GoogleMapsApiKey = string;
 interface MapOptions {
@@ -34,6 +35,7 @@ function Map() {
   return (
     <GoogleMap zoom={15} options={mapOptions} center={center} mapContainerClassName="aspect-square w-full max-w-sm">
       <Marker
+        onClick={openMapsApp}
         icon={{
           // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           url: customMarkerIcon.src,

@@ -55,9 +55,8 @@ export default function HeroServices() {
                     >
                       <div className="translate-z-0 absolute inset-0 rounded-full bg-buttercup-500 blur-[120px]" />
                     </div>
-                    {/* Particles */}
+
                     <Particles quantity={5} className="absolute inset-0 z-10" />
-                    {/* <Image src={ImageService} width={500} alt="Feature 04" /> */}
                     <div
                       className="h-[320px] w-full bg-cover bg-center"
                       style={{ backgroundImage: `url(${ImageService.src})` }}

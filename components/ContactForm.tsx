@@ -1,4 +1,4 @@
-import '@/app/(site)/css/additional-styles/utility-patterns.css';
+import '@/styles/css/additional-styles/utility-patterns.css';
 
 export default function ContactForm() {
   return (

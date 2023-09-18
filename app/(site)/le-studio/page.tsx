@@ -16,12 +16,6 @@ export default function StudioPage() {
       <StudioPres />
       <EquipmentsList />
       <Team />
-      {/* <Cta />
-      <Features02 />
-      <Features03 />
-      <ActualityCarousel />
-      <Features04 />
-      <Pricing /> */}
     </>
   );
 }

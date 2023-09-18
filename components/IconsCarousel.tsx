@@ -17,9 +17,10 @@ import Swiper7 from '@/public/images/swiper7.svg';
 import Swiper8 from '@/public/images/swiper8.svg';
 import Swiper9 from '@/public/images/swiper9.svg';
 
-// Import Swiper
+const SwiperIcons = [Swiper1, Swiper2, Swiper3, Swiper4, Swiper5, Swiper6, Swiper7, Swiper8, Swiper9, Swiper10];
+
 import 'swiper/swiper.min.css';
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
 Swiper.use([Autoplay]);
 
 export default function IconsCarousel() {
@@ -49,7 +50,7 @@ export default function IconsCarousel() {
         <div className="relative py-7 md:py-10">
           <div className="overflow-hidden before:absolute before:top-[-4px] before:h-2 before:w-[100%] before:backdrop-blur-xs after:absolute after:bottom-[-4px] after:h-2 after:w-[100%] after:backdrop-blur-xs ">
             {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
-            {/* * Custom styles in src/css/additional-styles/theme.scss */}
+            {/* Custom styles in src/css/additional-styles/theme.scss */}
             <div
               data-aos="fade-left"
               data-aos-delay="400"
@@ -57,36 +58,11 @@ export default function IconsCarousel() {
             >
               <div className="swiper-wrapper select-none items-center !ease-linear">
                 {/* Carousel items */}
-                <div className="swiper-slide icons-swiper-slide !w-auto">
-                  <Image src={Swiper1} alt="swiper 01" />
-                </div>
-                <div className="swiper-slide icons-swiper-slide !w-auto">
-                  <Image src={Swiper3} alt="swiper 03" />
-                </div>
-                <div className="swiper-slide icons-swiper-slide !w-auto">
-                  <Image src={Swiper2} alt="swiper 02" />
-                </div>
-                <div className="swiper-slide icons-swiper-slide !w-auto">
-                  <Image src={Swiper8} alt="swiper 08" />
-                </div>
-                <div className="swiper-slide icons-swiper-slide !w-auto">
-                  <Image src={Swiper4} alt="swiper 04" />
-                </div>
-                <div className="swiper-slide icons-swiper-slide !w-auto">
-                  <Image src={Swiper5} alt="swiper 05" />
-                </div>
-                <div className="swiper-slide icons-swiper-slide !w-auto">
-                  <Image src={Swiper6} alt="swiper 06" />
-                </div>
-                <div className="swiper-slide icons-swiper-slide !w-auto">
-                  <Image src={Swiper7} alt="swiper 07" />
-                </div>
-                <div className="swiper-slide icons-swiper-slide !w-auto">
-                  <Image src={Swiper9} alt="swiper 09" />
-                </div>
-                <div className="swiper-slide icons-swiper-slide !w-auto">
-                  <Image src={Swiper10} alt="swiper 010" />
-                </div>
+                {SwiperIcons.map((icon, key) => (
+                  <div key={key} className="swiper-slide icons-swiper-slide !w-auto">
+                    <Image src={icon} alt="swiper 01" />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
