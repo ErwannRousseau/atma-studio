@@ -9,13 +9,12 @@ export default function ServicesList() {
         <Particles className="absolute inset-0 -z-10" />
         {/* Section content Musicale */}
         <div className=" md:pt-10">
+          {/* Content odd */}
           <div className="mx-auto flex max-w-xl flex-col-reverse items-center pb-12 md:max-w-none md:flex-row md:gap-24 md:pb-24 ">
-            {/* Content */}
             <div
               className="order-1 pb-4  text-right max-md:text-center  md:order-none md:w-1/2 md:pb-0 md:pl-6 lg:pl-20 xl:pl-28"
               data-aos="fade-down"
             >
-              {/* Content #1 */}
               <h3 className="h3 inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent">
                 Enregistrement
               </h3>
@@ -37,12 +36,11 @@ export default function ServicesList() {
             </div>
           </div>
           <div className="mx-auto flex max-w-xl flex-col-reverse items-center pb-12 md:max-w-none md:flex-row-reverse md:gap-24 md:pb-24 ">
-            {/* Content */}
+            {/* Content even */}
             <div
               className="order-1 pb-4 text-left  max-md:text-center md:order-none md:w-1/2 md:pb-0 md:pr-6 lg:pr-20 xl:pr-28"
               data-aos="fade-down"
             >
-              {/* Content #2 */}
               <h3 className="h3 inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent">
                 Mixage
               </h3>

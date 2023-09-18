@@ -12,8 +12,8 @@ export default function ActiveLink({ href, children, onClick }: LinkProps) {
 
   const handleClick = () => {
     if (onClick) {
-      onClick(); // Appelez onClick si elle est définie
-    } // Ajoutez ici la logique pour fermer la navigation mobile
+      onClick();
+    }
   };
 
   return (

@@ -1,5 +1,5 @@
 'use client';
-import './css/style.css';
+import '@/styles/css/style.css';
 import AOS from 'aos';
 import { Inter } from 'next/font/google';
 import { useEffect } from 'react';
@@ -23,7 +23,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
       duration: 1000,
       easing: 'ease-out-cubic',
     });
-  });
+  }, []);
   return (
     <body className={`${inter.variable} bg-black font-inter tracking-tight text-slate-100 antialiased`}>
       <div className="flex min-h-screen flex-col overflow-hidden">

@@ -11,7 +11,6 @@ export default function ArtistsList() {
     <section className="relative">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div>
-          {/* Highlighted boxes */}
           <div className="relative pb-6 md:pb-10">
             {/* Blurred shape */}
             <div
@@ -33,7 +32,6 @@ export default function ArtistsList() {
                 />
               </svg>
             </div>
-            {/* Grid */}
             <Highlighter className="grid gap-6 md:grid-cols-12">
               {/* Box #1 */}
               <div className="group/slide md:col-span-6" data-aos="fade-down" data-aos-delay="100">

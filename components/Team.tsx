@@ -9,7 +9,7 @@ import Particles from './Particles';
 import Bhim from '@/public/images/bhim.png';
 import Theo from '@/public/images/theo.png';
 
-interface Item {
+interface TeamMember {
   img: StaticImageData;
   quote: string;
   name: string;
@@ -21,7 +21,7 @@ export default function Team() {
   const [autorotate, setAutorotate] = useState<boolean>(true);
   const [autorotateTiming] = useState<number>(7000);
 
-  const items: Item[] = [
+  const teamMember: TeamMember[] = [
     {
       img: Theo,
       quote: "Je m'occupe du management",
@@ -41,7 +41,7 @@ export default function Team() {
   useEffect(() => {
     if (!autorotate) return;
     const interval = setInterval(() => {
-      setActive(active + 1 === items.length ? 0 : (active) => active + 1);
+      setActive(active + 1 === teamMember.length ? 0 : (active) => active + 1);
     }, autorotateTiming);
     return () => clearInterval(interval);
   }, [active, autorotate]);
@@ -63,13 +63,12 @@ export default function Team() {
           <div className="absolute left-1/2 top-0 -z-10 -mt-6 h-80 w-80 -translate-x-1/2">
             <Particles className="absolute inset-0 -z-10" quantity={10} staticity={40} />
           </div>
-
           {/* Carousel */}
           <div className="text-center">
             {/* Testimonial image */}
             <div className="relative h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_40%,theme(colors.white))]">
               <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[480px] w-[480px] -translate-x-1/2 rounded-full before:absolute before:inset-0 before:-z-20 before:rounded-full before:bg-gradient-to-b before:from-buttercup-200/50 before:to-transparent before:to-20% after:absolute after:inset-0 after:-z-20 after:m-px after:rounded-full after:bg-buttercup-500/20">
-                {items.map((item, index) => (
+                {teamMember.map((member, index) => (
                   <Transition
                     key={index}
                     show={active === index}
@@ -83,20 +82,20 @@ export default function Team() {
                     beforeEnter={() => heightFix()}
                   >
                     <Image
-                      className="relative left-1/2 top-11 -translate-x-1/2 rounded-full"
-                      src={item.img}
-                      width={56}
-                      height={56}
-                      alt={item.name}
+                      className="relative left-1/2 top-9 -translate-x-1/2 rounded-full"
+                      src={member.img}
+                      width={90}
+                      height={90}
+                      alt={member.name}
                     />
                   </Transition>
                 ))}
               </div>
             </div>
-            {/* Text */}
-            <div className="mb-10 transition-all delay-300 duration-150 ease-in-out">
+            {/* Quote */}
+            <div className="mb-5 transition-all delay-300 duration-150 ease-in-out">
               <div className="relative flex flex-col" ref={testimonials}>
-                {items.map((item, index) => (
+                {teamMember.map((member, index) => (
                   <Transition
                     key={index}
                     show={active === index}
@@ -109,17 +108,17 @@ export default function Team() {
                     beforeEnter={() => heightFix()}
                   >
                     <div className="bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text text-xl font-bold text-transparent">
-                      {item.quote}
+                      {member.quote}
                     </div>
                   </Transition>
                 ))}
               </div>
             </div>
             {/* Buttons */}
-            <div className="sm: -m-1.5 flex flex-col justify-center gap-2 sm:flex-row sm:flex-wrap">
-              {items.map((item, index) => (
+            <div className="flex flex-col justify-center gap-2 sm:flex-row sm:flex-wrap">
+              {teamMember.map((member, index) => (
                 <button
-                  className={`btn-sm relative m-1.5 mx-auto py-1.5 text-xs text-slate-300 transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 sm:mx-0 ${
+                  className={`btn-sm relative  mx-auto py-1.5 text-xs text-slate-300 transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 sm:mx-0 ${
                     active === index ? 'opacity-100' : 'opacity-30 hover:opacity-60'
                   }`}
                   key={index}
@@ -129,8 +128,8 @@ export default function Team() {
                   }}
                 >
                   <span className="relative">
-                    <span className="text-slate-50">{item.name}</span> <span className="text-slate-600">-</span>{' '}
-                    <span>{item.role}</span>
+                    <span className="text-slate-50">{member.name}</span> <span className="text-slate-600">-</span>{' '}
+                    <span>{member.role}</span>
                   </span>
                 </button>
               ))}

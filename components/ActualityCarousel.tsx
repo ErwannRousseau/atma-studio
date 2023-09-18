@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Swiper, { Navigation } from 'swiper';
@@ -14,9 +13,9 @@ import CarouselImg04 from '@/public/images/carousel-icon-04.svg';
 import CarouselImg05 from '@/public/images/carousel-icon-05.svg';
 import ImageCarousel from '@/public/images/cover-tay1an.webp';
 
-// Import Swiper
+const CarouselImages = [ImageCarousel, CarouselImg02, CarouselImg03, CarouselImg04, CarouselImg05];
+
 import 'swiper/swiper.min.css';
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 Swiper.use([Navigation]);
 
 export default function ActualityCarousel() {
@@ -78,203 +77,56 @@ export default function ActualityCarousel() {
             </svg>
           </div>
           {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
-          {/* * Custom styles in src/css/additional-styles/theme.scss */}
+          {/* Custom styles in src/css/additional-styles/theme.scss */}
           <div className="relative before:absolute before:inset-0 before:z-20 before:-translate-x-full before:rounded-r-3xl before:bg-gradient-to-l before:from-transparent before:to-slate-900 before:to-20% before:blur after:absolute after:inset-0 after:z-20 after:translate-x-full after:bg-gradient-to-r after:from-transparent after:to-slate-900 after:to-20% after:blur">
             <div className="actuality-carousel swiper-container group h-[300px]">
               <Highlighter className="swiper-wrapper w-fit" refresh={swiperInitialized}>
                 {/* Carousel items */}
-                <HighlighterItem className="swiper-slide group/slide h-max">
-                  <div
-                    className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-cover bg-center bg-no-repeat "
-                    style={{ backgroundImage: `url(${ImageCarousel.src})` }}
-                  >
-                    {/* Particles animation */}
-                    <Particles
-                      className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
-                      quantity={5}
-                      refresh={swiperInitialized}
-                    />
-                    {/* Radial gradient */}
+                {CarouselImages.map((image, index) => (
+                  <HighlighterItem key={index} className="swiper-slide group/slide h-max">
                     <div
-                      className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/3 -translate-x-1/2 translate-y-1/2"
-                      aria-hidden="true"
+                      className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-cover bg-center bg-no-repeat "
+                      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                      style={{ backgroundImage: `url(${image.src})` }}
                     >
-                      <div className="translate-z-0 absolute inset-0 rounded-full bg-slate-800 blur-[60px] transition-colors duration-500 ease-in-out group-[.swiper-slide-active]/slide:bg-buttercup-500" />
-                    </div>
-                    <div className="relative flex h-full flex-col p-6">
-                      <div className="grid grow place-items-center">
-                        <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-lg font-bold text-transparent underline">
-                          TAY1AN - CARTES EN MAIN
-                          <span className="absolute inset-x-0 bottom-0 h-[2.5px] bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
-                        </p>
+                      {/* Particles animation */}
+                      <Particles
+                        className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
+                        quantity={5}
+                        refresh={swiperInitialized}
+                      />
+                      {/* Radial gradient */}
+                      <div
+                        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/3 -translate-x-1/2 translate-y-1/2"
+                        aria-hidden="true"
+                      >
+                        <div className="translate-z-0 absolute inset-0 rounded-full bg-slate-800 blur-[60px] transition-colors duration-500 ease-in-out group-[.swiper-slide-active]/slide:bg-buttercup-500" />
                       </div>
-                      <div className="group/arrow absolute bottom-5 right-6 text-right">
-                        <Link
-                          className="group inline-flex items-center text-sm font-medium text-buttercup-50 transition duration-150 ease-in-out hover:text-white"
-                          href="#0"
-                        >
-                          Découvrir{' '}
-                          <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                            -&gt;
-                          </span>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </HighlighterItem>
-                <HighlighterItem className="swiper-slide group/slide h-auto">
-                  <div className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-slate-900">
-                    {/* Particles animation */}
-                    <Particles
-                      className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
-                      quantity={3}
-                      refresh={swiperInitialized}
-                    />
-                    {/* Radial gradient */}
-                    <div
-                      className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/3 -translate-x-1/2 translate-y-1/2"
-                      aria-hidden="true"
-                    >
-                      <div className="translate-z-0 absolute inset-0 rounded-full bg-slate-800 blur-[60px] transition-colors duration-500 ease-in-out group-[.swiper-slide-active]/slide:bg-buttercup-500" />
-                    </div>
-                    <div className="flex h-full flex-col p-6">
-                      <Image className="mb-3" src={CarouselImg02} width={56} height={56} alt="Icon 01" />
-                      <div className="grow">
-                        <div className="mb-1 text-lg font-bold">Bot Detection</div>
-                        <div className="mb-3 text-slate-400">
-                          Incorporate rich user profiling, and facilitate more transactions. Incorporate rich user
-                          profiling, and facilitate more transactions.
+                      <div className="relative flex h-full flex-col p-6">
+                        <div className="grid grow place-items-center">
+                          <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-lg font-bold text-transparent underline">
+                            TAY1AN - CARTES EN MAIN
+                            <span className="absolute inset-x-0 bottom-0 h-[2.5px] bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
+                          </p>
+                        </div>
+                        <div className="group/arrow absolute bottom-5 right-6 text-right">
+                          <Link
+                            className="group inline-flex items-center text-sm font-medium text-buttercup-50 transition duration-150 ease-in-out hover:text-white"
+                            href="#0"
+                          >
+                            Découvrir{' '}
+                            <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
+                              -&gt;
+                            </span>
+                          </Link>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <a
-                          className="group inline-flex items-center text-sm font-medium text-slate-300 transition duration-150 ease-in-out hover:text-white"
-                          href="#0"
-                        >
-                          Learn More{' '}
-                          <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
-                            -&gt;
-                          </span>
-                        </a>
-                      </div>
                     </div>
-                  </div>
-                </HighlighterItem>
-                <HighlighterItem className="swiper-slide group/slide h-auto">
-                  <div className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-slate-900">
-                    {/* Particles animation */}
-                    <Particles
-                      className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
-                      quantity={3}
-                      refresh={swiperInitialized}
-                    />
-                    {/* Radial gradient */}
-                    <div
-                      className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/3 -translate-x-1/2 translate-y-1/2"
-                      aria-hidden="true"
-                    >
-                      <div className="translate-z-0 absolute inset-0 rounded-full bg-slate-800 blur-[60px] transition-colors duration-500 ease-in-out group-[.swiper-slide-active]/slide:bg-buttercup-500" />
-                    </div>
-                    <div className="flex h-full flex-col p-6">
-                      <Image className="mb-3" src={CarouselImg03} width={56} height={56} alt="Icon 01" />
-                      <div className="grow">
-                        <div className="mb-1 text-lg font-bold">Social integrations</div>
-                        <div className="mb-3 text-slate-400">
-                          Incorporate rich user profiling, and facilitate more transactions.
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <a
-                          className="group inline-flex items-center text-sm font-medium text-slate-300 transition duration-150 ease-in-out hover:text-white"
-                          href="#0"
-                        >
-                          Learn More{' '}
-                          <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
-                            -&gt;
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </HighlighterItem>
-                <HighlighterItem className="swiper-slide group/slide h-auto">
-                  <div className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-slate-900">
-                    {/* Particles animation */}
-                    <Particles
-                      className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
-                      quantity={3}
-                      refresh={swiperInitialized}
-                    />
-                    {/* Radial gradient */}
-                    <div
-                      className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/3 -translate-x-1/2 translate-y-1/2"
-                      aria-hidden="true"
-                    >
-                      <div className="translate-z-0 absolute inset-0 rounded-full bg-slate-800 blur-[60px] transition-colors duration-500 ease-in-out group-[.swiper-slide-active]/slide:bg-buttercup-500" />
-                    </div>
-                    <div className="flex h-full flex-col p-6">
-                      <Image className="mb-3" src={CarouselImg04} width={56} height={56} alt="Icon 01" />
-                      <div className="grow">
-                        <div className="mb-1 text-lg font-bold">Progressive Profiling</div>
-                        <div className="mb-3 text-slate-400">
-                          Incorporate rich user profiling, and facilitate more transactions.
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <a
-                          className="group inline-flex items-center text-sm font-medium text-slate-300 transition duration-150 ease-in-out hover:text-white"
-                          href="#0"
-                        >
-                          Learn More{' '}
-                          <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
-                            -&gt;
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </HighlighterItem>
-                <HighlighterItem className="swiper-slide group/slide h-auto">
-                  <div className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-slate-900">
-                    {/* Particles animation */}
-                    <Particles
-                      className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
-                      quantity={3}
-                      refresh={swiperInitialized}
-                    />
-                    {/* Radial gradient */}
-                    <div
-                      className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/3 -translate-x-1/2 translate-y-1/2"
-                      aria-hidden="true"
-                    >
-                      <div className="translate-z-0 absolute inset-0 rounded-full bg-slate-800 blur-[60px] transition-colors duration-500 ease-in-out group-[.swiper-slide-active]/slide:bg-buttercup-500" />
-                    </div>
-                    <div className="flex h-full flex-col p-6">
-                      <Image className="mb-3" src={CarouselImg05} width={56} height={56} alt="Icon 05" />
-                      <div className="grow">
-                        <div className="mb-1 text-lg font-bold">Secure Access</div>
-                        <div className="mb-3 text-slate-400">
-                          Incorporate rich user profiling, and facilitate more transactions.
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <a
-                          className="group inline-flex items-center text-sm font-medium text-slate-300 transition duration-150 ease-in-out hover:text-white"
-                          href="#0"
-                        >
-                          Learn More{' '}
-                          <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
-                            -&gt;
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </HighlighterItem>
+                  </HighlighterItem>
+                ))}
               </Highlighter>
             </div>
           </div>
-
           {/* Arrows */}
           <div className="mt-8 flex justify-end">
             <button className="carousel-prev group relative z-20 flex h-12 w-12 items-center justify-center">

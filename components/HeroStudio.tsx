@@ -4,6 +4,7 @@ export default function HeroStudio() {
   return (
     <section>
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        {/* Blurred shape */}
         <div
           className="pointer-events-none absolute bottom-1/3 left-20 -z-10 translate-y-1/2 opacity-60 blur-2xl"
           aria-hidden="true"
