@@ -15,7 +15,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "yarn run lint:fix"
+    "*.{js,jsx,ts,tsx}": "npm run lint:fix"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",

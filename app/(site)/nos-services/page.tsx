@@ -1,5 +1,5 @@
 import HeroServices from '@/components/HeroServices';
-import Pricing from '@/components/Pricing';
+// import Pricing from '@/components/Pricing';
 import ServicesList from '@/components/ServicesList';
 
 export const metadata = {
@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <HeroServices />
       <ServicesList />
-      <Pricing />
+      {/* <Pricing /> */}
     </>
   );
 }
