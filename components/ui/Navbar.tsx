@@ -91,7 +91,7 @@ export default function Navbar() {
               </ActiveLink>
             </li>
             <li>
-              <ActiveLink href="/contact-acces" onClick={() => setMobileNavOpen(false)}>
+              <ActiveLink href="/acces-contact" onClick={() => setMobileNavOpen(false)}>
                 Contact/Accès
               </ActiveLink>
             </li>
