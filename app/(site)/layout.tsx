@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 
 import Footer from '@/components/ui/Footer';
 import Header from '@/components/ui/Header';
+import ScrollTopButton from '@/components/ui/ScrollTopButton';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
   }, []);
   return (
     <body className={`${inter.variable} bg-black font-inter tracking-tight text-slate-100 antialiased`}>
+      <ScrollTopButton />
       <div className="flex min-h-screen flex-col overflow-hidden">
         <Header />
         <main className="grow">{children}</main>
