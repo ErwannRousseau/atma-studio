@@ -44,7 +44,7 @@ export default function Team() {
       setActive(active + 1 === teamMember.length ? 0 : (active) => active + 1);
     }, autorotateTiming);
     return () => clearInterval(interval);
-  }, [active, autorotate]);
+  }, [active, autorotate, autorotateTiming, teamMember.length]);
 
   const heightFix = () => {
     if (testimonials.current && testimonials.current.parentElement)
