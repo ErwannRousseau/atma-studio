@@ -76,7 +76,7 @@ export default function ActualityCarousel({ actualities }: { actualities: Actual
             <div className="actuality-carousel swiper-container group h-[300px]">
               <Highlighter className="swiper-wrapper w-fit" refresh={swiperInitialized}>
                 {/* Carousel items */}
-                {actualities.map(({ _key, title, image, link, date }) => (
+                {actualities.map(({ _key, title, image, link }) => (
                   <HighlighterItem key={_key} className="swiper-slide group/slide h-max">
                     <div
                       className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-cover bg-center bg-no-repeat "
