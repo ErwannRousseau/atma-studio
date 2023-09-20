@@ -6,8 +6,8 @@ import { useState, useRef, useEffect } from 'react';
 
 import Particles from './Particles';
 
-import Bhim from '@/public/images/bhim.png';
-import Theo from '@/public/images/theo.png';
+import Bhim from '@/public/images/bhim.webp';
+import Theo from '@/public/images/theo.webp';
 
 interface TeamMember {
   img: StaticImageData;

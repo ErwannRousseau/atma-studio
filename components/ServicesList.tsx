@@ -1,6 +1,6 @@
 import Particles from './Particles';
 
-import Photo from '@/public/images/atma6.png';
+import Photo from '@/public/images/atma6.webp';
 
 export default function ServicesList() {
   return (

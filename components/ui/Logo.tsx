@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import LogoImg from '@/public/images/logo.png';
+import LogoImg from '@/public/images/logo.webp';
 
 export default function Logo() {
   return (

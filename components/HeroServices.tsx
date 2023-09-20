@@ -1,7 +1,7 @@
 import Highlighter, { HighlighterItem } from './Highlighter';
 import Particles from './Particles';
 
-import ImageService from '@/public/images/atma5.png';
+import ImageService from '@/public/images/atma5.webp';
 
 export default function HeroServices() {
   return (
