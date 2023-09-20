@@ -1,6 +1,6 @@
 import Particles from './Particles';
 
-import Photo from '@/public/images/atma2.png';
+import Photo from '@/public/images/atma2.webp';
 
 export default function StudioPres() {
   return (

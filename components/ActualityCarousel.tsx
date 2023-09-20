@@ -7,18 +7,12 @@ import Swiper, { Navigation } from 'swiper';
 import Highlighter, { HighlighterItem } from './Highlighter';
 import Particles from './Particles';
 
-import CarouselImg02 from '@/public/images/carousel-icon-02.svg';
-import CarouselImg03 from '@/public/images/carousel-icon-03.svg';
-import CarouselImg04 from '@/public/images/carousel-icon-04.svg';
-import CarouselImg05 from '@/public/images/carousel-icon-05.svg';
-import ImageCarousel from '@/public/images/cover-tay1an.webp';
-
-const CarouselImages = [ImageCarousel, CarouselImg02, CarouselImg03, CarouselImg04, CarouselImg05];
+import type { Actualities } from '@/sanity/types/HomePage';
 
 import 'swiper/swiper.min.css';
 Swiper.use([Navigation]);
 
-export default function ActualityCarousel() {
+export default function ActualityCarousel({ actualities }: { actualities: Actualities }) {
   const [swiperInitialized, setSwiperInitialized] = useState<boolean>(false);
 
   useEffect(() => {
@@ -82,12 +76,12 @@ export default function ActualityCarousel() {
             <div className="actuality-carousel swiper-container group h-[300px]">
               <Highlighter className="swiper-wrapper w-fit" refresh={swiperInitialized}>
                 {/* Carousel items */}
-                {CarouselImages.map((image, index) => (
-                  <HighlighterItem key={index} className="swiper-slide group/slide h-max">
+                {actualities.map(({ _key, title, image, link, date }) => (
+                  <HighlighterItem key={_key} className="swiper-slide group/slide h-max">
                     <div
                       className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-cover bg-center bg-no-repeat "
-                      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-                      style={{ backgroundImage: `url(${image.src})` }}
+                      style={{ backgroundImage: `url(${image.url})` }}
+                      aria-label={title}
                     >
                       {/* Particles animation */}
                       <Particles
@@ -105,14 +99,14 @@ export default function ActualityCarousel() {
                       <div className="relative flex h-full flex-col p-6">
                         <div className="grid grow place-items-center">
                           <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-lg font-bold text-transparent underline">
-                            TAY1AN - CARTES EN MAIN
+                            {title}
                             <span className="absolute inset-x-0 bottom-0 h-[2.5px] bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
                           </p>
                         </div>
                         <div className="group/arrow absolute bottom-5 right-6 text-right">
                           <Link
                             className="group inline-flex items-center text-sm font-medium text-buttercup-50 transition duration-150 ease-in-out hover:text-white"
-                            href="#0"
+                            href={link}
                           >
                             Découvrir{' '}
                             <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">

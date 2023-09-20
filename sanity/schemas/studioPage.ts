@@ -1,4 +1,4 @@
-import { Briefcase, Mic2 } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const studioPage = defineType({
@@ -73,7 +73,7 @@ export const equipmentItem = defineType({
   name: 'equipmentItem',
   title: 'Matériel/Outil',
   type: 'object',
-  icon: Mic2,
+  icon: Briefcase,
   fields: [
     defineField({
       name: 'name',

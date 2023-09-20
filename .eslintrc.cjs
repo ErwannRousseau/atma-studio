@@ -75,6 +75,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'import/no-unresolved': 'error',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   ignorePatterns: [
     'node_modules',
