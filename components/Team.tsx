@@ -1,50 +1,27 @@
 'use client';
 
 import { Transition } from '@headlessui/react';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 
 import Particles from './Particles';
 
-import Bhim from '@/public/images/bhim.webp';
-import Theo from '@/public/images/theo.webp';
+import { TeamMember } from '@/sanity/types/StudioPage';
 
-interface TeamMember {
-  img: StaticImageData;
-  quote: string;
-  name: string;
-  role: string;
-}
-
-export default function Team() {
+export default function Team({ team }: { team: TeamMember[] }) {
   const [active, setActive] = useState<number>(0);
   const [autorotate, setAutorotate] = useState<boolean>(true);
   const [autorotateTiming] = useState<number>(7000);
-
-  const teamMember: TeamMember[] = [
-    {
-      img: Theo,
-      quote: "Je m'occupe du management",
-      name: 'Theo',
-      role: 'Management',
-    },
-    {
-      img: Bhim,
-      quote: "Je m'occupe du mix",
-      name: 'Bhim',
-      role: 'Mix',
-    },
-  ];
 
   const testimonials = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!autorotate) return;
     const interval = setInterval(() => {
-      setActive(active + 1 === teamMember.length ? 0 : (active) => active + 1);
+      setActive(active + 1 === team.length ? 0 : (active) => active + 1);
     }, autorotateTiming);
     return () => clearInterval(interval);
-  }, [active, autorotate, autorotateTiming, teamMember.length]);
+  }, [active, autorotate, autorotateTiming, team.length]);
 
   const heightFix = () => {
     if (testimonials.current && testimonials.current.parentElement)
@@ -68,7 +45,7 @@ export default function Team() {
             {/* Testimonial image */}
             <div className="relative h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_40%,theme(colors.white))]">
               <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[480px] w-[480px] -translate-x-1/2 rounded-full before:absolute before:inset-0 before:-z-20 before:rounded-full before:bg-gradient-to-b before:from-buttercup-200/50 before:to-transparent before:to-20% after:absolute after:inset-0 after:-z-20 after:m-px after:rounded-full after:bg-buttercup-500/20">
-                {teamMember.map((member, index) => (
+                {team.map(({ image, name }, index) => (
                   <Transition
                     key={index}
                     show={active === index}
@@ -83,10 +60,10 @@ export default function Team() {
                   >
                     <Image
                       className="relative left-1/2 top-9 -translate-x-1/2 rounded-full"
-                      src={member.img}
+                      src={image.url}
                       width={90}
                       height={90}
-                      alt={member.name}
+                      alt={`photo${name}`}
                     />
                   </Transition>
                 ))}
@@ -95,9 +72,9 @@ export default function Team() {
             {/* Quote */}
             <div className="mb-5 transition-all delay-300 duration-150 ease-in-out">
               <div className="relative flex flex-col" ref={testimonials}>
-                {teamMember.map((member, index) => (
+                {team.map(({ quote, _key }, index) => (
                   <Transition
-                    key={index}
+                    key={_key}
                     show={active === index}
                     enter="transition ease-in-out duration-500 delay-200 order-first"
                     enterFrom="opacity-0 -translate-x-4"
@@ -108,7 +85,7 @@ export default function Team() {
                     beforeEnter={() => heightFix()}
                   >
                     <div className="bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text text-xl font-bold text-transparent">
-                      {member.quote}
+                      {quote}
                     </div>
                   </Transition>
                 ))}
@@ -116,20 +93,20 @@ export default function Team() {
             </div>
             {/* Buttons */}
             <div className="flex flex-col justify-center gap-2 sm:flex-row sm:flex-wrap">
-              {teamMember.map((member, index) => (
+              {team.map(({ role, name, _key }, index) => (
                 <button
                   className={`btn-sm relative  mx-auto py-1.5 text-xs text-slate-300 transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 sm:mx-0 ${
                     active === index ? 'opacity-100' : 'opacity-30 hover:opacity-60'
                   }`}
-                  key={index}
+                  key={_key}
                   onClick={() => {
                     setActive(index);
                     setAutorotate(false);
                   }}
                 >
                   <span className="relative">
-                    <span className="text-slate-50">{member.name}</span> <span className="text-slate-600">-</span>{' '}
-                    <span>{member.role}</span>
+                    <span className="text-slate-50">{name}</span> <span className="text-slate-600">-</span>{' '}
+                    <span>{role}</span>
                   </span>
                 </button>
               ))}

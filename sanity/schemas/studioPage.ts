@@ -7,8 +7,8 @@ export const studioPage = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'content',
-      title: 'Content',
+      name: 'presentation',
+      title: 'Présentation',
       type: 'array',
       of: [{ type: 'block' }],
       validation: (Rule) => Rule.required().error('Un contenu est obligatoire'),

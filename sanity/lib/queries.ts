@@ -2,15 +2,15 @@ import { groq } from 'next-sanity';
 
 // Get homePage Data
 export const homePageQuery = groq`*[_type == "homepage"][0]{
-  "history": history[]{
+  history[]{
      style,
      _key,
-    "children": children[]{
+    children[]{
       text
     }
   },
   "image": image.asset->{url, altText},
-  "actualitySection": actualitySection[]{
+  actualitySection[]{
     "image": image.asset->{url, altText},
     link,
     _key,
@@ -19,3 +19,29 @@ export const homePageQuery = groq`*[_type == "homepage"][0]{
   }
 }
  `;
+
+export const studioPageQuery = groq`*[_type == "studioPage"][0] {
+  presentation[]{
+    children[]{
+      text
+    },
+    style
+  },
+  team[]{
+    "image": image.asset->{url, altText},
+    role,
+    name,
+    "quote": description
+  },
+  "imagePresentation": image.asset->{url, altText},
+  equipmentsCategories[]{
+    "icon": icon.asset->{url, altText},
+    "title": name,
+    _key,
+    equipmentItem[]{
+      name,
+      _key
+    }
+  }
+}
+`;

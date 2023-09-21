@@ -1,8 +1,15 @@
 import Particles from './Particles';
 
-import Photo from '@/public/images/atma2.webp';
+import { ImageSanity } from '@/sanity/types/ImageSanity';
+import { Presentation } from '@/sanity/types/StudioPage';
 
-export default function StudioPres() {
+export default function StudioPres({
+  presentation,
+  imagePresentation,
+}: {
+  imagePresentation: ImageSanity;
+  presentation: Presentation[];
+}) {
   return (
     <section>
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
@@ -41,15 +48,13 @@ export default function StudioPres() {
           <div className="mx-auto flex max-w-xl flex-col space-y-8 space-y-reverse md:max-w-none md:flex-row md:space-x-8 md:space-y-0 lg:space-x-16 xl:space-x-20">
             {/* Content */}
             <div className="order-1 max-md:text-center md:order-none md:w-7/12 lg:w-1/2" data-aos="fade-down">
-              <h3 className="h3 inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent">
-                Notre vision
+              <h3
+                className={`h3 inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent`}
+              >
+                {presentation[0].children[0].text}
               </h3>
               <p className="mb-8 text-justify text-lg text-slate-100 md:text-left">
-                Le confort est primordial pour stimuler la créativité. Le salle de mixage et la cabine forment un
-                véritable cocon insonorisé avec lumières ajustables pour vous plonger dans l’atmosphère qui vous
-                convient. Nous disposons d’une salle de pause (Break Room) et d’une salle d’accueil. <br />
-                Si vous voulez prendre l’air, nous bénéficions d’un accès direct à la Butte Sainte-Anne et à la vue
-                qu’elle offre sur la ville. Plusieurs commerces sont à proximité (boulangerie, épicerie, bar, tabac).
+                {presentation[1].children[0].text}
               </p>
             </div>
             {/* Image */}
@@ -57,8 +62,9 @@ export default function StudioPres() {
               <div
                 className="h-[320px] w-[320px] rounded-2xl border border-transparent bg-cover bg-no-repeat shadow-2xl lg:h-[360px] lg:w-[360px] "
                 style={{
-                  backgroundImage: `url(${Photo.src})`,
+                  backgroundImage: `url(${imagePresentation.url})`,
                 }}
+                aria-label={imagePresentation.altText}
               />
             </div>
           </div>
