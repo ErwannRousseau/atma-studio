@@ -25,6 +25,7 @@ export const studioPageQuery = groq`*[_type == "studioPage"][0] {
     children[]{
       text
     },
+    _key,
     style
   },
   team[]{

@@ -3,8 +3,6 @@ import Image from 'next/image';
 import { EquipmentsCategory } from '@/sanity/types/StudioPage';
 
 export default function EquipmentsList({ equipmentsCategories }: { equipmentsCategories: EquipmentsCategory[] }) {
-  console.log(equipmentsCategories);
-
   return (
     <section>
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">

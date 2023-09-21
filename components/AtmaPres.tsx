@@ -31,7 +31,11 @@ export default function AtmaPres({ history, image }: { history: History[]; image
                 >
                   {history[0].children[0].text}
                 </h3>
-                <p className="mb-8 text-lg text-slate-100">{history[1].children[0].text}</p>
+                {history.slice(1).map(({ children, _key }) => (
+                  <p key={_key} className="mb-8 text-lg text-slate-100">
+                    {children[0].text}
+                  </p>
+                ))}
               </div>
               {/* Image */}
               <div className="md:w-5/12 lg:w-1/2" data-aos="fade-up" data-aos-delay="100">

@@ -1,6 +1,7 @@
 import type { ImageSanity } from './ImageSanity';
 
 export type History = {
+  _key: string;
   style: string;
   children: {
     text: string;

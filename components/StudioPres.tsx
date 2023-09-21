@@ -49,13 +49,15 @@ export default function StudioPres({
             {/* Content */}
             <div className="order-1 max-md:text-center md:order-none md:w-7/12 lg:w-1/2" data-aos="fade-down">
               <h3
-                className={`h3 inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent`}
+                className={`${presentation[0].style} inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent`}
               >
                 {presentation[0].children[0].text}
               </h3>
-              <p className="mb-8 text-justify text-lg text-slate-100 md:text-left">
-                {presentation[1].children[0].text}
-              </p>
+              {presentation.slice(1).map(({ children, _key }) => (
+                <p key={_key} className="text-justify text-lg text-slate-100 md:text-left">
+                  {children[0].text}
+                </p>
+              ))}
             </div>
             {/* Image */}
             <div className="grid place-items-center md:w-5/12 lg:w-1/2" data-aos="fade-up" data-aos-delay="100">

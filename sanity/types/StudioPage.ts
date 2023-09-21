@@ -12,6 +12,7 @@ export type Presentation = {
     text: string;
   }[];
   style: string;
+  _key: string;
 };
 
 export type TeamMember = {
