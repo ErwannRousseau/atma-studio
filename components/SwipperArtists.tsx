@@ -10,9 +10,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import ImageCarousel from '@/public/images/cover-tay1an.webp';
+import { ReferenceItem } from '@/sanity/types/ReferencesPage';
 
-export default function SwipperArtists() {
+export default function SwipperArtists({ nextArtists }: { nextArtists: ReferenceItem[] }) {
   return (
     <div className="col-span-12 mx-auto my-0" data-aos="fade-left">
       <Swiper
@@ -43,251 +43,34 @@ export default function SwipperArtists() {
         }}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div
-            className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
-            style={{ backgroundImage: `url(${ImageCarousel.src})` }}
-          >
-            <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
-              TAY1AN - CARTES EN MAIN
-              <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
-            </p>
-            <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
-              <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <Link
-                  href="#"
-                  className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
-                >
-                  <span className="relative inline-flex items-center">
-                    Découvrir{' '}
-                    <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                      -&gt;
+        {nextArtists.map(({ artistName, _key, link, image }) => (
+          <SwiperSlide key={_key}>
+            <div
+              className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
+              style={{ backgroundImage: `url(${image.url})` }}
+            >
+              <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
+                {artistName}
+                <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
+              </p>
+              <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
+                <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
+                  <Link
+                    href={link}
+                    className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
+                  >
+                    <span className="relative inline-flex items-center">
+                      Découvrir{' '}
+                      <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
+                        -&gt;
+                      </span>
                     </span>
-                  </span>
-                </Link>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-        {/* <div className="group/arrow absolute bottom-5 right-6 text-right">
-              <Link
-                className="group inline-flex items-center text-sm font-medium text-buttercup-50 transition duration-150 ease-in-out hover:text-white"
-                href="#0"
-              >
-                Découvrir{' '}
-                <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                  -&gt;
-                </span>
-              </Link>
-            </div> */}
-        <SwiperSlide>
-          <div
-            className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
-            style={{ backgroundImage: `url(${ImageCarousel.src})` }}
-          >
-            <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
-              TAY1AN - CARTES EN MAIN
-              <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
-            </p>
-            <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
-              <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <Link
-                  href="#"
-                  className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
-                >
-                  <span className="relative inline-flex items-center">
-                    Découvrir{' '}
-                    <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                      -&gt;
-                    </span>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
-            style={{ backgroundImage: `url(${ImageCarousel.src})` }}
-          >
-            <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
-              TAY1AN - CARTES EN MAIN
-              <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
-            </p>
-            <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
-              <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <Link
-                  href="#"
-                  className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
-                >
-                  <span className="relative inline-flex items-center">
-                    Découvrir{' '}
-                    <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                      -&gt;
-                    </span>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
-            style={{ backgroundImage: `url(${ImageCarousel.src})` }}
-          >
-            <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
-              TAY1AN - CARTES EN MAIN
-              <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
-            </p>
-            <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
-              <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <Link
-                  href="#"
-                  className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
-                >
-                  <span className="relative inline-flex items-center">
-                    Découvrir{' '}
-                    <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                      -&gt;
-                    </span>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
-            style={{ backgroundImage: `url(${ImageCarousel.src})` }}
-          >
-            <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
-              TAY1AN - CARTES EN MAIN
-              <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
-            </p>
-            <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
-              <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <Link
-                  href="#"
-                  className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
-                >
-                  <span className="relative inline-flex items-center">
-                    Découvrir{' '}
-                    <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                      -&gt;
-                    </span>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
-            style={{ backgroundImage: `url(${ImageCarousel.src})` }}
-          >
-            <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
-              TAY1AN - CARTES EN MAIN
-              <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
-            </p>
-            <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
-              <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <Link
-                  href="#"
-                  className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
-                >
-                  <span className="relative inline-flex items-center">
-                    Découvrir{' '}
-                    <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                      -&gt;
-                    </span>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
-            style={{ backgroundImage: `url(${ImageCarousel.src})` }}
-          >
-            <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
-              TAY1AN - CARTES EN MAIN
-              <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
-            </p>
-            <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
-              <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <Link
-                  href="#"
-                  className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
-                >
-                  <span className="relative inline-flex items-center">
-                    Découvrir{' '}
-                    <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                      -&gt;
-                    </span>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
-            style={{ backgroundImage: `url(${ImageCarousel.src})` }}
-          >
-            <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
-              TAY1AN - CARTES EN MAIN
-              <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
-            </p>
-            <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
-              <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <Link
-                  href="#"
-                  className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
-                >
-                  <span className="relative inline-flex items-center">
-                    Découvrir{' '}
-                    <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                      -&gt;
-                    </span>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div
-            className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
-            style={{ backgroundImage: `url(${ImageCarousel.src})` }}
-          >
-            <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
-              TAY1AN - CARTES EN MAIN
-              <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
-            </p>
-            <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
-              <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <Link
-                  href="#"
-                  className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
-                >
-                  <span className="relative inline-flex items-center">
-                    Découvrir{' '}
-                    <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                      -&gt;
-                    </span>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
       <div className="flex justify-end gap-6 pr-2">
         <button className="button-prev group relative z-20 flex items-center justify-center">
@@ -314,3 +97,16 @@ export default function SwipperArtists() {
     </div>
   );
 }
+
+// Optional button link :
+/* <div className="group/arrow absolute bottom-5 right-6 text-right">
+    <Link
+      className="group inline-flex items-center text-sm font-medium text-buttercup-50 transition duration-150 ease-in-out hover:text-white"
+      href="#0"
+    >
+      Découvrir{' '}
+      <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
+        -&gt;
+      </span>
+    </Link>
+  </div> */

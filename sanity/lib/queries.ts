@@ -46,3 +46,12 @@ export const studioPageQuery = groq`*[_type == "studioPage"][0] {
   }
 }
 `;
+
+export const referencePageQuery = groq`*[_type == "referencePage"][0]{
+  referencesList[]{
+    link,
+    artistName,
+    _key,
+    "image": image.asset->{url, altText}
+  }
+}`;
