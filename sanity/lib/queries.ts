@@ -20,6 +20,7 @@ export const homePageQuery = groq`*[_type == "homepage"][0]{
 }
  `;
 
+// Get studioPage Data
 export const studioPageQuery = groq`*[_type == "studioPage"][0] {
   presentation[]{
     children[]{
@@ -47,11 +48,22 @@ export const studioPageQuery = groq`*[_type == "studioPage"][0] {
 }
 `;
 
-export const referencePageQuery = groq`*[_type == "referencePage"][0]{
+// Get referencesPage Data
+export const referencesPageQuery = groq`*[_type == "referencePage"][0]{
   referencesList[]{
     link,
     artistName,
     _key,
     "image": image.asset->{url, altText}
+  }
+}`;
+
+// Get servicesPage Data
+export const servicesPageData = groq`*[_type == "servicesPage"][0]{
+  servicesList[]{
+    "image" : images.asset->{url, altText},
+    description,
+    _key,
+    title
   }
 }`;

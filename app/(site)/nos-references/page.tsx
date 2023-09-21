@@ -2,7 +2,7 @@ import type { ReferencePageData } from '@/sanity/types/ReferencesPage';
 
 import ArtistsList from '@/components/ArtistsList';
 import HeroReferences from '@/components/HeroReferences';
-import { referencePageQuery } from '@/sanity/lib/queries';
+import { referencesPageQuery } from '@/sanity/lib/queries';
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 
 export const metadata = {
@@ -12,8 +12,7 @@ export const metadata = {
 };
 
 export default async function ReferencesPage() {
-  const { referencesList } = await sanityFetch<ReferencePageData>({ query: referencePageQuery });
-  // console.log(referencesList);
+  const { referencesList } = await sanityFetch<ReferencePageData>({ query: referencesPageQuery });
 
   return (
     <>
