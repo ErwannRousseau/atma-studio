@@ -47,7 +47,7 @@ export default function Team({ team }: { team: TeamMember[] }) {
               <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[480px] w-[480px] -translate-x-1/2 rounded-full before:absolute before:inset-0 before:-z-20 before:rounded-full before:bg-gradient-to-b before:from-buttercup-200/50 before:to-transparent before:to-20% after:absolute after:inset-0 after:-z-20 after:m-px after:rounded-full after:bg-buttercup-500/20">
                 {team.map(({ image, name }, index) => (
                   <Transition
-                    key={index}
+                    key={name}
                     show={active === index}
                     className="absolute inset-0 -z-10 h-full"
                     enter="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700 order-first"
@@ -72,9 +72,9 @@ export default function Team({ team }: { team: TeamMember[] }) {
             {/* Quote */}
             <div className="mb-5 transition-all delay-300 duration-150 ease-in-out">
               <div className="relative flex flex-col" ref={testimonials}>
-                {team.map(({ quote, _key }, index) => (
+                {team.map(({ quote }, index) => (
                   <Transition
-                    key={_key}
+                    key={quote}
                     show={active === index}
                     enter="transition ease-in-out duration-500 delay-200 order-first"
                     enterFrom="opacity-0 -translate-x-4"
@@ -93,12 +93,12 @@ export default function Team({ team }: { team: TeamMember[] }) {
             </div>
             {/* Buttons */}
             <div className="flex flex-col justify-center gap-2 sm:flex-row sm:flex-wrap">
-              {team.map(({ role, name, _key }, index) => (
+              {team.map(({ role, name }, index) => (
                 <button
                   className={`btn-sm relative  mx-auto py-1.5 text-xs text-slate-300 transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 sm:mx-0 ${
                     active === index ? 'opacity-100' : 'opacity-30 hover:opacity-60'
                   }`}
-                  key={_key}
+                  key={role}
                   onClick={() => {
                     setActive(index);
                     setAutorotate(false);

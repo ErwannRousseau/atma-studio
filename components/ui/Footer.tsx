@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import Logo from './Logo';
 
-import { openMapsApp } from '@/utils/openMapApp';
+import { openMapsApp } from '@/lib/openMapApp';
 
 export default function Footer() {
   return (

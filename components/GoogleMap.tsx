@@ -4,7 +4,7 @@ import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import { useMemo } from 'react';
 
 import customMarkerIcon from '@/public/images/custom-marker.svg';
-import { openMapsApp } from '@/utils/openMapApp';
+import { openMapsApp } from '@/lib/openMapApp';
 
 type GoogleMapsApiKey = string;
 interface MapOptions {

@@ -107,6 +107,7 @@ export default function ActualityCarousel({ actualities }: { actualities: Actual
                           <Link
                             className="group inline-flex items-center text-sm font-medium text-buttercup-50 transition duration-150 ease-in-out hover:text-white"
                             href={link}
+                            target="_blank"
                           >
                             Découvrir{' '}
                             <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
