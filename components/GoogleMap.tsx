@@ -3,8 +3,8 @@
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import { useMemo } from 'react';
 
-import customMarkerIcon from '@/public/images/custom-marker.svg';
 import { openMapsApp } from '@/lib/openMapApp';
+import customMarkerIcon from '@/public/images/custom-marker.svg';
 
 type GoogleMapsApiKey = string;
 interface MapOptions {
