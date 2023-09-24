@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
   try {
     const data = await resend.emails.send({
       from: 'ATMA Studio - Contact <onboarding@resend.dev>',
-      to: 'erwann.rousseau@icloud.com',
+      to: 'adn.nantes@gmail.com',
       subject: 'Prise de contact ATMA Studio',
       react: (
         <ContactEmail
