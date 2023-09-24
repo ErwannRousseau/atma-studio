@@ -1,5 +1,9 @@
+import type { ReferencePageData } from '@/sanity/types/ReferencesPage';
+
 import ArtistsList from '@/components/ArtistsList';
 import HeroReferences from '@/components/HeroReferences';
+import { referencesPageQuery } from '@/sanity/lib/queries';
+import { sanityFetch } from '@/sanity/lib/sanityFetch';
 
 export const metadata = {
   title: 'Atma Studio - Nos références',
@@ -7,11 +11,13 @@ export const metadata = {
     "Explorez notre galerie d'artistes talentueux produits par ATMA Studio. Découvrez une sélection diversifiée de musiciens, chanteurs, et groupes qui ont choisi notre studio pour réaliser leurs projets musicaux. Plongez dans un univers de créativité et de musique exceptionnelle avec nos références artistiques.",
 };
 
-export default function Home() {
+export default async function ReferencesPage() {
+  const { referencesList } = await sanityFetch<ReferencePageData>({ query: referencesPageQuery });
+
   return (
     <>
       <HeroReferences />
-      <ArtistsList />
+      <ArtistsList referencesList={referencesList} />
     </>
   );
 }

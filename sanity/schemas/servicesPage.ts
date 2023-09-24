@@ -34,11 +34,13 @@ export const serviceItem = defineType({
       name: 'title',
       title: 'Titre du service',
       type: 'string',
+      validation: (Rule) => Rule.required().error('Un titre de service est obligatoire.'),
     }),
     defineField({
       name: 'description',
       title: 'Description du service',
       type: 'text',
+      validation: (Rule) => Rule.required().error('Une description est obligatoire.'),
     }),
     defineField({
       name: 'images',
@@ -47,6 +49,7 @@ export const serviceItem = defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required().error('Une image est obligatoire.'),
     }),
   ],
 });

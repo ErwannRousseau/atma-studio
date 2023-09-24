@@ -1,4 +1,4 @@
-import { Briefcase, Mic2 } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export const studioPage = defineType({
@@ -7,8 +7,8 @@ export const studioPage = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'content',
-      title: 'Content',
+      name: 'presentation',
+      title: 'Présentation',
       type: 'array',
       of: [{ type: 'block' }],
       validation: (Rule) => Rule.required().error('Un contenu est obligatoire'),
@@ -73,7 +73,7 @@ export const equipmentItem = defineType({
   name: 'equipmentItem',
   title: 'Matériel/Outil',
   type: 'object',
-  icon: Mic2,
+  icon: Briefcase,
   fields: [
     defineField({
       name: 'name',

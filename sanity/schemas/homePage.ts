@@ -6,7 +6,7 @@ export const homePage = defineType({
   title: 'Accueil',
   fields: [
     defineField({
-      name: 'content',
+      name: 'history',
       title: 'Histoire',
       type: 'array',
       of: [{ type: 'block' }],
@@ -22,7 +22,7 @@ export const homePage = defineType({
       validation: (Rule) => Rule.required().error('Une image est obligatoire.'),
     }),
     defineField({
-      name: 'newsSection',
+      name: 'actualitySection',
       title: 'Section Actualités',
       type: 'array',
       of: [
@@ -46,16 +46,6 @@ export const actualityItem = defineType({
       validation: (Rule) => Rule.required().error('Un titre est obligatoire'),
     }),
     defineField({
-      name: 'description',
-      title: 'Description',
-      type: 'text',
-    }),
-    defineField({
-      name: 'date',
-      title: 'Date',
-      type: 'date',
-    }),
-    defineField({
       name: 'image',
       title: "Image de l'actualité",
       type: 'image',
@@ -63,6 +53,22 @@ export const actualityItem = defineType({
         hotspot: true,
       },
       validation: (Rule) => Rule.required().error('Une image est obligatoire.'),
+    }),
+    defineField({
+      name: 'link',
+      title: 'Lien',
+      type: 'url',
+      validation: (Rule) => Rule.required().error('Un lien est obligatoire.'),
+    }),
+    defineField({
+      name: 'date',
+      title: 'Date',
+      type: 'date',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
     }),
   ],
 });

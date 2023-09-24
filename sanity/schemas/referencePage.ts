@@ -34,17 +34,13 @@ export const referenceItem = defineType({
       name: 'artistName',
       title: "Nom de l'Artiste",
       type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'description',
-      title: 'Description de la Référence',
-      type: 'text',
+      validation: (Rule) => Rule.required().error('Un nom est obligatoire.'),
     }),
     defineField({
       name: 'link',
       title: 'Lien',
       type: 'url',
+      validation: (Rule) => Rule.required().error('Un lien est obligatoire.'),
     }),
     defineField({
       name: 'image',
@@ -53,6 +49,12 @@ export const referenceItem = defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required().error('Une image est obligatoire.'),
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description de la Référence',
+      type: 'text',
     }),
   ],
 });
