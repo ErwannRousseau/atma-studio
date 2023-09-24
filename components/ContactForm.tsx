@@ -34,10 +34,8 @@ export default function ContactForm() {
       if (response.status === 200) {
         reset();
       }
-      console.log(response);
     } catch (error) {
-      // Gérez les erreurs ici, par exemple, affichez un message d'erreur à l'utilisateur.
-      console.error("Une erreur s'est produite :", error);
+      alert("Une erreur s'est produite");
     }
   };
   return (
