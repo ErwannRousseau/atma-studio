@@ -32,7 +32,7 @@ export default function AtmaPres({ history, image }: { history: History[]; image
                   {history[0].children[0].text}
                 </h3>
                 {history.slice(1).map(({ children, _key }) => (
-                  <p key={_key} className="mb-8 text-lg text-slate-100">
+                  <p key={_key} className=" mb-8 text-justify text-lg text-slate-100">
                     {children[0].text}
                   </p>
                 ))}

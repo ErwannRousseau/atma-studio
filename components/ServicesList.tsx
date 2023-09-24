@@ -10,9 +10,9 @@ export default function ServicesList({ servicesList }: { servicesList: ServicesL
         {/* Section content Musicale */}
         <div className=" md:pt-10">
           {/* Content odd */}
-          {servicesList.map((item, index) => (
+          {servicesList.map(({ _key, title, description, image }, index) => (
             <div
-              key={item._key}
+              key={_key}
               className={`mx-auto flex max-w-xl flex-col-reverse items-center pb-12 md:max-w-none ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               } md:gap-24 md:pb-24`}
@@ -27,9 +27,9 @@ export default function ServicesList({ servicesList }: { servicesList: ServicesL
                 }`}
               >
                 <h3 className="h3 inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent">
-                  {item.title}
+                  {title}
                 </h3>
-                <p className="mb-4 text-lg text-slate-100">{item.description}</p>
+                <p className="mb-4 text-lg text-slate-100">{description}</p>
               </div>
               {/* Image */}
               <div className={`${index % 2 === 0 ? '' : 'flex justify-end'} md:w-1/2`}>
@@ -38,7 +38,7 @@ export default function ServicesList({ servicesList }: { servicesList: ServicesL
                   data-aos="fade-up"
                   data-aos-delay="100"
                   style={{
-                    backgroundImage: `url(${item.image.url})`,
+                    backgroundImage: `url(${image.url})`,
                   }}
                 />
               </div>
