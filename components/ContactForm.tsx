@@ -35,6 +35,7 @@ export default function ContactForm() {
         reset();
       }
     } catch (error) {
+      console.log(error);
       alert("Une erreur s'est produite");
     }
   };
