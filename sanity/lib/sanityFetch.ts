@@ -9,5 +9,5 @@ export async function sanityFetch<QueryResponse>({ query }: { query: string }): 
     throw new Error('The `SANITY_API_READ_TOKEN` environment variable is required.');
   }
 
-  return client.fetch<QueryResponse>(query, { cache: 'no-store' });
+  return client.fetch<QueryResponse>(query, { next: { revalidate: 0 } });
 }
