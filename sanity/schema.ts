@@ -9,7 +9,6 @@ import { studioPage, equipmentsCategories, equipmentItem, teamMember } from './s
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
-    // imageAsset,
     actualityItem,
     homePage,
     studioPage,
