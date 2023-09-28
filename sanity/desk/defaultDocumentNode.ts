@@ -1,19 +1,11 @@
-import { DefaultDocumentNodeResolver } from 'sanity/desk';
-import Iframe from 'sanity-plugin-iframe-pane';
+import { StructureBuilder } from 'sanity/desk';
 
-export const defaultDocumentNode: DefaultDocumentNodeResolver = (S, { schemaType }) => {
-  switch (schemaType) {
-    case `post`:
-      return S.document().views([
-        S.view.form(),
-        S.view
-          .component(Iframe)
-          .options({
-            url: `http://localhost:3000/api/preview`,
-          })
-          .title('Preview'),
-      ]);
-    default:
-      return S.document().views([S.view.form()]);
-  }
-};
+export const myStructure = (S: StructureBuilder) =>
+  S.list()
+    .title('Pages')
+    .items([
+      ...S.documentTypeListItems().filter((listItem) => {
+        const id = listItem.getId();
+        return id && !['media.tag'].includes(id);
+      }),
+    ]);

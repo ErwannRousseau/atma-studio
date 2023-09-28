@@ -12,7 +12,7 @@ import { media } from 'sanity-plugin-media';
 import { apiVersion, dataset, projectId } from './sanity/env';
 import { schema } from './sanity/schema';
 
-import { defaultDocumentNode } from '@/sanity/desk/defaultDocumentNode';
+import { myStructure } from '@/sanity/desk/defaultDocumentNode';
 
 export default defineConfig({
   basePath: '/admin',
@@ -21,7 +21,7 @@ export default defineConfig({
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
   plugins: [
-    deskTool({ defaultDocumentNode }),
+    deskTool({ structure: myStructure }),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     media(),

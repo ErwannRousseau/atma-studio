@@ -9,16 +9,15 @@ import { studioPage, equipmentsCategories, equipmentItem, teamMember } from './s
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
-    // imageAsset,
     actualityItem,
     homePage,
-    referenceItem,
-    referencePage,
-    servicesPage,
-    serviceItem,
     studioPage,
     equipmentsCategories,
     equipmentItem,
     teamMember,
+    servicesPage,
+    serviceItem,
+    referenceItem,
+    referencePage,
   ],
 };
