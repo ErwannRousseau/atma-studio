@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 'use client';
 
 import '@/styles/css/additional-styles/utility-patterns.css';
@@ -6,7 +5,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-// import { action } from '@/lib/action';
 import { type TEmailSchema, emailSchema } from '@/lib/types';
 
 export default function ContactForm() {

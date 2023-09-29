@@ -59,7 +59,7 @@ export default function Team({ team }: { team: TeamMember[] }) {
                     beforeEnter={() => heightFix()}
                   >
                     <Image
-                      className="relative left-1/2 top-9 -translate-x-1/2 rounded-full"
+                      className="relative left-1/2 top-9 aspect-square -translate-x-1/2 rounded-full"
                       src={image.url}
                       width={90}
                       height={90}
@@ -98,7 +98,7 @@ export default function Team({ team }: { team: TeamMember[] }) {
                   className={`btn-sm relative  mx-auto py-1.5 text-xs text-slate-300 transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 sm:mx-0 ${
                     active === index ? 'opacity-100' : 'opacity-30 hover:opacity-60'
                   }`}
-                  key={role}
+                  key={name}
                   onClick={() => {
                     setActive(index);
                     setAutorotate(false);
