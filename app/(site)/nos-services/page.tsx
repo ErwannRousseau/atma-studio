@@ -1,7 +1,9 @@
+import { revalidatePath } from 'next/cache';
+
 import HeroServices from '@/components/HeroServices';
 // import Pricing from '@/components/Pricing';
 import ServicesList from '@/components/ServicesList';
-import { servicesPageData } from '@/sanity/lib/queries';
+import { getServicesPageData, servicesPageData } from '@/sanity/lib/queries';
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { ServicesPageData } from '@/sanity/types/ServicesPage';
 
@@ -12,7 +14,7 @@ export const metadata = {
 };
 
 export default async function ServicesPage() {
-  const { servicesList } = await sanityFetch<ServicesPageData>({ query: servicesPageData });
+  const { servicesList } = await getServicesPageData();
 
   return (
     <>

@@ -12,7 +12,7 @@ import { media } from 'sanity-plugin-media';
 import { apiVersion, dataset, projectId } from './sanity/env';
 import { schema } from './sanity/schema';
 
-import { myStructure } from '@/sanity/desk/defaultDocumentNode';
+import { myStructure } from '@/sanity/desk/myStructure';
 
 export default defineConfig({
   basePath: '/admin',
