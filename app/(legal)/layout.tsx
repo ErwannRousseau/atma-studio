@@ -12,10 +12,10 @@ export const metadata = {
   title: 'Atma Studio - Légal',
 };
 
-export default function DefaultLayout({ children }: { children: React.ReactNode }) {
+export default function LegalLayout({ children }: { children: React.ReactNode }) {
   return (
     <body className={`${inter.variable} bg-black font-inter tracking-tight text-slate-100 antialiased`}>
-      <div className="flex min-h-screen flex-col overflow-hidden">{children}</div>
+      <div className="mx-auto flex max-w-4xl flex-col overflow-hidden text-justify">{children}</div>
     </body>
   );
 }
