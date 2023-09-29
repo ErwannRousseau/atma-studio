@@ -114,7 +114,7 @@ export default function ContactForm() {
             type="submit"
             className="btn group w-full bg-buttercup-500 text-sm text-white shadow-sm hover:bg-buttercup-600"
           >
-            {isSubmitting ? 'Envoi en cours...' : isSubmitSuccessful ? 'Bien envoyé !' : 'Envoyer'}
+            {isSubmitting ? 'Envoi en cours...' : isSubmitSuccessful ? 'Message bien envoyé !' : 'Envoyer'}
             <span className="ml-1 tracking-normal text-buttercup-200 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
               -&gt;
             </span>
