@@ -1,16 +1,16 @@
+// import type { HomePageData } from '@/sanity/types/HomePage';
+// import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { revalidatePath } from 'next/cache';
-
-import type { HomePageData } from '@/sanity/types/HomePage';
 
 import ActualityCarousel from '@/components/ActualityCarousel';
 import AtmaPres from '@/components/AtmaPres';
 import HeroHome from '@/components/HeroHome';
 import IconsCarousel from '@/components/IconsCarousel';
-import { getHomePageData, homePageQuery } from '@/sanity/lib/queries';
-import { sanityFetch } from '@/sanity/lib/sanityFetch';
+import { getHomePageData } from '@/sanity/lib/queries';
 
 export default async function Home() {
   const { history, image, actualitySection } = await getHomePageData();
+  revalidatePath('/');
 
   return (
     <>
