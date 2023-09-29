@@ -46,12 +46,12 @@ export default function Footer() {
             <div className="mb-2 text-sm font-medium md:order-1 md:mb-0">
               <ul className="inline-flex flex-wrap text-sm font-medium">
                 <li className="after:px-2 after:text-gray-400 after:content-['·'] last:after:hidden">
-                  <Link className="text-gray-500 hover:text-gray-500 hover:underline" href="#0">
+                  <Link className="text-gray-500 hover:text-gray-500 hover:underline" href="/conditions-generales">
                     Conditions Générales
                   </Link>
                 </li>
                 <li className="after:px-2 after:text-gray-400 after:content-['·'] last:after:hidden">
-                  <Link className="text-gray-500 hover:text-gray-500 hover:underline" href="#0">
+                  <Link className="text-gray-500 hover:text-gray-500 hover:underline" href="/confidentialite">
                     Confidentialité
                   </Link>
                 </li>
