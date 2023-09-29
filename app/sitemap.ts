@@ -33,13 +33,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: 'http://localhost:3000/conditions-generales',
+      url: 'http://studio-atma.com/conditions-generales',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.1,
     },
     {
-      url: 'http://localhost:3000/confidentialite',
+      url: 'http://studio-atma.com/confidentialite',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.1,

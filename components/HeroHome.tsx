@@ -48,15 +48,15 @@ export default function HeroHome() {
               <Popover color="slate" shadow="md" size="md">
                 <Popover.Trigger>
                   <div className="cursor-not-allowed">
-                    <a
-                      className="btn group w-full cursor-not-allowed bg-gradient-to-r from-white/80 via-white to-white/80 text-slate-900 transition duration-150 ease-in-out hover:bg-white"
-                      href="#0"
+                    <Link
+                      href="/contact-acces"
+                      className="btn group w-full bg-gradient-to-r from-white/80 via-white to-white/80 text-slate-900 transition duration-150 ease-in-out hover:bg-white"
                     >
                       Réservez une session
                       <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
                         -&gt;
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </Popover.Trigger>
                 <Popover.Content>La réservation en ligne arrive bientôt !</Popover.Content>
