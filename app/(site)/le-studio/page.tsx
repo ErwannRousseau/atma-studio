@@ -1,8 +1,10 @@
+import { revalidatePath } from 'next/cache';
+
 import EquipmentsList from '@/components/EquipmentsList';
 import HeroStudio from '@/components/HeroStudio';
 import StudioPres from '@/components/StudioPres';
 import Team from '@/components/Team';
-import { studioPageQuery } from '@/sanity/lib/queries';
+import { getStudioPageData, studioPageQuery } from '@/sanity/lib/queries';
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { StudioPageData } from '@/sanity/types/StudioPage';
 
@@ -13,9 +15,7 @@ export const metadata = {
 };
 
 export default async function StudioPage() {
-  const { presentation, team, imagePresentation, equipmentsCategories } = await sanityFetch<StudioPageData>({
-    query: studioPageQuery,
-  });
+  const { presentation, team, imagePresentation, equipmentsCategories } = await getStudioPageData();
 
   return (
     <>
