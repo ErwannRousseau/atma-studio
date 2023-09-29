@@ -1,5 +1,3 @@
-// import type { HomePageData } from '@/sanity/types/HomePage';
-// import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { revalidatePath } from 'next/cache';
 
 import ActualityCarousel from '@/components/ActualityCarousel';
