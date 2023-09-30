@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   const { firstname, lastname, email, message, sourceOfDiscovery } = clientData;
   try {
     const data = await resend.emails.send({
-      from: 'ATMA Studio - Contact <onboarding@resend.dev>',
+      from: 'ATMA Studio - Contact <contact@studio-atma.com>',
       to: 'adn.nantes@gmail.com',
       subject: 'Prise de contact ATMA Studio',
       react: (

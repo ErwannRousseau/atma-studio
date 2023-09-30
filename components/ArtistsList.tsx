@@ -44,6 +44,7 @@ export default function ArtistsList({ referencesList }: { referencesList: Refere
                     <div
                       className="relative z-20 grid aspect-square w-full  grow place-items-center overflow-hidden rounded-[inherit] bg-cover bg-center bg-no-repeat md:aspect-4/3 "
                       style={{ backgroundImage: `url(${image.url})` }}
+                      aria-label={image?.altText}
                     >
                       <Particles
                         className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100"
@@ -81,6 +82,7 @@ export default function ArtistsList({ referencesList }: { referencesList: Refere
                     <div
                       className="relative z-20 grid aspect-square w-full grow  place-items-center overflow-hidden rounded-[inherit] bg-cover bg-center bg-no-repeat md:aspect-4/3.5"
                       style={{ backgroundImage: `url(${image.url})` }}
+                      aria-label={image?.altText}
                     >
                       <Particles
                         className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100"
