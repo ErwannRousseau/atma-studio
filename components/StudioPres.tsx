@@ -66,7 +66,7 @@ export default function StudioPres({
                 style={{
                   backgroundImage: `url(${imagePresentation.url})`,
                 }}
-                aria-label={imagePresentation.altText}
+                aria-label={imagePresentation?.altText}
               />
             </div>
           </div>

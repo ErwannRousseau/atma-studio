@@ -48,6 +48,7 @@ export default function SwipperArtists({ nextArtists }: { nextArtists: Reference
             <div
               className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl bg-cover bg-center bg-no-repeat md:aspect-4/3.5 xl:aspect-square"
               style={{ backgroundImage: `url(${image.url})` }}
+              aria-label={image?.altText}
             >
               <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
                 {artistName}
