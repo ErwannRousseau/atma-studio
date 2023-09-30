@@ -11,11 +11,8 @@ import {
   Tailwind,
   Text,
 } from '@react-email/components';
-import * as React from 'react';
 
 import type { TEmailSchema } from '@/lib/types';
-
-// import Logo from '@/public/images/logo.webp';
 
 export const ContactEmail = ({ firstname, lastname, email, message, sourceOfDiscovery = '' }: TEmailSchema) => {
   return (
@@ -27,10 +24,10 @@ export const ContactEmail = ({ firstname, lastname, email, message, sourceOfDisc
           <Container className="mx-auto my-[40px] w-[465px] rounded border border-solid border-[#eaeaea] p-[20px]">
             <Section className="mt-[32px]">
               <Img
-                src="https://atma-studio.vercel.app/images/logo.png"
+                src="https://studio-atma.com/images/logo.webp"
                 width="55"
                 height="50"
-                alt="Atma Studio Logo"
+                alt="Logo Atma Studio"
                 className="mx-auto my-0"
               />
             </Section>

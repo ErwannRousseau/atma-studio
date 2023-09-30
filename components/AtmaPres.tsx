@@ -43,6 +43,7 @@ export default function AtmaPres({ history, image }: { history: History[]; image
                   <div className="flex items-center justify-center">
                     <div className="relative flex h-48 w-48 items-center justify-center">
                       <div
+                        aria-label={image?.altText}
                         className="absolute h-[320px] w-[320px] rounded-2xl border border-transparent bg-cover bg-center shadow-2xl before:absolute before:inset-0 before:rounded-2xl"
                         style={{
                           backgroundImage: `url(${image.url})`,

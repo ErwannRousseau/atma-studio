@@ -40,6 +40,7 @@ export default function ServicesList({ servicesList }: { servicesList: ServicesL
                   style={{
                     backgroundImage: `url(${image.url})`,
                   }}
+                  aria-label={image?.altText}
                 />
               </div>
             </div>
