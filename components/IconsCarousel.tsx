@@ -17,7 +17,7 @@ import Swiper7 from '@/public/images/swiper7.svg';
 import Swiper8 from '@/public/images/swiper8.svg';
 import Swiper9 from '@/public/images/swiper9.svg';
 
-const SwiperIcons = [Swiper1, Swiper2, Swiper3, Swiper4, Swiper5, Swiper6, Swiper7, Swiper8, Swiper9, Swiper10];
+const SwiperIcons = [Swiper1, Swiper2, Swiper3, Swiper7, Swiper4, Swiper5, Swiper6, Swiper9, Swiper10, Swiper8];
 
 import 'swiper/swiper.min.css';
 
