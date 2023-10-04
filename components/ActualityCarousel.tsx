@@ -102,17 +102,21 @@ export default function ActualityCarousel({ actualities }: { actualities: Actual
                             <span className="absolute inset-x-0 bottom-0 h-[2.5px] bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
                           </p>
                         </div>
-                        <div className="group/arrow absolute bottom-5 right-6 text-right">
-                          <Link
-                            className="group inline-flex items-center text-sm font-medium text-buttercup-50 transition duration-150 ease-in-out hover:text-white"
-                            href={link}
-                            target="_blank"
-                          >
-                            Découvrir{' '}
-                            <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                              -&gt;
-                            </span>
-                          </Link>
+                        <div className="group/arrow absolute bottom-4 right-4 md:right-5 ">
+                          <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
+                            <Link
+                              href={link}
+                              target="_blank"
+                              className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
+                            >
+                              <span className="relative inline-flex items-center">
+                                Découvrir{' '}
+                                <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
+                                  -&gt;
+                                </span>
+                              </span>
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
