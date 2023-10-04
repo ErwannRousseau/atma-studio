@@ -99,7 +99,6 @@ export default function ActualityCarousel({ actualities }: { actualities: Actual
                         <div className="grid grow place-items-center">
                           <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-lg font-bold text-transparent underline">
                             {title}
-                            <span className="absolute inset-x-0 bottom-0 h-[2.5px] bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
                           </p>
                         </div>
                         <div className="group/arrow absolute bottom-4 right-4 md:right-5 ">
