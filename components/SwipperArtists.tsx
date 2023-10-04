@@ -51,9 +51,8 @@ export default function SwipperArtists({ nextArtists }: { nextArtists: Reference
             >
               <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center text-lg font-bold text-transparent underline">
                 {artistName}
-                <span className="absolute inset-x-0 bottom-0 h-[2.5px] rounded-sm bg-gradient-to-r from-buttercup-500 to-buttercup-200 opacity-0 transition-opacity duration-300 group-hover/slide:opacity-100" />
               </p>
-              <div className=" group/arrow absolute bottom-5 right-5 md:bottom-6 md:right-8 ">
+              <div className="group/arrow absolute bottom-4 right-4 md:right-5  ">
                 <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
                   <Link
                     href={link}
