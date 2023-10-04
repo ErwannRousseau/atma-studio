@@ -12,7 +12,7 @@ export const metadata = {
 
 export default async function ReferencesPage() {
   const { referencesList } = await getReferencesPageData();
-  revalidatePath('nos-references');
+  revalidatePath('/nos-references');
 
   return (
     <>
