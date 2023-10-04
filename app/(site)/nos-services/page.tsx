@@ -12,7 +12,7 @@ export const metadata = {
 
 export default async function ServicesPage() {
   const { servicesList } = await getServicesPageData();
-  revalidatePath('nos-services');
+  revalidatePath('/nos-services');
   return (
     <>
       <HeroServices />
