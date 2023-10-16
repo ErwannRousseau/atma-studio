@@ -27,7 +27,7 @@ export default function HeroHome() {
             <div className="mb-6" data-aos="fade-down">
               <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
                 <div className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-slate-800/50 hover:text-white">
-                  <span className="relative inline-flex items-center">Studio d&apos;enregistrement</span>
+                  <p className="relative inline-flex items-center">Studio d&apos;enregistrement</p>
                 </div>
               </div>
             </div>
