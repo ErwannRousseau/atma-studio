@@ -72,7 +72,7 @@ export default function ActualityCarousel({ actualities }: { actualities: Actual
           </div>
           {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
           {/* Custom styles in src/css/additional-styles/theme.scss */}
-          <div className="relative before:absolute before:inset-0 before:z-20 before:-translate-x-full before:rounded-r-3xl before:bg-gradient-to-l before:from-transparent before:to-slate-900 before:to-20% before:blur after:absolute after:inset-0 after:z-20 after:translate-x-full after:bg-gradient-to-r after:from-transparent after:to-slate-900 after:to-20% after:blur">
+          <div className="relative before:absolute before:inset-0 before:z-20 before:-translate-x-full before:rounded-r-3xl before:bg-gradient-to-l before:from-transparent before:to-buttercup-500/20 before:to-20% before:blur after:absolute after:inset-0 after:z-20 after:translate-x-full after:bg-gradient-to-r after:from-transparent after:to-buttercup-500/20 after:to-20% after:blur">
             <div className="actuality-carousel swiper-container group h-[300px]">
               <Highlighter className="swiper-wrapper w-fit" refresh={swiperInitialized}>
                 {/* Carousel items */}

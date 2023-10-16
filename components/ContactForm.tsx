@@ -105,6 +105,7 @@ export default function ContactForm() {
               <option value={undefined}>Sélectionner une option</option>
               <option value="Instagram">Instagram</option>
               <option value="Bouche à oreille">Bouche à oreille</option>
+              <option value="Bouche à oreille">Recherche Internet</option>
             </select>
           </div>
         </div>

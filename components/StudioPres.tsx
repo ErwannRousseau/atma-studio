@@ -45,7 +45,7 @@ export default function StudioPres({
         </div>
         <Particles className="absolute inset-0 -z-10" />
         <div className="pb-12 pt-16 md:pb-20 md:pt-20">
-          <div className="mx-auto flex max-w-xl flex-col space-y-8 space-y-reverse md:max-w-none md:flex-row md:space-x-8 md:space-y-0 lg:space-x-16 xl:space-x-20">
+          <div className="mx-auto flex max-w-xl flex-col items-center space-y-8 space-y-reverse md:max-w-none md:flex-row md:space-x-8 md:space-y-0 lg:space-x-16 xl:space-x-20">
             {/* Content */}
             <div className="order-1 max-md:text-center md:order-none md:w-7/12 lg:w-1/2" data-aos="fade-down">
               <h3
@@ -54,7 +54,7 @@ export default function StudioPres({
                 {presentation[0].children[0].text}
               </h3>
               {presentation.slice(1).map(({ children, _key }) => (
-                <p key={_key} className="text-justify text-lg text-slate-100 md:text-left">
+                <p key={_key} className="text-left text-lg text-slate-100 md:text-left">
                   {children[0].text}
                 </p>
               ))}

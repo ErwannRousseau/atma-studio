@@ -7,7 +7,7 @@ import Team from '@/components/Team';
 import { getStudioPageData } from '@/sanity/lib/queries';
 
 export const metadata = {
-  title: 'Atma Studio - Le studio',
+  title: 'Le studio',
   description:
     "Découvrez notre studio de musique professionnel équipé de matériel haut de gamme. Réalisez vos projets musicaux avec une qualité sonore exceptionnelle. Explorez notre gamme complète d'instruments et d'équipements audio pour donner vie à votre créativité.",
 };

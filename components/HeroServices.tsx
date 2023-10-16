@@ -34,9 +34,9 @@ export default function HeroServices() {
           {/* Section header */}
           <div className="mx-auto max-w-3xl pb-8 text-center md:pb-12">
             <div>
-              <div className="inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 font-medium text-transparent">
+              <p className="inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 font-medium text-transparent">
                 Nous proposons divers services au sein du studio.
-              </div>
+              </p>
             </div>
             <h1 className="h1 bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 bg-clip-text pb-4 text-transparent">
               Nos services

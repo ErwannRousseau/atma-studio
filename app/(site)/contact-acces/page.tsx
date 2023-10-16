@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Atma Studio - Contact/Accès',
+  title: 'Contact & Accès',
   description:
     "Contactez-nous chez ATMA Studio pour discuter de vos besoins musicaux. Que vous soyez un artiste émergent, un musicien confirmé ou une entreprise, nous sommes là pour répondre à vos questions, planifier une visite de notre studio et discuter de vos projets musicaux. Contactez-nous dès aujourd'hui pour concrétiser votre vision musicale. Trouvez facilement votre chemin vers ATMA Studio. Notre emplacement est pratique et accessible, que vous veniez en voiture, en transport en commun ou à pied. Consultez notre page d'accès pour obtenir des instructions détaillées et une carte pour planifier votre visite dans notre studio de musique professionnel.",
 };
