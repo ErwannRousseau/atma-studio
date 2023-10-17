@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: 'https://studio-atma.com/contact',
+      url: 'https://studio-atma.com/contact-acces',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.5,
