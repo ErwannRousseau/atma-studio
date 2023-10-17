@@ -21,7 +21,7 @@ export default function AtmaPres({ history, image }: { history: History[]; image
             <Image src={Illustration} className="max-w-none" width={1404} height={658} alt="Features Illustration" />
           </div>
         </div>
-        <div className="pb-12 pt-16 md:pb-20 md:pt-52">
+        <div className="pb-12 pt-16 md:pb-20 md:pt-32">
           <div>
             {/* Section content */}
             <div className="mx-auto flex max-w-xl flex-col space-y-8 space-y-reverse md:max-w-none md:flex-row md:space-x-8 md:space-y-0 lg:space-x-16 xl:space-x-20">
@@ -42,7 +42,7 @@ export default function AtmaPres({ history, image }: { history: History[]; image
               </div>
               {/* Image */}
               <div className="md:w-5/12 lg:w-1/2" data-aos="fade-up" data-aos-delay="100">
-                <div className="relative -mt-12 py-24">
+                <div className="relative py-24">
                   <div className="flex items-center justify-center">
                     <div className="relative flex h-48 w-48 items-center justify-center">
                       <div
