@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Admin',
   icons: {
-    icon: '/favicon-admin.ico',
+    icon: '/admin.ico',
   },
   robots: {
     index: false,
