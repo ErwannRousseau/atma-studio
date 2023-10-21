@@ -34,7 +34,10 @@ export const metadata: Metadata = {
       "Découvrez ATMA Studio, studio d'enregistrement, niché au cœur de la butte Sainte-Anne à Nantes. Notre équipe d'ingénieurs du son qualifiée, excelle dans une variété de styles musicaux. Enregistrement, mixage, mastering, composition et arrangement – nous offrons un accompagnement complet pour donner vie à vos créations musicales. Explorez l'union entre l'art et la technique chez ATMA Studio.",
     url: 'https://studio-atma.com',
     siteName: 'ATMA Studio',
-    images: '/images/logo.webp',
+    images: {
+      url: '/images/og_image.png',
+      alt: "Photo d'un enregistrement et mixage dans le studio de ATMA Studio",
+    },
     locale: 'fr_FR',
     type: 'website',
   },
