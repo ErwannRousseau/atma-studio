@@ -1,3 +1,5 @@
+'use client';
+
 import { Popover } from '@rewind-ui/core';
 import Image from 'next/image';
 import Link from 'next/link';
