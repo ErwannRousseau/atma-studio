@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import Particles from './Particles';
 
 import { ImageSanity } from '@/sanity/types/ImageSanity';
@@ -61,13 +63,17 @@ export default function StudioPres({
             </div>
             {/* Image */}
             <div className="grid place-items-center md:w-5/12 lg:w-1/2" data-aos="fade-up" data-aos-delay="100">
-              <div
-                className="h-[320px] w-[320px] rounded-2xl border border-transparent bg-cover bg-no-repeat shadow-2xl lg:h-[360px] lg:w-[360px] "
-                style={{
-                  backgroundImage: `url(${imagePresentation.url})`,
-                }}
-                aria-label={imagePresentation?.altText}
-              />
+              <div className="relative h-[320px] w-[320px] rounded-2xl shadow-2xl lg:h-[360px] lg:w-[360px] ">
+                <Image
+                  src={imagePresentation.url}
+                  alt={imagePresentation?.altText || ''}
+                  className="rounded-[inherit]"
+                  fill
+                  style={{
+                    objectFit: 'cover',
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import Particles from './Particles';
 
 import { ServicesList } from '@/sanity/types/ServicesPage';
@@ -34,14 +36,20 @@ export default function ServicesList({ servicesList }: { servicesList: ServicesL
               {/* Image */}
               <div className={`${index % 2 === 0 ? '' : 'flex justify-end'} md:w-1/2`}>
                 <div
-                  className="h-[315px] w-[315px] rounded-2xl border border-transparent bg-cover bg-center bg-no-repeat shadow-2xl"
+                  className="relative h-[315px] w-[315px] rounded-2xl shadow-2xl"
                   data-aos="fade-up"
                   data-aos-delay="100"
-                  style={{
-                    backgroundImage: `url(${image.url})`,
-                  }}
-                  aria-label={image?.altText}
-                />
+                >
+                  <Image
+                    src={image.url}
+                    alt={title}
+                    fill
+                    className="rounded-[inherit]"
+                    style={{
+                      objectFit: 'cover',
+                    }}
+                  />
+                </div>
               </div>
             </div>
           ))}
