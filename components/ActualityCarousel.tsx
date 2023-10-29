@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Swiper, { Navigation } from 'swiper';
@@ -78,14 +79,18 @@ export default function ActualityCarousel({ actualities }: { actualities: Actual
                 {/* Carousel items */}
                 {actualities.map(({ _key, title, image, link }) => (
                   <HighlighterItem key={_key} className="swiper-slide group/slide h-max">
-                    <div
-                      className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-cover bg-center bg-no-repeat "
-                      style={{ backgroundImage: `url(${image.url})` }}
-                      aria-label={title}
-                    >
+                    <div className="relative z-20 h-full overflow-hidden rounded-[inherit]">
+                      <Image
+                        src={image.url}
+                        alt={title}
+                        fill
+                        style={{
+                          objectFit: 'cover',
+                        }}
+                      />
                       {/* Particles animation */}
                       <Particles
-                        className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
+                        className="absolute inset-0 z-30 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
                         quantity={5}
                       />
                       {/* Radial gradient */}

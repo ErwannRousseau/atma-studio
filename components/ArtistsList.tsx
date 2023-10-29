@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import Highlighter, { HighlighterItem } from './Highlighter';
@@ -41,11 +42,15 @@ export default function ArtistsList({ referencesList }: { referencesList: Refere
               {firstBlockArtists.map(({ _key, artistName, image, link }) => (
                 <div key={_key} className="md:col-span-6" data-aos="fade-down" data-aos-delay="100">
                   <HighlighterItem>
-                    <div
-                      className="relative z-20 grid aspect-square w-full  grow place-items-center overflow-hidden rounded-[inherit] bg-cover bg-center bg-no-repeat md:aspect-4/3 "
-                      style={{ backgroundImage: `url(${image.url})` }}
-                      aria-label={image?.altText}
-                    >
+                    <div className="relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-[inherit]  md:aspect-4/3 ">
+                      <Image
+                        src={image.url}
+                        alt={image?.altText || ''}
+                        fill
+                        style={{
+                          objectFit: 'cover',
+                        }}
+                      />
                       <Particles
                         className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100"
                         quantity={5}
@@ -77,11 +82,15 @@ export default function ArtistsList({ referencesList }: { referencesList: Refere
               {secondBlockArtists.map(({ _key, artistName, image, link }) => (
                 <div key={_key} className="md:col-span-4" data-aos="fade-down">
                   <HighlighterItem>
-                    <div
-                      className="relative z-20 grid aspect-square w-full grow  place-items-center overflow-hidden rounded-[inherit] bg-cover bg-center bg-no-repeat md:aspect-4/3.5"
-                      style={{ backgroundImage: `url(${image.url})` }}
-                      aria-label={image?.altText}
-                    >
+                    <div className="relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-[inherit]  md:aspect-4/3.5">
+                      <Image
+                        src={image.url}
+                        alt={image?.altText || ''}
+                        fill
+                        style={{
+                          objectFit: 'cover',
+                        }}
+                      />
                       <Particles
                         className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100"
                         quantity={5}

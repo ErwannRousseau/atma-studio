@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import Highlighter, { HighlighterItem } from './Highlighter';
 import Particles from './Particles';
 
@@ -57,10 +59,17 @@ export default function HeroServices() {
                     </div>
 
                     <Particles quantity={5} className="absolute inset-0 z-10" />
-                    <div
-                      className="h-[320px] w-full bg-cover bg-center"
-                      style={{ backgroundImage: `url(${ImageService.src})` }}
-                    />
+                    <div className="h-[320px] w-full">
+                      <Image
+                        src={ImageService.src}
+                        alt="Image de la table d'enregistrement"
+                        className="rounded-[inherit]"
+                        fill
+                        style={{
+                          objectFit: 'cover',
+                        }}
+                      />
+                    </div>
                   </div>
                 </HighlighterItem>
               </Highlighter>

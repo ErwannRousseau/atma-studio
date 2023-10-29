@@ -63,6 +63,9 @@ export default function Team({ team }: { team: TeamMember[] }) {
                       src={image.url}
                       width={90}
                       height={90}
+                      style={{
+                        objectFit: 'cover',
+                      }}
                       alt={`photo de profil de ${name}`}
                     />
                   </Transition>
