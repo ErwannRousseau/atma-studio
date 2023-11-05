@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "email": "email dev --dir utils/emails --port 4000"
+    "email": "email dev --dir components/emails --port 4000"
   },
   "husky": {
     "hooks": {
