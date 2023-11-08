@@ -17,7 +17,9 @@ export default function GoogleAds() {
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                gtag('config', '${GOOGLE_ADS_ID}');
+                gtag('config', '${GOOGLE_ADS_ID}', {
+                  page_path: window.location.pathname,
+                }),;
                 `,
         }}
       />
