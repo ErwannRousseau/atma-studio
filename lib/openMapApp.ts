@@ -1,9 +1,9 @@
 export const openMapsApp = () => {
-  const address = '6+square+Commodore+Guiné,44100+Nantes';
+  const address: string = '6+square+Commodore+Guiné,44100+Nantes';
 
-  const userAgent = typeof window !== 'undefined' ? window.navigator.userAgent : '';
+  const userAgent: string = typeof window !== 'undefined' ? window.navigator.userAgent : '';
 
-  const confirmationMessage = "Voulez-vous ouvrir l'adresse dans un plan ?";
+  const confirmationMessage: string = "Voulez-vous ouvrir l'adresse dans un plan ?";
   const userConfirmed = window.confirm(confirmationMessage);
 
   if (userConfirmed) {

@@ -1,6 +1,7 @@
 import { revalidatePath } from 'next/cache';
 
 import HeroServices from '@/components/HeroServices';
+import Pricing from '@/components/Pricing';
 import ServicesList from '@/components/ServicesList';
 import { getServicesPageData } from '@/sanity/lib/queries';
 
@@ -17,7 +18,7 @@ export default async function ServicesPage() {
     <>
       <HeroServices />
       <ServicesList servicesList={servicesList} />
-      {/* <Pricing /> */}
+      <Pricing />
     </>
   );
 }
