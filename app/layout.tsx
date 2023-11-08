@@ -2,6 +2,8 @@ import { Analytics } from '@vercel/analytics/react';
 
 import type { Metadata } from 'next';
 
+import GoogleAds from '@/components/utils/GoogleAds';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://studio-atma.com'),
   title: {
@@ -47,6 +49,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
+      <GoogleAds />
       {children}
       <Analytics />
     </html>
