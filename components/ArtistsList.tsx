@@ -42,7 +42,7 @@ export default function ArtistsList({ referencesList }: { referencesList: Refere
               {firstBlockArtists.map(({ _key, artistName, image, link }) => (
                 <div key={_key} className="md:col-span-6" data-aos="fade-down" data-aos-delay="100">
                   <HighlighterItem>
-                    <div className="relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-[inherit]  md:aspect-4/3 ">
+                    <div className="relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-[inherit]">
                       <Image
                         src={image.url}
                         alt={image?.altText || ''}
@@ -82,7 +82,7 @@ export default function ArtistsList({ referencesList }: { referencesList: Refere
               {secondBlockArtists.map(({ _key, artistName, image, link }) => (
                 <div key={_key} className="md:col-span-4" data-aos="fade-down">
                   <HighlighterItem>
-                    <div className="relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-[inherit]  md:aspect-4/3.5">
+                    <div className="relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-[inherit]">
                       <Image
                         src={image.url}
                         alt={image?.altText || ''}

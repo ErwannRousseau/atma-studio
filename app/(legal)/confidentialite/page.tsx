@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Politique de Confidentialité',
+  description: 'Politique de Confidentialité du site internet Atma Studio',
+};
+
 export default function PolitiqueConfidentialitePage() {
   return (
     <div className="p-6">
