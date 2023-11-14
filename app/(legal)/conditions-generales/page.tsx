@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Conditions Générales d'Utilisation",
+  description: "Conditions Générales d'Utilisation du site internet Atma Studio",
+};
+
 export default function ConditionsGeneralesPage() {
   return (
     <div className="p-6">

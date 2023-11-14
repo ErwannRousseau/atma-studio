@@ -45,7 +45,7 @@ export default function SwipperArtists({ nextArtists }: { nextArtists: Reference
       >
         {nextArtists.map(({ artistName, _key, link, image }) => (
           <SwiperSlide key={_key}>
-            <div className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl md:aspect-4/3.5 xl:aspect-square">
+            <div className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl">
               <Image
                 src={image.url}
                 alt={image?.altText || ''}

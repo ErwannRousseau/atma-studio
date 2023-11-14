@@ -6,12 +6,15 @@ import GoogleAds from '@/components/utils/GoogleAds';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://studio-atma.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
-    template: "%s | ATMA Studio - Studio d'enregistrement de musique à Nantes",
+    template: '%s | ATMA Studio',
     default: "ATMA Studio - Studio d'enregistrement de musique à Nantes",
   },
   description:
-    "Découvrez ATMA Studio, studio d'enregistrement, niché au cœur de la butte Sainte-Anne à Nantes. Notre équipe d'ingénieurs du son qualifiée, excelle dans une variété de styles musicaux. Enregistrement, mixage, mastering, composition et arrangement – nous offrons un accompagnement complet pour donner vie à vos créations musicales. Explorez l'union entre l'art et la technique chez ATMA Studio.",
+    "Explorez ATMA Studio, studio d'enregistrement à Nantes. Notre équipe experte enregistre, mixe, masterise et accompagne votre création musicale. L'union de l'art et de la technique chez ATMA Studio",
   icons: {
     icon: [
       { url: 'https://studio-atma.com/favicon.ico', type: 'image/x-icon' },
@@ -33,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ATMA Studio - Studio d'enregistrement de musique à Nantes",
     description:
-      "Découvrez ATMA Studio, studio d'enregistrement, niché au cœur de la butte Sainte-Anne à Nantes. Notre équipe d'ingénieurs du son qualifiée, excelle dans une variété de styles musicaux. Enregistrement, mixage, mastering, composition et arrangement – nous offrons un accompagnement complet pour donner vie à vos créations musicales. Explorez l'union entre l'art et la technique chez ATMA Studio.",
+      "Explorez ATMA Studio, studio d'enregistrement à Nantes. Notre équipe experte enregistre, mixe, masterise et accompagne votre création musicale. L'union de l'art et de la technique chez ATMA Studio",
     url: 'https://studio-atma.com',
     siteName: 'ATMA Studio',
     images: {

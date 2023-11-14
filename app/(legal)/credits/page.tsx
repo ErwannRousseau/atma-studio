@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Crédits',
+  description: 'Crédits du site internet Atma Studio',
+};
+
 export default function CreditsPage() {
   return (
     <div className="p-6">

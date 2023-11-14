@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Atma Studio - Légal',
+  title: 'Légal',
 };
 
 export default function LegalLayout({ children }: { children: React.ReactNode }) {

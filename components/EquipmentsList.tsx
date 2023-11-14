@@ -22,7 +22,7 @@ export default function EquipmentsList({ equipmentsCategories }: { equipmentsCat
             </h2>
           </div>
           {/* Equipments list */}
-          <div className="ml-8 grid gap-8 sm:ml-0 sm:grid-cols-3 sm:gap-12" data-aos="fade-up" data-aos-delay="300">
+          <div className="ml-8 grid gap-8 sm:ml-0 sm:grid-cols-3 sm:gap-12" data-aos="fade-up" data-aos-delay="200">
             {/* Equipement */}
             {equipmentsCategories.map(({ icon, title, _key, equipmentItem }) => (
               <div className="place-items-center sm:grid" key={_key}>
