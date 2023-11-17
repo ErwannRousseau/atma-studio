@@ -61,6 +61,7 @@ export default function SwipperArtists({ nextArtists }: { nextArtists: Reference
               <div className="group/arrow absolute bottom-4 right-4 md:right-5  ">
                 <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
                   <Link
+                    target="_blank"
                     href={link}
                     className="btn-sm group relative z-30 py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
                   >
