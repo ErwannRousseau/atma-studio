@@ -12,7 +12,7 @@ export type ActualityItem = {
   date?: string;
   image: ImageSanity;
   link: string;
-  _key: string;
+  _key?: string;
   title: string;
 };
 
