@@ -5,6 +5,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
+import ErrorMessage from './utils/ErrorMessage';
+
 import { type TEmailSchema, emailSchema } from '@/lib/types';
 
 export default function ContactForm() {
@@ -52,9 +54,7 @@ export default function ContactForm() {
               type="text"
               placeholder="Pierre"
             />
-            {errors.firstname?.message && (
-              <span className="text-sm text-buttercup-400/80">{errors.firstname?.message}</span>
-            )}
+            <ErrorMessage>{errors.firstname?.message}</ErrorMessage>
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="lastname">
@@ -67,9 +67,7 @@ export default function ContactForm() {
               type="text"
               placeholder="Dupont"
             />
-            {errors.lastname?.message && (
-              <span className="text-sm text-buttercup-400/80">{errors.lastname?.message}</span>
-            )}
+            <ErrorMessage>{errors.lastname?.message}</ErrorMessage>
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="email">
@@ -82,16 +80,14 @@ export default function ContactForm() {
               type="email"
               placeholder="pierre.d@example.com"
             />
-            {errors.email?.message && <span className="text-sm text-buttercup-400/80">{errors.email?.message}</span>}
+            <ErrorMessage>{errors.email?.message}</ErrorMessage>
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="message">
               Message <span className="text-rose-500">*</span>
             </label>
             <textarea {...register('message', { required: true })} id="message" className="form-input w-full" />
-            {errors.message?.message && (
-              <span className="text-sm text-buttercup-400/80">{errors.message?.message}</span>
-            )}
+            <ErrorMessage>{errors.message?.message}</ErrorMessage>
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="sourceOfDiscovery">
