@@ -12,3 +12,20 @@
     direction: rtl;
   }
 }
+
+.transform-style-preserve {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari */
+}
+
+.perspective-800 {
+  perspective: 800px;
+}
+
+.rotateY-180 {
+  transform: rotateY(180deg);
+}

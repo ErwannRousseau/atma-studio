@@ -19,7 +19,7 @@ export default function GoogleAds() {
 
                 gtag('config', '${GOOGLE_ADS_ID}', {
                   page_path: window.location.pathname,
-                }),;
+                });
                 `,
         }}
       />

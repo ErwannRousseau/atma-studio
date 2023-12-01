@@ -24,6 +24,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     link,
     _key,
     title,
+    description,
     date
   }
 }

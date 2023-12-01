@@ -5,7 +5,7 @@ import Highlighter, { HighlighterItem } from './Highlighter';
 import Particles from './Particles';
 import SwipperArtists from './SwipperArtists';
 
-import { ReferenceItem } from '@/sanity/types/ReferencesPage';
+import type { ReferenceItem } from '@/sanity/types/ReferencesPage';
 
 export default function ArtistsList({ referencesList }: { referencesList: ReferenceItem[] }) {
   const firstBlockArtists = referencesList.slice(0, 2);

@@ -14,7 +14,14 @@ import {
 
 import type { TEmailSchema } from '@/lib/types';
 
-export const ContactEmail = ({ firstname, lastname, email, message, sourceOfDiscovery = '' }: TEmailSchema) => {
+export const ContactEmail = ({
+  firstname,
+  lastname,
+  email,
+  phoneNumber,
+  message,
+  sourceOfDiscovery = '',
+}: TEmailSchema) => {
   return (
     <Html>
       <Head />
@@ -44,6 +51,12 @@ export const ContactEmail = ({ firstname, lastname, email, message, sourceOfDisc
                 Email :{' '}
                 <Link href={`mailto:${email}`} className="text-blue-600 no-underline">
                   {email}
+                </Link>
+              </Text>
+              <Text className="mt-2 pl-2">
+                Numéro de téléphone :{' '}
+                <Link href={`tel:+33${phoneNumber.substring(1)}`} className="text-blue-600 no-underline">
+                  {phoneNumber}
                 </Link>
               </Text>
             </div>

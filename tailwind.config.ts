@@ -64,6 +64,12 @@ const config: Config = {
         xxs: '0.5px',
         xs: '2px',
       },
+      blur: {
+        card: '1px',
+      },
+      filter: {
+        'brightness-50': 'brightness(0.5)',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--gradient-color-stops))',
       },
@@ -73,6 +79,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms'), require('tailwindcss-filters')],
 };
 export default config;

@@ -12,8 +12,9 @@ export type ActualityItem = {
   date?: string;
   image: ImageSanity;
   link: string;
-  _key: string;
+  _key?: string;
   title: string;
+  description?: string;
 };
 
 export type Actualities = ActualityItem[];

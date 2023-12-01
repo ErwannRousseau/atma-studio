@@ -1,12 +1,9 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Swiper, { Navigation } from 'swiper';
 
-import Highlighter, { HighlighterItem } from './Highlighter';
-import Particles from './Particles';
+import ActualityCard from './ActualityCard';
 
 import type { Actualities } from '@/sanity/types/HomePage';
 
@@ -14,8 +11,6 @@ import 'swiper/swiper.min.css';
 Swiper.use([Navigation]);
 
 export default function ActualityCarousel({ actualities }: { actualities: Actualities }) {
-  const [swiperInitialized, setSwiperInitialized] = useState<boolean>(false);
-
   useEffect(() => {
     new Swiper('.actuality-carousel', {
       breakpoints: {
@@ -39,8 +34,25 @@ export default function ActualityCarousel({ actualities }: { actualities: Actual
         prevEl: '.carousel-prev',
       },
     });
-    setSwiperInitialized(true);
   }, []);
+
+  const [activeActuality, setActiveActuality] = useState<string | undefined | null>(null);
+
+  useEffect(() => {
+    const clickRemoveRotateHandler = (event: MouseEvent) => {
+      const isActuality = (event.target as HTMLElement).closest('.actuality-card');
+
+      if (!isActuality) {
+        setActiveActuality(null);
+      }
+    };
+
+    document.addEventListener('click', clickRemoveRotateHandler);
+
+    return () => {
+      document.removeEventListener('click', clickRemoveRotateHandler);
+    };
+  }, [activeActuality]);
 
   return (
     <section>
@@ -72,61 +84,20 @@ export default function ActualityCarousel({ actualities }: { actualities: Actual
             </svg>
           </div>
           {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
-          {/* Custom styles in src/css/additional-styles/theme.scss */}
+          {/* Custom styles in styles/css/additional-styles/theme.scss */}
           <div className="relative before:absolute before:inset-0 before:z-20 before:-translate-x-full before:rounded-r-3xl before:bg-gradient-to-l before:from-transparent before:to-buttercup-500/20 before:to-20% before:blur after:absolute after:inset-0 after:z-20 after:translate-x-full after:bg-gradient-to-r after:from-transparent after:to-buttercup-500/20 after:to-20% after:blur">
             <div className="actuality-carousel swiper-container group">
-              <Highlighter className="swiper-wrapper w-fit" refresh={swiperInitialized}>
+              <div className="swiper-wrapper w-fit py-2">
                 {/* Carousel items */}
-                {actualities.map(({ _key, title, image, link }) => (
-                  <HighlighterItem key={_key} className="swiper-slide group/slide aspect-square h-full w-full">
-                    <div className="relative z-20 mx-auto aspect-square h-full w-full overflow-hidden rounded-[inherit]">
-                      <Image
-                        src={image.url}
-                        alt={title}
-                        fill
-                        style={{
-                          objectFit: 'cover',
-                        }}
-                      />
-                      {/* Particles animation */}
-                      <Particles
-                        className="absolute inset-0 z-30 opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
-                        quantity={5}
-                      />
-                      {/* Radial gradient */}
-                      <div
-                        className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/3 -translate-x-1/2 translate-y-1/2"
-                        aria-hidden="true"
-                      >
-                        <div className="translate-z-0 absolute inset-0 rounded-full bg-slate-800 blur-[60px] transition-colors duration-500 ease-in-out group-[.swiper-slide-active]/slide:bg-buttercup-500" />
-                      </div>
-                      <div className="relative flex h-full flex-col p-6">
-                        <div className="grid grow place-items-center">
-                          <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-lg font-bold text-transparent underline">
-                            {title}
-                          </p>
-                        </div>
-                        <div className="group/arrow absolute bottom-4 right-4 md:right-5 ">
-                          <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                            <Link
-                              href={link}
-                              target="_blank"
-                              className="btn-sm group relative z-30 py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
-                            >
-                              <span className="relative inline-flex items-center">
-                                Découvrir{' '}
-                                <span className="ml-1 tracking-normal text-buttercup-50 transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
-                                  -&gt;
-                                </span>
-                              </span>
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </HighlighterItem>
+                {actualities.map((actuality) => (
+                  <ActualityCard
+                    key={actuality._key}
+                    actuality={actuality}
+                    activeActuality={activeActuality}
+                    setActiveActuality={() => setActiveActuality(actuality._key)}
+                  />
                 ))}
-              </Highlighter>
+              </div>
             </div>
           </div>
           {/* Arrows */}
