@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { Inter } from 'next/font/google';
 
 import type { Metadata } from 'next';
 
@@ -49,9 +50,15 @@ export const metadata: Metadata = {
   generator: 'Next.js',
 };
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={inter.variable}>
       <GoogleAds />
       {children}
       <Analytics />

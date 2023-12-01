@@ -1,7 +1,6 @@
 'use client';
 import '@/styles/css/style.css';
 import AOS from 'aos';
-import { Inter } from 'next/font/google';
 import { useEffect } from 'react';
 
 import 'aos/dist/aos.css';
@@ -9,12 +8,6 @@ import 'aos/dist/aos.css';
 import Footer from '@/components/ui/Footer';
 import Header from '@/components/ui/Header';
 import ScrollTopButton from '@/components/ui/ScrollTopButton';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
 
 export default function DefaultLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -26,7 +19,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
     });
   }, []);
   return (
-    <body className={`${inter.variable} bg-black font-inter tracking-tight text-slate-100 antialiased`}>
+    <body className={`bg-black font-inter tracking-tight text-slate-100 antialiased`}>
       <ScrollTopButton />
       <div className="flex min-h-screen flex-col overflow-hidden">
         <Header />

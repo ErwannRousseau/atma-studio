@@ -62,12 +62,13 @@
 .icons-swiper-slide {
   @apply grid place-items-center;
 }
+
 .swiper-button-disabled {
   @apply pointer-events-none cursor-default opacity-50;
 }
 
 .actuality-carousel .swiper-slide {
-  @apply opacity-80;
+  @apply opacity-90;
 }
 
 .actuality-carousel .swiper-slide.swiper-slide-active {
@@ -79,54 +80,12 @@
   @apply !bottom-0;
 }
 
-.swiper-wrapper {
-  @apply pb-4;
-}
-
 .swiper-pagination-bullet {
   @apply !bg-buttercup-100/70;
 }
 
 .swiper-pagination-bullet-active {
   @apply !bg-buttercup-500;
-}
-
-/* Pulsing animation */
-@keyframes pulseLoop {
-  0% {
-    opacity: 0;
-    transform: scale(0.25) translateZ(0);
-  }
-
-  30% {
-    opacity: 0.4;
-  }
-
-  70% {
-    opacity: 0;
-  }
-
-  80% {
-    transform: scale(1) translateZ(0);
-  }
-}
-
-.pulse {
-  opacity: 0;
-  transform-origin: center;
-  animation: pulseLoop 12000ms linear infinite;
-}
-
-.pulse-1 {
-  animation-delay: -4000ms;
-}
-
-.pulse-2 {
-  animation-delay: -8000ms;
-}
-
-.translate-z-0 {
-  transform: translateZ(0);
 }
 
 /* Custom AOS distance */

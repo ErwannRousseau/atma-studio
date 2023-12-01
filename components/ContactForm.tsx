@@ -20,6 +20,7 @@ export default function ContactForm() {
       firstname: '',
       lastname: '',
       email: '',
+      phoneNumber: '',
       message: '',
       sourceOfDiscovery: '',
     },
@@ -81,6 +82,19 @@ export default function ContactForm() {
               placeholder="pierre.d@example.com"
             />
             <ErrorMessage>{errors.email?.message}</ErrorMessage>
+          </div>
+          <div>
+            <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="email">
+              Numero de téléphone <span className="text-rose-500">*</span>
+            </label>
+            <input
+              {...register('phoneNumber', { required: true, pattern: /^(0\d{1}[1-9]{8}|(\d{2}\s?){4}\d{2})$/ })}
+              id="phoneNumber"
+              className="form-input w-full"
+              type="tel"
+              placeholder="0612345678"
+            />
+            <ErrorMessage>{errors.phoneNumber?.message}</ErrorMessage>
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="message">

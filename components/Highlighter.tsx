@@ -7,10 +7,9 @@ import MousePosition from './utils/mouse-position';
 type HighlighterProps = {
   children: React.ReactNode;
   className?: string;
-  refresh?: boolean;
 };
 
-export default function Highlighter({ children, className = '', refresh = false }: HighlighterProps) {
+export default function Highlighter({ children, className = '' }: HighlighterProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mousePosition = MousePosition();
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -33,10 +32,6 @@ export default function Highlighter({ children, className = '', refresh = false 
   useEffect(() => {
     onMouseMove();
   }, [mousePosition]);
-
-  useEffect(() => {
-    initContainer();
-  }, [refresh]);
 
   const initContainer = () => {
     if (containerRef.current) {

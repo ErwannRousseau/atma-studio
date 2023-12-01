@@ -7,7 +7,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   const clientData = await req.json();
-  const { firstname, lastname, email, message, sourceOfDiscovery } = clientData;
+  const { firstname, lastname, email, phoneNumber, message, sourceOfDiscovery } = clientData;
+
   try {
     const data = await resend.emails.send({
       from: 'ATMA Studio - Contact <contact@studio-atma.com>',
@@ -18,6 +19,7 @@ export async function POST(req: NextRequest) {
           firstname={firstname}
           lastname={lastname}
           email={email}
+          phoneNumber={phoneNumber}
           message={message}
           sourceOfDiscovery={sourceOfDiscovery}
         />

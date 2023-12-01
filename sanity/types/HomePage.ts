@@ -14,6 +14,7 @@ export type ActualityItem = {
   link: string;
   _key?: string;
   title: string;
+  description?: string;
 };
 
 export type Actualities = ActualityItem[];

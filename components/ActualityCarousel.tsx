@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import Swiper, { Navigation } from 'swiper';
 
 import ActualityCard from './ActualityCard';
-import Highlighter from './Highlighter';
 
 import type { Actualities } from '@/sanity/types/HomePage';
 
@@ -12,8 +11,6 @@ import 'swiper/swiper.min.css';
 Swiper.use([Navigation]);
 
 export default function ActualityCarousel({ actualities }: { actualities: Actualities }) {
-  const [swiperInitialized, setSwiperInitialized] = useState<boolean>(false);
-
   useEffect(() => {
     new Swiper('.actuality-carousel', {
       breakpoints: {
@@ -37,8 +34,25 @@ export default function ActualityCarousel({ actualities }: { actualities: Actual
         prevEl: '.carousel-prev',
       },
     });
-    setSwiperInitialized(true);
   }, []);
+
+  const [activeActuality, setActiveActuality] = useState<string | undefined | null>(null);
+
+  useEffect(() => {
+    const clickRemoveRotateHandler = (event: MouseEvent) => {
+      const isActuality = (event.target as HTMLElement).closest('.actuality-card');
+
+      if (!isActuality) {
+        setActiveActuality(null);
+      }
+    };
+
+    document.addEventListener('click', clickRemoveRotateHandler);
+
+    return () => {
+      document.removeEventListener('click', clickRemoveRotateHandler);
+    };
+  }, [activeActuality]);
 
   return (
     <section>
@@ -70,15 +84,20 @@ export default function ActualityCarousel({ actualities }: { actualities: Actual
             </svg>
           </div>
           {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
-          {/* Custom styles in src/css/additional-styles/theme.scss */}
+          {/* Custom styles in styles/css/additional-styles/theme.scss */}
           <div className="relative before:absolute before:inset-0 before:z-20 before:-translate-x-full before:rounded-r-3xl before:bg-gradient-to-l before:from-transparent before:to-buttercup-500/20 before:to-20% before:blur after:absolute after:inset-0 after:z-20 after:translate-x-full after:bg-gradient-to-r after:from-transparent after:to-buttercup-500/20 after:to-20% after:blur">
             <div className="actuality-carousel swiper-container group">
-              <Highlighter className="swiper-wrapper w-fit" refresh={swiperInitialized}>
+              <div className="swiper-wrapper w-fit py-2">
                 {/* Carousel items */}
-                {actualities.map(({ _key, title, image, link }) => (
-                  <ActualityCard key={_key} title={title} image={image} link={link} />
+                {actualities.map((actuality) => (
+                  <ActualityCard
+                    key={actuality._key}
+                    actuality={actuality}
+                    activeActuality={activeActuality}
+                    setActiveActuality={() => setActiveActuality(actuality._key)}
+                  />
                 ))}
-              </Highlighter>
+              </div>
             </div>
           </div>
           {/* Arrows */}
