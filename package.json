@@ -23,7 +23,6 @@
     "@hookform/resolvers": "^3.3.1",
     "@react-email/components": "^0.0.7",
     "@react-google-maps/api": "^2.19.2",
-    "@rewind-ui/core": "^0.17.2",
     "@sanity/vision": "^3.16.7",
     "@types/node": "20.8.0",
     "@types/react": "18.2.23",

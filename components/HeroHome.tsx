@@ -1,6 +1,5 @@
 'use client';
 
-import { Popover } from '@rewind-ui/core';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -47,20 +46,17 @@ export default function HeroHome() {
               data-aos="fade-down"
               data-aos-delay="400"
             >
-              <Popover color="slate" shadow="md" size="md">
-                <Popover.Trigger>
-                  <Link
-                    href="/contact-acces"
-                    className="btn group w-full bg-gradient-to-r from-white/80 via-white to-white/80 text-slate-900 transition duration-150 ease-in-out hover:bg-white"
-                  >
-                    Réservez une session
-                    <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
-                      -&gt;
-                    </span>
-                  </Link>
-                </Popover.Trigger>
-                <Popover.Content>La réservation en ligne arrive bientôt !</Popover.Content>
-              </Popover>
+              <div>
+                <Link
+                  href="/reservation"
+                  className="btn group w-full bg-gradient-to-r from-white/80 via-white to-white/80 text-slate-900 transition duration-150 ease-in-out hover:bg-white"
+                >
+                  Réservez une session
+                  <span className="ml-1 tracking-normal text-buttercup-500 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
+                    -&gt;
+                  </span>
+                </Link>
+              </div>
               <div>
                 <Link
                   className="btn w-full bg-slate-900 bg-opacity-25 text-slate-200 transition duration-150 ease-in-out hover:bg-opacity-30 hover:text-white"
