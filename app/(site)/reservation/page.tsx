@@ -36,7 +36,7 @@ export default function BookingPage() {
         {/* Widget Zcal */}
         <ZcalWidget />
       </div>
-      <p data-aos="fade-up" className="text-center text-buttercup-50">
+      <p data-aos="fade-up" className="pt-4 text-center text-buttercup-50">
         Si le calendrier de réservation ne s&apos;affiche pas, veuillez actualiser la page
       </p>
       <div data-aos="fade-up" className="m-auto mt-8 w-fit">
