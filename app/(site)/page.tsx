@@ -1,6 +1,7 @@
 import { revalidatePath } from 'next/cache';
 
 import ActualityCarousel from '@/components/ActualityCarousel';
+import ActualityCarouselV2 from '@/components/ActualityCarouselV2';
 import AtmaPres from '@/components/AtmaPres';
 import HeroHome from '@/components/HeroHome';
 import IconsCarousel from '@/components/IconsCarousel';
@@ -15,7 +16,8 @@ export default async function Home() {
       <HeroHome />
       <IconsCarousel />
       <AtmaPres history={history} image={image} />
-      <ActualityCarousel actualities={actualitySection} />
+      {/* <ActualityCarousel actualities={actualitySection} /> */}
+      <ActualityCarouselV2 actualities={actualitySection} />
     </>
   );
 }
