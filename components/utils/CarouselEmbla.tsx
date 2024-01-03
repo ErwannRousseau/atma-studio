@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+'use client';
+
 import useEmblaCarousel, {
   type EmblaCarouselType as CarouselApi,
   type EmblaOptionsType as CarouselOptions,

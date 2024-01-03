@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import ArtistsCarousel from './ArtistsCarousel';
 import Highlighter, { HighlighterItem } from './Highlighter';
 import Particles from './Particles';
-import SwipperArtists from './SwipperArtists';
 
 import type { ReferenceItem } from '@/sanity/types/ReferencesPage';
 
@@ -122,7 +122,8 @@ export default function ArtistsList({ referencesList }: { referencesList: Refere
           </div>
         </div>
         {/* Box #6 to [...] */}
-        <SwipperArtists nextArtists={nextArtists} />
+        {/* <SwipperArtists nextArtists={nextArtists} /> */}
+        <ArtistsCarousel nextArtists={nextArtists} />
       </div>
     </section>
   );
