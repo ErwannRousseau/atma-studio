@@ -2,6 +2,7 @@
 
 import '@/styles/css/additional-styles/utility-patterns.css';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useSearchParams } from 'next/navigation';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
@@ -10,6 +11,10 @@ import ErrorMessage from './utils/ErrorMessage';
 import { type TEmailSchema, emailSchema } from '@/lib/types';
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
+
+  const subject = searchParams.get('subject');
+  const defaultMessage = subject ? `Objet : ${subject}` : '';
   const {
     register,
     handleSubmit,
@@ -21,7 +26,7 @@ export default function ContactForm() {
       lastname: '',
       email: '',
       phoneNumber: '',
-      message: '',
+      message: defaultMessage,
       sourceOfDiscovery: '',
     },
     resolver: zodResolver(emailSchema),

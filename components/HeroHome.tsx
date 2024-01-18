@@ -1,3 +1,4 @@
+import { Sliders, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -60,15 +61,17 @@ export default function HeroHome() {
                   className="btn w-full bg-slate-900 bg-opacity-25 text-slate-200 transition duration-150 ease-in-out hover:bg-opacity-30 hover:text-white"
                   href="/nos-references"
                 >
-                  <svg
-                    className="mr-3 shrink-0 fill-slate-300"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                  >
-                    <path d="m1.999 0 1 2-1 2 2-1 2 1-1-2 1-2-2 1zM11.999 0l1 2-1 2 2-1 2 1-1-2 1-2-2 1zM11.999 10l1 2-1 2 2-1 2 1-1-2 1-2-2 1zM6.292 7.586l2.646-2.647L11.06 7.06 8.413 9.707zM0 13.878l5.586-5.586 2.122 2.121L2.12 16z" />
-                  </svg>
+                  <Sparkles className="mr-3 shrink-0 " />
                   <span>Voir nos artistes</span>
+                </Link>
+              </div>
+              <div>
+                <Link
+                  className="btn w-full bg-slate-900 bg-opacity-25 text-slate-200 transition duration-150 ease-in-out hover:bg-opacity-30 hover:text-white"
+                  href="/contact-acces?subject=Mix%20à%20distance"
+                >
+                  <Sliders className="mr-3 shrink-0 fill-slate-300" />
+                  <span>Mix à distance</span>
                 </Link>
               </div>
             </div>
