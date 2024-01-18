@@ -1,5 +1,6 @@
 'use client';
 import '@/styles/css/style.css';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import AOS from 'aos';
 import { useEffect } from 'react';
 
@@ -26,6 +27,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
         <main className="grow">{children}</main>
         <Footer />
       </div>
+      <SpeedInsights />
     </body>
   );
 }
