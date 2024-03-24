@@ -13,6 +13,7 @@ import ContactForm from "@/components/ContactForm";
 import GoogleMap from "@/components/GoogleMap";
 import Particles from "@/components/Particles";
 import Illustration from "@/public/images/conic-gradient2.svg";
+import { Suspense } from "react";
 
 export default function ContactPage() {
   return (
@@ -56,7 +57,9 @@ export default function ContactPage() {
             </div>
             <div className="flex flex-wrap items-center justify-center gap-16">
               {/* Form */}
-              <ContactForm />
+              <Suspense>
+                <ContactForm />
+              </Suspense>
               {/* Maps */}
               <GoogleMap />
             </div>
