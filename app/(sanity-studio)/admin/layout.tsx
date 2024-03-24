@@ -1,9 +1,9 @@
-import { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Admin',
+  title: "Admin",
   icons: {
-    icon: '/admin.ico',
+    icon: "/admin.ico",
   },
   robots: {
     index: false,
@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function StudioLayout({ children }: { children: React.ReactNode }) {
+export default function StudioLayout({
+  children,
+}: { children: React.ReactNode }) {
   return <body>{children}</body>;
 }

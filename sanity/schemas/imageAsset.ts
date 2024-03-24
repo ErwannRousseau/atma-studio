@@ -1,36 +1,36 @@
-import { defineField, defineType } from 'sanity';
+import { defineField, defineType } from "sanity";
 
 export const imageAsset = defineType({
-  name: 'imageAsset',
-  type: 'document',
-  title: 'Images',
+  name: "imageAsset",
+  type: "document",
+  title: "Images",
   fields: [
     defineField({
-      name: 'image',
-      title: 'Image',
-      type: 'image',
+      name: "image",
+      title: "Image",
+      type: "image",
       options: {
         hotspot: true,
       },
       fields: [
         {
-          name: 'name',
-          title: 'Nom',
-          type: 'string',
+          name: "name",
+          title: "Nom",
+          type: "string",
         },
         {
-          name: 'alt',
-          title: 'Description',
-          type: 'string',
+          name: "alt",
+          title: "Description",
+          type: "string",
         },
         {
-          name: 'tags',
-          title: 'Tags',
-          type: 'array',
+          name: "tags",
+          title: "Tags",
+          type: "array",
           of: [
             {
-              type: 'reference',
-              to: [{ type: 'tag' }],
+              type: "reference",
+              to: [{ type: "tag" }],
             },
           ],
         },

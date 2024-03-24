@@ -1,23 +1,30 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import Highlighter, { HighlighterItem } from './Highlighter';
-import Particles from './Particles';
+import Highlighter, { HighlighterItem } from "./Highlighter";
+import Particles from "./Particles";
 
-import ImageService from '@/public/images/atma5.webp';
+import ImageService from "@/public/images/atma5.webp";
 
 export default function HeroServices() {
   return (
     <section className="relative">
       {/* Particles */}
-      <Particles quantity={8} className="absolute inset-0 -z-10" />
+      <Particles quantity={8} className="-z-10 absolute inset-0" />
       {/* Blurred shape */}
       <div
-        className="pointer-events-none absolute left-1/3 top-1/3 -z-10 -translate-x-1/2 -translate-y-1/4 opacity-50 blur-2xl"
+        className="-z-10 -translate-x-1/2 -translate-y-1/4 pointer-events-none absolute top-1/3 left-1/3 opacity-50 blur-2xl"
         aria-hidden="true"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="434" height="427">
+          <title>Blurred shape</title>
           <defs>
-            <linearGradient id="bs3-a" x1="19.609%" x2="50%" y1="14.544%" y2="100%">
+            <linearGradient
+              id="bs3-a"
+              x1="19.609%"
+              x2="50%"
+              y1="14.544%"
+              y2="100%"
+            >
               <stop offset="0%" stopColor="#f3a710" />
               <stop offset="100%" stopColor="#fce98b" stopOpacity="0" />
             </linearGradient>
@@ -52,7 +59,7 @@ export default function HeroServices() {
                   <div className="relative z-20 h-full overflow-hidden rounded-[inherit] bg-slate-900 object-contain">
                     {/* Radial gradient */}
                     <div
-                      className="pointer-events-none absolute bottom-0 left-1/2 -z-10 aspect-square w-1/2 -translate-x-1/2 translate-y-1/2"
+                      className="-z-10 -translate-x-1/2 pointer-events-none absolute bottom-0 left-1/2 aspect-square w-1/2 translate-y-1/2"
                       aria-hidden="true"
                     >
                       <div className="translate-z-0 absolute inset-0 rounded-full bg-buttercup-500 blur-[120px]" />
@@ -66,7 +73,7 @@ export default function HeroServices() {
                         className="rounded-[inherit]"
                         fill
                         style={{
-                          objectFit: 'cover',
+                          objectFit: "cover",
                         }}
                       />
                     </div>

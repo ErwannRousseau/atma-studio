@@ -1,11 +1,11 @@
-import { groq } from 'next-sanity';
+import { groq } from "next-sanity";
 
-import { HomePageData } from '../types/HomePage';
-import { ReferencePageData } from '../types/ReferencesPage';
-import { ServicesPageData } from '../types/ServicesPage';
-import { StudioPageData } from '../types/StudioPage';
+import type { HomePageData } from "../types/HomePage";
+import type { ReferencePageData } from "../types/ReferencesPage";
+import type { ServicesPageData } from "../types/ServicesPage";
+import type { StudioPageData } from "../types/StudioPage";
 
-import { client } from './client';
+import { client } from "./client";
 
 // Get homePage Data
 export async function getHomePageData(): Promise<HomePageData> {
@@ -28,7 +28,7 @@ export async function getHomePageData(): Promise<HomePageData> {
     date
   }
 }
- `
+ `,
   );
 }
 
@@ -60,7 +60,7 @@ export async function getStudioPageData(): Promise<StudioPageData> {
     }
   }
 }
-`
+`,
   );
 }
 
@@ -75,7 +75,7 @@ export async function getReferencesPageData(): Promise<ReferencePageData> {
        "image": image.asset->{url, altText}
      }
    }
- `
+ `,
   );
 }
 
@@ -90,6 +90,6 @@ export async function getServicesPageData(): Promise<ServicesPageData> {
        title
      }
    }
- `
+ `,
   );
 }

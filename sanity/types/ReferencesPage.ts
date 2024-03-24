@@ -1,4 +1,4 @@
-import { ImageSanity } from './ImageSanity';
+import type { ImageSanity } from "./ImageSanity";
 
 export interface ReferencePageData {
   referencesList: ReferenceItem[];
