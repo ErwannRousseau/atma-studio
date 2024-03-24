@@ -7,7 +7,12 @@ export default function FlipIcon({ className }: { className?: string }) {
         viewBox="0 0 305.000000 382.000000"
         preserveAspectRatio="xMidYMid meet"
       >
-        <g transform="translate(0.000000,382.000000) scale(0.100000,-0.100000)" fill="#f3a710" stroke="none">
+        <title>Flip Icon</title>
+        <g
+          transform="translate(0.000000,382.000000) scale(0.100000,-0.100000)"
+          fill="#f3a710"
+          stroke="none"
+        >
           <path
             d="M1432 2485 l3 -857 55 -23 55 -23 3 765 c2 724 3 764 20 761 10 -2
           131 -68 270 -148 l252 -144 0 -623 0 -622 59 -41 c33 -22 62 -40 66 -40 3 0 4

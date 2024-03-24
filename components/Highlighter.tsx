@@ -1,15 +1,20 @@
-'use client';
+"use client";
 
-import React, { useRef, useState, useEffect } from 'react';
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 
-import MousePosition from './utils/mouse-position';
+import { cn } from "@/lib/utils";
+import MousePosition from "./utils/mouse-position";
 
 type HighlighterProps = {
   children: React.ReactNode;
   className?: string;
 };
 
-export default function Highlighter({ children, className = '' }: HighlighterProps) {
+export default function Highlighter({
+  children,
+  className = "",
+}: HighlighterProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mousePosition = MousePosition();
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -17,18 +22,25 @@ export default function Highlighter({ children, className = '' }: HighlighterPro
   const [boxes, setBoxes] = useState<Array<HTMLElement>>([]);
 
   useEffect(() => {
-    containerRef.current && setBoxes(Array.from(containerRef.current.children).map((el) => el as HTMLElement));
+    containerRef.current &&
+      setBoxes(
+        Array.from(containerRef.current.children).map(
+          (el) => el as HTMLElement,
+        ),
+      );
   }, []);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies:
   useEffect(() => {
     initContainer();
-    window.addEventListener('resize', initContainer);
+    window.addEventListener("resize", initContainer);
 
     return () => {
-      window.removeEventListener('resize', initContainer);
+      window.removeEventListener("resize", initContainer);
     };
   }, [setBoxes]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies:
   useEffect(() => {
     onMouseMove();
   }, [mousePosition]);
@@ -50,12 +62,14 @@ export default function Highlighter({ children, className = '' }: HighlighterPro
       if (inside) {
         mouse.current.x = x;
         mouse.current.y = y;
-        boxes.forEach((box) => {
-          const boxX = -(box.getBoundingClientRect().left - rect.left) + mouse.current.x;
-          const boxY = -(box.getBoundingClientRect().top - rect.top) + mouse.current.y;
-          box.style.setProperty('--mouse-x', `${boxX}px`);
-          box.style.setProperty('--mouse-y', `${boxY}px`);
-        });
+        for (const box of boxes) {
+          const boxX =
+            -(box.getBoundingClientRect().left - rect.left) + mouse.current.x;
+          const boxY =
+            -(box.getBoundingClientRect().top - rect.top) + mouse.current.y;
+          box.style.setProperty("--mouse-x", `${boxX}px`);
+          box.style.setProperty("--mouse-y", `${boxY}px`);
+        }
       }
     }
   };
@@ -72,10 +86,16 @@ type HighlighterItemProps = {
   className?: string;
 };
 
-export function HighlighterItem({ children, className = '' }: HighlighterItemProps) {
+export function HighlighterItem({
+  children,
+  className = "",
+}: HighlighterItemProps) {
   return (
     <div
-      className={`relative h-full overflow-hidden rounded-3xl p-px before:pointer-events-none before:absolute before:-left-48 before:-top-48 before:z-30 before:h-96 before:w-96 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-buttercup-100 before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:absolute after:inset-0 after:z-10 after:rounded-[inherit] after:opacity-0 after:transition-opacity after:duration-500 after:[background:_radial-gradient(250px_circle_at_var(--mouse-x)_var(--mouse-y),theme(colors.slate.400),transparent)] before:hover:opacity-20 after:group-hover:opacity-100 ${className}`}
+      className={cn(
+        "before:-left-48 before:-top-48 relative h-full overflow-hidden rounded-3xl p-px before:pointer-events-none after:absolute before:absolute after:inset-0 after:z-10 before:z-30 before:h-96 before:w-96 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] after:rounded-[inherit] before:rounded-full before:bg-buttercup-100 after:group-hover:opacity-100 after:opacity-0 before:hover:opacity-20 before:opacity-0 before:blur-[100px] after:transition-opacity before:transition-opacity after:duration-500 before:duration-500 after:[background:_radial-gradient(250px_circle_at_var(--mouse-x)_var(--mouse-y),theme(colors.slate.400),transparent)]",
+        className,
+      )}
     >
       {children}
     </div>

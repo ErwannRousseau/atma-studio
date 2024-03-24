@@ -1,4 +1,4 @@
-import type { ImageSanity } from './ImageSanity';
+import type { ImageSanity } from "./ImageSanity";
 
 export type History = {
   _key: string;

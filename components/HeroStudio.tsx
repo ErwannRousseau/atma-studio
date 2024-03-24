@@ -1,4 +1,4 @@
-import Particles from './Particles';
+import Particles from "./Particles";
 
 export default function HeroStudio() {
   return (
@@ -6,23 +6,35 @@ export default function HeroStudio() {
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         {/* Blurred shape */}
         <div
-          className="pointer-events-none absolute bottom-1/3 left-20 -z-10 translate-y-1/2 opacity-60 blur-2xl"
+          className="-z-10 pointer-events-none absolute bottom-1/3 left-20 translate-y-1/2 opacity-60 blur-2xl"
           aria-hidden="true"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="434" height="500">
+            <title>Blurred shape</title>
             <defs>
-              <linearGradient id="bs5-a" x1="19.609%" x2="50%" y1="14.544%" y2="100%">
+              <linearGradient
+                id="bs5-a"
+                x1="19.609%"
+                x2="50%"
+                y1="14.544%"
+                y2="100%"
+              >
                 <stop offset="0%" stopColor="#f3a710" />
                 <stop offset="100%" stopColor="#fce98b" stopOpacity="0" />
               </linearGradient>
             </defs>
-            <path fill="url(#bs5-a)" fillRule="evenodd" d="m0 0 461 369-284 58z" transform="matrix(1 0 0 -1 0 427)" />
+            <path
+              fill="url(#bs5-a)"
+              fillRule="evenodd"
+              d="m0 0 461 369-284 58z"
+              transform="matrix(1 0 0 -1 0 427)"
+            />
           </svg>
         </div>
         {/* Particles animation */}
-        <Particles quantity={8} className="absolute inset-0 -z-10" />
+        <Particles quantity={8} className="-z-10 absolute inset-0" />
         {/* Hero content */}
-        <div className="pt-32 md:pb-12 md:pt-32">
+        <div className="pt-32 md:pt-32 md:pb-12">
           <div className="mx-auto max-w-3xl text-center">
             <div>
               <div
@@ -39,8 +51,13 @@ export default function HeroStudio() {
             >
               Studio & Matériel
             </h1>
-            <p className="px-8 text-lg text-buttercup-50 lg:px-0" data-aos="fade-down" data-aos-delay="200">
-              Matériel studio haut de gamme, créativité sans limites. Confort, vue, et inspiration à portée de main.
+            <p
+              className="px-8 text-buttercup-50 text-lg lg:px-0"
+              data-aos="fade-down"
+              data-aos-delay="200"
+            >
+              Matériel studio haut de gamme, créativité sans limites. Confort,
+              vue, et inspiration à portée de main.
             </p>
           </div>
         </div>
