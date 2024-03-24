@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check --apply .",
-    "email": "email dev --dir components/emails --port 4000"
+    "lint": "biome check --apply ."
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
