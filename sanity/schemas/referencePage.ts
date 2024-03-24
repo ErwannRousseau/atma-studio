@@ -1,23 +1,23 @@
-import { User2 } from 'lucide-react';
-import { defineArrayMember, defineField, defineType } from 'sanity';
+import { User2 } from "lucide-react";
+import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const referencePage = defineType({
-  name: 'referencePage',
-  type: 'document',
-  title: 'Nos Références',
+  name: "referencePage",
+  type: "document",
+  title: "Nos Références",
   fields: [
     defineField({
-      name: 'references',
-      title: 'Nos références',
-      type: 'string',
+      name: "references",
+      title: "Nos références",
+      type: "string",
     }),
     defineField({
-      name: 'referencesList',
-      title: 'Liste de Références',
-      type: 'array',
+      name: "referencesList",
+      title: "Liste de Références",
+      type: "array",
       of: [
         defineArrayMember({
-          type: 'referenceItem',
+          type: "referenceItem",
         }),
       ],
     }),
@@ -25,36 +25,36 @@ export const referencePage = defineType({
 });
 
 export const referenceItem = defineType({
-  name: 'referenceItem',
-  title: 'Référence',
-  type: 'object',
+  name: "referenceItem",
+  title: "Référence",
+  type: "object",
   icon: User2,
   fields: [
     defineField({
-      name: 'artistName',
+      name: "artistName",
       title: "Nom de l'Artiste",
-      type: 'string',
-      validation: (Rule) => Rule.required().error('Un nom est obligatoire.'),
+      type: "string",
+      validation: (Rule) => Rule.required().error("Un nom est obligatoire."),
     }),
     defineField({
-      name: 'link',
-      title: 'Lien',
-      type: 'url',
-      validation: (Rule) => Rule.required().error('Un lien est obligatoire.'),
+      name: "link",
+      title: "Lien",
+      type: "url",
+      validation: (Rule) => Rule.required().error("Un lien est obligatoire."),
     }),
     defineField({
-      name: 'image',
-      title: 'Image de la Référence',
-      type: 'image',
+      name: "image",
+      title: "Image de la Référence",
+      type: "image",
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required().error('Une image est obligatoire.'),
+      validation: (Rule) => Rule.required().error("Une image est obligatoire."),
     }),
     defineField({
-      name: 'description',
-      title: 'Description de la Référence',
-      type: 'text',
+      name: "description",
+      title: "Description de la Référence",
+      type: "text",
     }),
   ],
 });

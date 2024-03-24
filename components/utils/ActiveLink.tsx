@@ -1,5 +1,6 @@
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface LinkProps {
   href: string;
@@ -20,10 +21,13 @@ export default function ActiveLink({ href, children, onClick }: LinkProps) {
     <Link
       href={href}
       onClick={handleClick}
-      className={`relative inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-lg font-medium text-transparent ${
-        pathname === href &&
-        'before:absolute before:top-6 before:h-[2px] before:w-full before:rounded-full before:bg-gradient-to-r before:from-buttercup-500 before:to-buttercup-200'
-      }`}
+      className={cn(
+        "relative inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text font-medium text-lg text-transparent",
+        {
+          "before:absolute before:top-6 before:h-[2px] before:w-full before:rounded-full before:bg-gradient-to-r before:from-buttercup-500 before:to-buttercup-200":
+            pathname === href,
+        },
+      )}
     >
       {children}
     </Link>

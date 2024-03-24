@@ -1,10 +1,10 @@
-import { ImageSanity } from './ImageSanity';
+import type { ImageSanity } from "./ImageSanity";
 
 export interface ServicesPageData {
-  servicesList: ServicesList[];
+  servicesList: TServicesList[];
 }
 
-export type ServicesList = {
+export type TServicesList = {
   image: ImageSanity;
   description: string;
   _key: string;

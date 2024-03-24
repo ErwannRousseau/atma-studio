@@ -1,32 +1,39 @@
 export const metadata = {
-  title: 'Contact & Accès',
+  title: "Contact & Accès",
   description:
     "Contactez-nous chez ATMA Studio pour discuter de vos besoins musicaux. Que vous soyez un artiste émergent, un musicien confirmé ou une entreprise, nous sommes là pour répondre à vos questions, planifier une visite de notre studio et discuter de vos projets musicaux. Contactez-nous dès aujourd'hui pour concrétiser votre vision musicale. Trouvez facilement votre chemin vers ATMA Studio. Notre emplacement est pratique et accessible, que vous veniez en voiture, en transport en commun ou à pied. Consultez notre page d'accès pour obtenir des instructions détaillées et une carte pour planifier votre visite dans notre studio de musique professionnel.",
   alternates: {
-    canonical: '/contact-acces',
+    canonical: "/contact-acces",
   },
 };
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import ContactForm from '@/components/ContactForm';
-import GoogleMap from '@/components/GoogleMap';
-import Particles from '@/components/Particles';
-import Illustration from '@/public/images/conic-gradient2.svg';
+import ContactForm from "@/components/ContactForm";
+import GoogleMap from "@/components/GoogleMap";
+import Particles from "@/components/Particles";
+import Illustration from "@/public/images/conic-gradient2.svg";
 
 export default function ContactPage() {
   return (
     <div className="relative">
       {/* Illustration */}
       <div
-        className="pointer-events-none absolute left-1/2 -z-10 -mt-36 -translate-x-1/2 opacity-70 blur-2xl md:block"
+        className="-z-10 -mt-36 -translate-x-1/2 pointer-events-none absolute left-1/2 opacity-70 blur-2xl md:block"
         aria-hidden="true"
       >
-        <Image src={Illustration} className="max-w-none" width={1440} height={450} priority alt="Page Illustration" />
+        <Image
+          src={Illustration}
+          className="max-w-none"
+          width={1440}
+          height={450}
+          priority
+          alt="Page Illustration"
+        />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <Particles quantity={8} className="absolute inset-0 -z-10" />
+        <Particles quantity={8} className="-z-10 absolute inset-0" />
         <div className="px-4 pb-16 sm:px-6">
           <div className="pt-32 md:pt-32">
             {/* Section header */}

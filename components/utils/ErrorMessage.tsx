@@ -1,18 +1,25 @@
-import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
 
-export default function ErrorMessage({
-	children,
-}: { children?: ReactNode | null }) {
-	const open = children != null;
-	return (
-		<div
-			className={`grid transition-all ${
-				open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-			}`}
-		>
-			<div className="overflow-hidden text-sm text-buttercup-400/80">
-				{children != null ? <span>{children}</span> : "NBSP"}
-			</div>
-		</div>
-	);
+type Props = {
+  children?: ReactNode | null;
+};
+
+export default function ErrorMessage({ children }: Props) {
+  const open = children != null;
+  return (
+    <div
+      className={cn("grid transition-all", {
+        "grid-rows-[0fr]": !open,
+        "grid-rows-[1fr]": open,
+      })}
+    >
+      <div
+        className="overflow-hidden text-buttercup-400/80 text-sm"
+        aria-hidden={!open}
+      >
+        {children != null ? <span>{children}</span> : null}
+      </div>
+    </div>
+  );
 }

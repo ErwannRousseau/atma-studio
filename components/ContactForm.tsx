@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import '@/styles/css/additional-styles/utility-patterns.css';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useSearchParams } from 'next/navigation';
-import React from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import "@/styles/css/additional-styles/utility-patterns.css";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useSearchParams } from "next/navigation";
+import React from "react";
+import { type SubmitHandler, useForm } from "react-hook-form";
 
-import ErrorMessage from './utils/ErrorMessage';
+import ErrorMessage from "./utils/ErrorMessage";
 
-import { type TEmailSchema, emailSchema } from '@/lib/types';
+import { type TEmailSchema, emailSchema } from "@/lib/types";
 
 export default function ContactForm() {
   const searchParams = useSearchParams();
 
-  const subject = searchParams.get('subject');
-  const defaultMessage = subject ? `Objet : ${subject}` : '';
+  const subject = searchParams.get("subject");
+  const defaultMessage = subject ? `Objet : ${subject}` : "";
   const {
     register,
     handleSubmit,
@@ -22,19 +22,19 @@ export default function ContactForm() {
     reset,
   } = useForm<TEmailSchema>({
     defaultValues: {
-      firstname: '',
-      lastname: '',
-      email: '',
-      phoneNumber: '',
+      firstname: "",
+      lastname: "",
+      email: "",
+      phoneNumber: "",
       message: defaultMessage,
-      sourceOfDiscovery: '',
+      sourceOfDiscovery: "",
     },
     resolver: zodResolver(emailSchema),
   });
   const onSubmit: SubmitHandler<TEmailSchema> = async (data) => {
     try {
-      const response = await fetch('/api/email', {
-        method: 'POST',
+      const response = await fetch("/api/email", {
+        method: "POST",
         body: JSON.stringify(data),
       });
       if (response.status === 200) {
@@ -50,11 +50,14 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="space-y-4">
           <div>
-            <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="firstname">
+            <label
+              className="mb-1 block font-medium text-slate-300 text-sm"
+              htmlFor="firstname"
+            >
               Prénom <span className="text-rose-500">*</span>
             </label>
             <input
-              {...register('firstname', { required: true })}
+              {...register("firstname", { required: true })}
               id="firstname"
               className="form-input w-full"
               type="text"
@@ -63,11 +66,14 @@ export default function ContactForm() {
             <ErrorMessage>{errors.firstname?.message}</ErrorMessage>
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="lastname">
+            <label
+              className="mb-1 block font-medium text-slate-300 text-sm"
+              htmlFor="lastname"
+            >
               Nom <span className="text-rose-500">*</span>
             </label>
             <input
-              {...register('lastname', { required: true })}
+              {...register("lastname", { required: true })}
               id="lastname"
               className="form-input w-full"
               type="text"
@@ -76,11 +82,14 @@ export default function ContactForm() {
             <ErrorMessage>{errors.lastname?.message}</ErrorMessage>
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="email">
+            <label
+              className="mb-1 block font-medium text-slate-300 text-sm"
+              htmlFor="email"
+            >
               Email <span className="text-rose-500">*</span>
             </label>
             <input
-              {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
               id="email"
               className="form-input w-full"
               type="email"
@@ -89,11 +98,17 @@ export default function ContactForm() {
             <ErrorMessage>{errors.email?.message}</ErrorMessage>
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="email">
+            <label
+              className="mb-1 block font-medium text-slate-300 text-sm"
+              htmlFor="email"
+            >
               Numero de téléphone <span className="text-rose-500">*</span>
             </label>
             <input
-              {...register('phoneNumber', { required: true, pattern: /^(0\d{1}[1-9]{8}|(\d{2}\s?){4}\d{2})$/ })}
+              {...register("phoneNumber", {
+                required: true,
+                pattern: /^(0\d{1}[1-9]{8}|(\d{2}\s?){4}\d{2})$/,
+              })}
               id="phoneNumber"
               className="form-input w-full"
               type="tel"
@@ -102,18 +117,28 @@ export default function ContactForm() {
             <ErrorMessage>{errors.phoneNumber?.message}</ErrorMessage>
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="message">
+            <label
+              className="mb-1 block font-medium text-slate-300 text-sm"
+              htmlFor="message"
+            >
               Message <span className="text-rose-500">*</span>
             </label>
-            <textarea {...register('message', { required: true })} id="message" className="form-input w-full" />
+            <textarea
+              {...register("message", { required: true })}
+              id="message"
+              className="form-input w-full"
+            />
             <ErrorMessage>{errors.message?.message}</ErrorMessage>
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium text-slate-300" htmlFor="sourceOfDiscovery">
+            <label
+              className="mb-1 block font-medium text-slate-300 text-sm"
+              htmlFor="sourceOfDiscovery"
+            >
               Comment as-tu entendu parlé de nous ?
             </label>
             <select
-              {...register('sourceOfDiscovery')}
+              {...register("sourceOfDiscovery")}
               id="sourceOfDiscovery"
               className="form-select w-full py-2 text-sm"
             >
@@ -130,8 +155,12 @@ export default function ContactForm() {
             type="submit"
             className="btn group w-full bg-buttercup-500 text-sm text-white shadow-sm hover:bg-buttercup-600"
           >
-            {isSubmitting ? 'Envoi en cours...' : isSubmitSuccessful ? 'Message bien envoyé !' : 'Envoyer'}
-            <span className="ml-1 tracking-normal text-buttercup-200 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
+            {isSubmitting
+              ? "Envoi en cours..."
+              : isSubmitSuccessful
+                ? "Message bien envoyé !"
+                : "Envoyer"}
+            <span className="ml-1 text-buttercup-200 tracking-normal transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
               -&gt;
             </span>
           </button>
