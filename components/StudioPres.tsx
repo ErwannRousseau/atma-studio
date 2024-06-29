@@ -71,10 +71,10 @@ export default function StudioPres({
         </div>
         <Particles className="-z-10 absolute inset-0" />
         <div className="pt-16 pb-12 md:pt-20 md:pb-20">
-          <div className="mx-auto flex max-w-xl flex-col items-center space-y-8 space-y-reverse md:max-w-none md:flex-row lg:space-x-16 md:space-x-8 xl:space-x-20 md:space-y-0">
+          <div className="mx-auto flex max-w-xl flex-col items-center space-y-8 space-y-reverse md:max-w-none md:flex-row md:space-x-8 md:space-y-0 lg:space-x-16 xl:space-x-20">
             {/* Content */}
             <div
-              className="order-1 md:order-none lg:w-1/2 md:w-7/12 max-md:text-center"
+              className="order-1 max-md:text-center md:order-none md:w-7/12 lg:w-1/2"
               data-aos="fade-down"
             >
               <h3
@@ -93,7 +93,7 @@ export default function StudioPres({
             </div>
             {/* Image */}
             <div
-              className="grid place-items-center lg:w-1/2 md:w-5/12"
+              className="grid place-items-center md:w-5/12 lg:w-1/2"
               data-aos="fade-up"
               data-aos-delay="100"
             >

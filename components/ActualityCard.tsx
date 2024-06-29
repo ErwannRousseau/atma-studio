@@ -45,7 +45,7 @@ export default function ActualityCard({
           />
           {/* Particles animation */}
           <Particles
-            className="absolute opacity-0 transition-opacity duration-500 ease-in-out group-[.swiper-slide-active]/slide:opacity-100 group-hover/slide:opacity-100"
+            className="absolute opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
             quantity={5}
           />
           <div className="relative flex h-full flex-col p-6">

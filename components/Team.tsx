@@ -2,7 +2,7 @@
 
 import { Transition } from "@headlessui/react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import React from "react";
 
 import Particles from "./Particles";
 
@@ -10,13 +10,13 @@ import { cn } from "@/lib/utils";
 import type { TeamMember } from "@/sanity/types/StudioPage";
 
 export default function Team({ team }: { team: TeamMember[] }) {
-  const [active, setActive] = useState<number>(0);
-  const [autorotate, setAutorotate] = useState<boolean>(true);
-  const [autorotateTiming] = useState<number>(7000);
+  const [active, setActive] = React.useState<number>(0);
+  const [autorotate, setAutorotate] = React.useState<boolean>(true);
+  const [autorotateTiming] = React.useState<number>(7000);
 
-  const testimonials = useRef<HTMLDivElement>(null);
+  const testimonials = React.useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!autorotate) return;
     const interval = setInterval(() => {
       setActive(active + 1 === team.length ? 0 : (active) => active + 1);
@@ -24,12 +24,12 @@ export default function Team({ team }: { team: TeamMember[] }) {
     return () => clearInterval(interval);
   }, [active, autorotate, autorotateTiming, team.length]);
 
-  const heightFix = () => {
+  const heightFix = React.useCallback(() => {
     if (testimonials.current?.parentElement)
       testimonials.current.parentElement.style.height = `${testimonials.current.clientHeight}px`;
-  };
+  }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     heightFix();
   }, [heightFix]);
 
@@ -49,7 +49,7 @@ export default function Team({ team }: { team: TeamMember[] }) {
           <div className="text-center">
             {/* Testimonial image */}
             <div className="relative h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_40%,theme(colors.white))]">
-              <div className="-z-10 -translate-x-1/2 before:-z-20 after:-z-20 pointer-events-none absolute top-0 left-1/2 h-[480px] w-[480px] rounded-full after:absolute before:absolute after:inset-0 before:inset-0 after:m-px after:rounded-full before:rounded-full after:bg-buttercup-500/20 before:bg-gradient-to-b before:from-buttercup-200/50 before:to-20% before:to-transparent">
+              <div className="-z-10 -translate-x-1/2 before:-z-20 after:-z-20 pointer-events-none absolute top-0 left-1/2 h-[480px] w-[480px] rounded-full before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-buttercup-200/50 before:to-20% before:to-transparent after:absolute after:inset-0 after:m-px after:rounded-full after:bg-buttercup-500/20">
                 {team.map(({ image, name }, index) => (
                   <Transition
                     key={name}
@@ -105,7 +105,7 @@ export default function Team({ team }: { team: TeamMember[] }) {
                 <button
                   type="button"
                   className={cn(
-                    "btn-sm relative mx-auto py-1.5 text-slate-300 text-xs transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 sm:mx-0 before:rounded-full before:bg-buttercup-900/30",
+                    "btn-sm relative mx-auto py-1.5 text-slate-300 text-xs transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 sm:mx-0",
                     {
                       "opacity-100": active === index,
                       "opacity-30 hover:opacity-60": active !== index,

@@ -2,7 +2,7 @@ import ActiveLink from "../utils/ActiveLink";
 
 export default function DesktopNavbar() {
   return (
-    <nav className="hidden navbar:flex navbar:grow" data-aos="fade-down">
+    <nav className="navbar:flex hidden navbar:grow" data-aos="fade-down">
       {/* Desktop menu links */}
       <ul className="flex grow flex-wrap items-center justify-end gap-6">
         <li>

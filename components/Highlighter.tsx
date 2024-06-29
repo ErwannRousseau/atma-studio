@@ -93,7 +93,7 @@ export function HighlighterItem({
   return (
     <div
       className={cn(
-        "before:-left-48 before:-top-48 relative h-full overflow-hidden rounded-3xl p-px before:pointer-events-none after:absolute before:absolute after:inset-0 after:z-10 before:z-30 before:h-96 before:w-96 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] after:rounded-[inherit] before:rounded-full before:bg-buttercup-100 after:group-hover:opacity-100 after:opacity-0 before:hover:opacity-20 before:opacity-0 before:blur-[100px] after:transition-opacity before:transition-opacity after:duration-500 before:duration-500 after:[background:_radial-gradient(250px_circle_at_var(--mouse-x)_var(--mouse-y),theme(colors.slate.400),transparent)]",
+        "before:-left-48 before:-top-48 relative h-full overflow-hidden rounded-3xl p-px before:pointer-events-none before:absolute before:z-30 before:h-96 before:w-96 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:rounded-full before:bg-buttercup-100 before:opacity-0 before:blur-[100px] before:transition-opacity before:duration-500 after:absolute after:inset-0 after:z-10 after:rounded-[inherit] after:opacity-0 after:transition-opacity after:duration-500 before:hover:opacity-20 after:group-hover:opacity-100 after:[background:_radial-gradient(250px_circle_at_var(--mouse-x)_var(--mouse-y),theme(colors.slate.400),transparent)]",
         className,
       )}
     >

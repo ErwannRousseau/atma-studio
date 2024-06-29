@@ -33,9 +33,9 @@ export default function AtmaPres({
         <div className="pt-16 pb-12 md:pt-32 md:pb-20">
           <div>
             {/* Section content */}
-            <div className="mx-auto flex max-w-xl flex-col space-y-8 space-y-reverse md:max-w-none md:flex-row lg:space-x-16 md:space-x-8 xl:space-x-20 md:space-y-0">
+            <div className="mx-auto flex max-w-xl flex-col space-y-8 space-y-reverse md:max-w-none md:flex-row md:space-x-8 md:space-y-0 lg:space-x-16 xl:space-x-20">
               <div
-                className="order-1 flex-col justify-center md:order-none md:flex lg:w-1/2 md:w-7/12 max-md:text-center"
+                className="order-1 flex-col justify-center max-md:text-center md:order-none md:flex md:w-7/12 lg:w-1/2"
                 data-aos="fade-down"
               >
                 <h3
@@ -51,7 +51,7 @@ export default function AtmaPres({
               </div>
               {/* Image */}
               <div
-                className="lg:w-1/2 md:w-5/12"
+                className="md:w-5/12 lg:w-1/2"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >

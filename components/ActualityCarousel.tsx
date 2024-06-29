@@ -79,13 +79,13 @@ export default function ActualityCarouselV2({
               />
             </svg>
           </div>
-          <div className="before:-translate-x-full relative after:absolute before:absolute after:inset-0 before:inset-0 after:z-20 before:z-20 after:translate-x-full before:rounded-r-3xl after:bg-gradient-to-r before:bg-gradient-to-l after:from-transparent before:from-transparent after:to-20% after:to-buttercup-500/20 before:to-20% before:to-buttercup-500/20 after:blur before:blur">
+          <div className="before:-translate-x-full relative before:absolute before:inset-0 before:z-20 before:rounded-r-3xl before:bg-gradient-to-l before:from-transparent before:to-20% before:to-buttercup-500/20 before:blur after:absolute after:inset-0 after:z-20 after:translate-x-full after:bg-gradient-to-r after:from-transparent after:to-20% after:to-buttercup-500/20 after:blur">
             <Carousel opts={{ align: "start" }}>
               <CarouselContent>
                 {/* Carousel items */}
                 {actualities.map((actuality) => (
                   <CarouselItem
-                    className="py-4 lg:basis-1/3 md:basis-1/2 sm:basis-full"
+                    className="py-4 sm:basis-full md:basis-1/2 lg:basis-1/3"
                     key={actuality._key}
                   >
                     <ActualityCard

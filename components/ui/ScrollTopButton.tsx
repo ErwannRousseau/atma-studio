@@ -1,12 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 export default function ScrollTopButton() {
-  const [showButton, setShowButton] = useState<boolean>(false);
+  const [showButton, setShowButton] = React.useState<boolean>(false);
 
-  const handleScroll = () => {
+  const handleScroll = React.useCallback(() => {
     if (
       document.body.scrollTop > 70 ||
       document.documentElement.scrollTop > 70
@@ -15,7 +15,7 @@ export default function ScrollTopButton() {
     } else {
       setShowButton(false);
     }
-  };
+  }, []);
 
   const backToTop = () => {
     document.documentElement.style.scrollBehavior = "smooth";
@@ -23,7 +23,7 @@ export default function ScrollTopButton() {
     document.documentElement.scrollTop = 0;
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -35,7 +35,7 @@ export default function ScrollTopButton() {
       type="button"
       onClick={backToTop}
       className={cn(
-        "fixed right-6 bottom-6 z-50 rounded-full bg-buttercup-500/50 p-3 font-medium text-white text-xs uppercase leading-tight shadow-md transition duration-150 ease-in-out active:bg-buttercup-600/50 focus:bg-buttercup-500/60 hover:bg-buttercup-500/60 active:shadow-lg focus:shadow-lg hover:shadow-lg focus:outline-none focus:ring-0",
+        "fixed right-6 bottom-6 z-50 rounded-full bg-buttercup-500/50 p-3 font-medium text-white text-xs uppercase leading-tight shadow-md transition duration-150 ease-in-out hover:bg-buttercup-500/60 hover:shadow-lg focus:bg-buttercup-500/60 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-buttercup-600/50 active:shadow-lg",
         showButton ? "inline-block" : "hidden",
       )}
     >

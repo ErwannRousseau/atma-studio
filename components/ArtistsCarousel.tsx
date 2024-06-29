@@ -19,7 +19,7 @@ export default function ArtistsCarousel({
         {/* Carousel items */}
         {nextArtists.map(({ _key, image, artistName, link }) => (
           <CarouselItem
-            className="py-4 lg:basis-1/4 md:basis-1/3 sm:basis-1/2"
+            className="py-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
             key={_key}
           >
             <div className="group/slide relative z-20 grid aspect-square w-full grow place-items-center overflow-hidden rounded-3xl">

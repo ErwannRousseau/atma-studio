@@ -30,9 +30,9 @@ export default function ServicesList({
               {/* Content */}
               <div
                 className={cn("order-1 pb-4", {
-                  "text-right md:order-none md:w-1/2 md:pb-0 lg:pl-20 md:pl-6 xl:pl-28 max-md:text-center":
+                  "text-right max-md:text-center md:order-none md:w-1/2 md:pb-0 md:pl-6 lg:pl-20 xl:pl-28":
                     index % 2 === 0,
-                  "text-left md:order-none md:w-1/2 lg:pr-20 md:pr-6 xl:pr-28 md:pb-0 max-md:text-center":
+                  "text-left max-md:text-center md:order-none md:w-1/2 md:pr-6 md:pb-0 lg:pr-20 xl:pr-28":
                     index % 2 !== 0,
                 })}
               >

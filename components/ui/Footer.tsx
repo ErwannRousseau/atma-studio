@@ -58,7 +58,7 @@ export default function Footer() {
           <div className="text-center md:flex md:items-center md:justify-between">
             <div className="mb-2 font-medium text-sm md:order-1 md:mb-0">
               <ul className="inline-flex flex-wrap font-medium text-sm">
-                <li className="last:after:hidden after:px-2 after:text-gray-400 after:content-['·']">
+                <li className="after:px-2 after:text-gray-400 after:content-['·'] last:after:hidden">
                   <Link
                     className="text-gray-500 hover:text-gray-500 hover:underline"
                     href="/credits"
@@ -66,7 +66,7 @@ export default function Footer() {
                     Crédits
                   </Link>
                 </li>
-                <li className="last:after:hidden after:px-2 after:text-gray-400 after:content-['·']">
+                <li className="after:px-2 after:text-gray-400 after:content-['·'] last:after:hidden">
                   <Link
                     className="text-gray-500 hover:text-gray-500 hover:underline"
                     href="/conditions-generales"
@@ -74,7 +74,7 @@ export default function Footer() {
                     Conditions Générales
                   </Link>
                 </li>
-                <li className="last:after:hidden after:px-2 after:text-gray-400 after:content-['·']">
+                <li className="after:px-2 after:text-gray-400 after:content-['·'] last:after:hidden">
                   <Link
                     className="text-gray-500 hover:text-gray-500 hover:underline"
                     href="/confidentialite"

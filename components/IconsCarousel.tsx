@@ -59,13 +59,13 @@ export default function IconsCarousel() {
           <Particles className="-z-10 absolute inset-0" quantity={5} />
         </div>
         <div className="relative py-7 md:py-10">
-          <div className="overflow-hidden after:absolute before:absolute before:top-[-4px] after:bottom-[-4px] after:h-2 before:h-2 after:w-[100%] before:w-[100%] after:backdrop-blur-xs before:backdrop-blur-xs">
+          <div className="overflow-hidden before:absolute before:top-[-4px] before:h-2 before:w-[100%] before:backdrop-blur-xs after:absolute after:bottom-[-4px] after:h-2 after:w-[100%] after:backdrop-blur-xs">
             {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
             {/* Custom styles in src/css/additional-styles/theme.scss */}
             <div
               data-aos="fade-left"
               data-aos-delay="400"
-              className="swiper-carousel swiper-container relative h-10 after:pointer-events-none before:pointer-events-none after:absolute before:absolute after:inset-0 before:inset-0 after:left-auto after:z-10 before:z-10 before:h-full after:w-32 before:w-32 after:bg-gradient-to-l before:bg-gradient-to-r after:from-buttercup-300/60 before:from-buttercup-300/60 after:blur before:blur-sm"
+              className="swiper-carousel swiper-container relative h-10 before:pointer-events-none before:absolute before:inset-0 before:z-10 before:h-full before:w-32 before:bg-gradient-to-r before:from-buttercup-300/60 before:blur-sm after:pointer-events-none after:absolute after:inset-0 after:left-auto after:z-10 after:w-32 after:bg-gradient-to-l after:from-buttercup-300/60 after:blur"
             >
               <div className="swiper-wrapper !ease-linear select-none items-center">
                 {/* Carousel items */}
