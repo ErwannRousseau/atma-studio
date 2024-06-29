@@ -72,7 +72,7 @@ input[type='search']::-webkit-search-results-decoration {
 .form-textarea,
 .form-multiselect,
 .form-select {
-  @apply px-3 py-1.5 text-sm text-slate-200;
+  @apply px-3 py-1.5 text-base text-slate-200;
 }
 
 .form-input,
