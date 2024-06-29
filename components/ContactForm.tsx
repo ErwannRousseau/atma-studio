@@ -1,14 +1,13 @@
 "use client";
 
+import { confettiFireworks } from "@/lib/confetti";
+import { type TEmailSchema, emailSchema } from "@/lib/types";
 import "@/styles/css/additional-styles/utility-patterns.css";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSearchParams } from "next/navigation";
 import React from "react";
 import { type SubmitHandler, useForm } from "react-hook-form";
-
 import ErrorMessage from "./utils/ErrorMessage";
-
-import { type TEmailSchema, emailSchema } from "@/lib/types";
 
 export default function ContactForm() {
   const searchParams = useSearchParams();
@@ -38,15 +37,16 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       });
       if (response.status === 200) {
+        confettiFireworks();
         reset();
       }
     } catch (error) {
       alert("Une erreur s'est produite");
     }
   };
+
   return (
     <div data-aos="fade-right" data-aos-delay="200" className="w-full max-w-sm">
-      {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="space-y-4">
           <div>

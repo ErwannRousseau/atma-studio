@@ -12,17 +12,15 @@ Deployed on Vercel here : [Atma Studio](https://studio-atma.com)
 
 ## 🔍 Table of Contents
 
-* [💻 Stack](#stack)
-
-* [📝 Project Summary](#project-summary)
-
-* [🚀 Run Locally](#run-locally)
-
-* [⚙️ Setting Up](#setting-up)
-
-* [🙌 Contributors](#contributors)
-
-* [📄 License](#license)
+- [ATMA STUDIO](#atma-studio)
+  - [🔍 Table of Contents](#-table-of-contents)
+  - [💻 Stack](#-stack)
+  - [📝 Project Summary](#-project-summary)
+  - [🚀 Run Locally](#-run-locally)
+  - [⚙️ Setting Up](#️-setting-up)
+    - [Your Environment Variable](#your-environment-variable)
+  - [🙌 Contributors](#-contributors)
+  - [📄 License](#-license)
 
 ## 💻 Stack
 
@@ -31,8 +29,7 @@ Deployed on Vercel here : [Atma Studio](https://studio-atma.com)
 - [next](https://nextjs.org/): A framework for React applications that provides server-side rendering, static site generation, and more.
 - [tailwindcss](https://tailwindcss.com/): A utility-first CSS framework for rapidly building custom designs.
 - [typescript](https://www.typescriptlang.org/): A superset of JavaScript that adds static types to the language.
-- [prettier](https://prettier.io/): An opinionated code formatter that enforces consistent code style.
-- [eslint](https://eslint.org/): A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript.
+- [Biome](https://biomejs.dev/): A pluggable and configurable linter/formater tool super fast and easy to use.
 - [react-hook-form](https://react-hook-form.com/): A library for managing form state and validation in React.
 
 ## 📝 Project Summary
@@ -49,18 +46,24 @@ Deployed on Vercel here : [Atma Studio](https://studio-atma.com)
 - [**sanity**](sanity): Sanity CMS related functionalities and components.
 
 ## 🚀 Run Locally
+
 1.Clone the atma-studio repository:
+
 ```sh
 git clone https://github.com/atma-studio/atma-studio
 ```
+
 2.Install the dependencies with one of the package managers listed below:
+
 ```bash
 pnpm install
 bun install
 npm install
 yarn install
 ```
+
 3.Start the development mode:
+
 ```bash
 pnpm run dev
 bun run dev
@@ -79,17 +82,16 @@ yarn run dev
 - Step 2 :
   
     Copy paste this env varibales :
-  ```
-  NEXT_PUBLIC_SANITY_PROJECT_ID=
-  NEXT_PUBLIC_SANITY_DATASET="production"
-  
-  SANITY_API_READ_TOKEN=
-  
-  NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
-  NEXT_PUBLIC_MAP_ID=
-  
-  RESEND_API_KEY=
-  ```
+
+```env
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_API_READ_TOKEN=
+RESEND_API_KEY=
+NEXT_PUBLIC_GOOGLE_ADS_ID=
+NEXT_PUBLIC_MAP_ID=
+```
 
 ## 🙌 Contributors
 
