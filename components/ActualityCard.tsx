@@ -50,7 +50,7 @@ export default function ActualityCard({
           />
           <div className="relative flex h-full flex-col p-6">
             <div className="grid grow place-items-center">
-              <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text font-bold text-lg text-transparent underline">
+              <p className="relative mb-1 inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center font-bold text-lg text-transparent underline">
                 {title}
               </p>
             </div>
@@ -96,7 +96,7 @@ export default function ActualityCard({
           />
           <div className="relative">
             <div className="grid place-items-center">
-              <p className="relative inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text font-bold text-2xl text-transparent underline">
+              <p className="relative inline-block bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text text-center font-bold text-2xl text-transparent underline">
                 {title}
               </p>
               <div className="bold max-h-72 overflow-auto px-4 text-center font-semibold text-md text-slate-100">

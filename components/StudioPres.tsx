@@ -78,14 +78,14 @@ export default function StudioPres({
               data-aos="fade-down"
             >
               <h3
-                className={`${presentation[0].style}inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent`}
+                className={`${presentation[0].style} inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent`}
               >
                 {presentation[0].children[0].text}
               </h3>
               {presentation.slice(1).map(({ children, _key }) => (
                 <p
                   key={_key}
-                  className="text-left text-lg text-slate-100 md:text-left"
+                  className="text-justify text-slate-100 md:text-left"
                 >
                   {children[0].text}
                 </p>

@@ -35,16 +35,16 @@ export default function AtmaPres({
             {/* Section content */}
             <div className="mx-auto flex max-w-xl flex-col space-y-8 space-y-reverse md:max-w-none md:flex-row md:space-x-8 md:space-y-0 lg:space-x-16 xl:space-x-20">
               <div
-                className="order-1 flex-col justify-center max-md:text-center md:order-none md:flex md:w-7/12 lg:w-1/2"
+                className="order-1 flex-col justify-center md:order-none md:flex md:w-7/12 lg:w-1/2"
                 data-aos="fade-down"
               >
                 <h3
-                  className={`${history[0].style}inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-transparent`}
+                  className={`${history[0].style} inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-left text-transparent`}
                 >
                   {history[0].children[0].text}
                 </h3>
                 {history.slice(1).map(({ children, _key }) => (
-                  <p key={_key} className="text-left text-lg text-slate-100">
+                  <p key={_key} className="text-justify text-slate-100">
                     {children[0].text}
                   </p>
                 ))}
