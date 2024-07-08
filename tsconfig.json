@@ -19,8 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "swiper": ["./node_modules/swiper"]
+      "@/*": ["./*"]
     }
   },
   "include": [

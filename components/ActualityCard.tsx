@@ -25,7 +25,7 @@ export default function ActualityCard({
   const { image, title, link, _key, description } = actuality;
 
   return (
-    <div className="perspective-800 swiper-slide group/slide aspect-square">
+    <div className="perspective-800 group/slide aspect-square">
       <div
         className={cn(
           "actuality-card transform-style-preserve relative mx-auto aspect-square rounded-2xl transition-transform duration-[0.5s]",
@@ -45,7 +45,7 @@ export default function ActualityCard({
           />
           {/* Particles animation */}
           <Particles
-            className="absolute opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100 group-[.swiper-slide-active]/slide:opacity-100"
+            className="absolute opacity-0 transition-opacity duration-500 ease-in-out group-hover/slide:opacity-100"
             quantity={5}
           />
           <div className="relative flex h-full flex-col p-6">
