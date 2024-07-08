@@ -82,10 +82,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/forms"),
-    require("tailwindcss-filters"),
-  ],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
 export default config;
