@@ -57,37 +57,6 @@
     width 0.1s ease-out;
 }
 
-/* Custom Swiper styles */
-
-.icons-swiper-slide {
-  @apply grid place-items-center;
-}
-
-.swiper-button-disabled {
-  @apply pointer-events-none cursor-default opacity-50;
-}
-
-.actuality-carousel .swiper-slide {
-  @apply opacity-90;
-}
-
-.actuality-carousel .swiper-slide.swiper-slide-active {
-  @apply opacity-100;
-}
-
-.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
-.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-  @apply !bottom-0;
-}
-
-.swiper-pagination-bullet {
-  @apply !bg-buttercup-100/70;
-}
-
-.swiper-pagination-bullet-active {
-  @apply !bg-buttercup-500;
-}
-
 /* Custom AOS distance */
 @media screen {
   html:not(.no-js) [data-aos='fade-up'] {
