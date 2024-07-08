@@ -52,11 +52,15 @@ const config: Config = {
       },
       animation: {
         endless: "endless 20s linear infinite",
+        marquee: "marquee var(--duration, 30s) linear infinite",
       },
       keyframes: {
         endless: {
           "0%": { transform: "translateY(0)" },
           "100%": { transform: "translateY(-245px)" },
+        },
+        marquee: {
+          to: { transform: "translateX(-50%)" },
         },
       },
       backdropBlur: {
