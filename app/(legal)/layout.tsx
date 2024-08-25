@@ -18,7 +18,7 @@ export default function LegalLayout({
 }: { children: React.ReactNode }) {
   return (
     <body
-      className={`${inter.variable}bg-black font-inter text-slate-100 tracking-tight antialiased`}
+      className={`${inter.variable} bg-black font-inter text-slate-100 tracking-tight antialiased`}
     >
       <div className="mx-auto flex max-w-4xl flex-col overflow-hidden text-justify">
         {children}
