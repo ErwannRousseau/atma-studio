@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import Footer from "@/components/ui/Footer";
 import Header from "@/components/ui/Header";
 import ScrollTopButton from "@/components/ui/ScrollTopButton";
+import { TailwindIndicator } from "@/components/utils/tailwind-indicator";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import AOS from "aos";
 import { useEffect } from "react";
@@ -34,6 +35,7 @@ export default function DefaultLayout({
         <Footer />
       </div>
       <SpeedInsights />
+      <TailwindIndicator />
     </body>
   );
 }
