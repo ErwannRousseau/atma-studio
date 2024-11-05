@@ -8,6 +8,7 @@ import Particles from "./Particles";
 
 import { cn } from "@/lib/utils";
 import type { TeamMember } from "@/sanity/types/StudioPage";
+import { buttonVariants } from "./ui/button";
 
 export default function Team({ team }: { team: TeamMember[] }) {
   const [active, setActive] = React.useState<number>(0);
@@ -105,7 +106,8 @@ export default function Team({ team }: { team: TeamMember[] }) {
                 <button
                   type="button"
                   className={cn(
-                    "btn-sm relative mx-auto py-1.5 text-slate-300 text-xs transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 sm:mx-0",
+                    buttonVariants({ size: "sm" }),
+                    "relative mx-auto py-1.5 text-slate-300 [background:linear-gradient(theme(colors.buttercup.300/50),_theme(colors.buttercup.400/20))_padding-box,_conic-gradient(theme(colors.buttercup.300),_theme(colors.buttercup.700)_25%,_theme(colors.buttercup.900)_75%,_theme(colors.buttercup.100)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-900/30 sm:mx-0",
                     {
                       "opacity-100": active === index,
                       "opacity-30 hover:opacity-60": active !== index,

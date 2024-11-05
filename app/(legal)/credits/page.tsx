@@ -36,7 +36,7 @@ export default function CreditsPage() {
               <a
                 target="_blank"
                 className="text-buttercup-500"
-                href="https://www.erwannrousseau.com"
+                href="https://www.erwannrousseau.dev"
                 rel="noreferrer"
               >
                 Erwann Rousseau Developpeur FullStack

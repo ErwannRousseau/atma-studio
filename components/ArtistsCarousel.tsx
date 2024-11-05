@@ -8,7 +8,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/utils/CarouselEmbla";
+import { cn } from "@/lib/utils";
 import type { ReferenceItem } from "@/sanity/types/ReferencesPage";
+import { buttonVariants } from "./ui/button";
 
 export default function ArtistsCarousel({
   nextArtists,
@@ -40,7 +42,10 @@ export default function ArtistsCarousel({
                   <Link
                     target="_blank"
                     href={link}
-                    className="btn-sm group relative z-30 py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
+                    className={cn(
+                      buttonVariants({ size: "sm" }),
+                      "group relative z-30 shadow [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70",
+                    )}
                   >
                     <span className="relative inline-flex items-center">
                       Découvrir{" "}

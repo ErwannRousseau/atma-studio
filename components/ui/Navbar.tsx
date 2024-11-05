@@ -1,15 +1,14 @@
 "use client";
 
-import { Transition } from "@headlessui/react";
-import { useEffect, useRef, useState } from "react";
-
-import ActiveLink from "../utils/ActiveLink";
-
+import ActiveLink from "@/components/utils/ActiveLink";
 import { cn } from "@/lib/utils";
+import { Transition } from "@headlessui/react";
+import Hamburger from "hamburger-react";
+import { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 
 export default function Navbar() {
-  const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const trigger = useRef<HTMLButtonElement>(null);
   const mobileNav = useRef<HTMLDivElement>(null);
@@ -46,7 +45,7 @@ export default function Navbar() {
       <button
         type="button"
         ref={trigger}
-        className={cn("hamburger z-30 mt-2 mr-5 sm:mr-0", {
+        className={cn("z-30 mt-2 mr-5 size-10 sm:mr-0", {
           active: mobileNavOpen,
         })}
         aria-controls="mobile-nav"
@@ -54,16 +53,7 @@ export default function Navbar() {
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
       >
         <span className="sr-only">Menu</span>
-        <svg
-          className="h-6 w-6 fill-current text-buttercup-50"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <title>Menu Icon</title>
-          <rect y="4" width="24" height="2" />
-          <rect y="11" width="24" height="2" />
-          <rect y="18" width="24" height="2" />
-        </svg>
+        <Hamburger toggled={mobileNavOpen} toggle={setMobileNavOpen} />
       </button>
 
       <div ref={mobileNav}>

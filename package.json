@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint:ci": "biome ci --reporter=github && tsc",
-    "check": "biome check",
+    "check": "biome check && tsc",
     "check:fix": "biome check --fix",
     "format": "biome format --fix",
     "email": "email dev --dir components/emails --port 4000"
@@ -15,6 +15,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.19",
     "@hookform/resolvers": "^3.9.0",
+    "@radix-ui/react-select": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.0",
     "@react-email/components": "^0.0.15",
     "@react-google-maps/api": "^2.19.3",
@@ -24,8 +25,10 @@
     "aos": "3.0.0-beta.6",
     "autoprefixer": "10.4.19",
     "canvas-confetti": "^1.9.3",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.1.6",
+    "hamburger-react": "^2.5.1",
     "lucide-react": "^0.363.0",
     "next": "14.2.2",
     "next-sanity": "9.0.7",
@@ -44,7 +47,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "@types/aos": "^3.0.7",
     "@types/canvas-confetti": "^1.6.4",

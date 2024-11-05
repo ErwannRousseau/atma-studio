@@ -8,6 +8,7 @@ import FlipIcon from "./utils/FlipIcon";
 
 import { cn } from "@/lib/utils";
 import type { ActualityItem } from "@/sanity/types/HomePage";
+import { buttonVariants } from "./ui/button";
 
 type ActualityProps = {
   actuality: ActualityItem;
@@ -70,11 +71,14 @@ export default function ActualityCard({
                 <Link
                   href={link}
                   target="_blank"
-                  className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70 hover:text-white"
+                  className={cn(
+                    buttonVariants({ size: "sm" }),
+                    "group relative overflow-hidden [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-buttercup-600/70",
+                  )}
                 >
                   <span className="relative inline-flex items-center">
                     Découvrir{" "}
-                    <span className="ml-1 text-buttercup-50 tracking-normal transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
+                    <span className="ml-1 tracking-normal transition-transform duration-150 ease-in-out group-hover/arrow:translate-x-1">
                       -&gt;
                     </span>
                   </span>

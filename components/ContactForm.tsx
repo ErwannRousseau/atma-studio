@@ -1,13 +1,14 @@
 "use client";
 
-import "@/styles/css/additional-styles/utility-patterns.css";
-
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import ErrorMessage from "@/components/utils/ErrorMessage";
 import { confettiFireworks } from "@/lib/confetti";
 import { type TEmailSchema, emailSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSearchParams } from "next/navigation";
 import { type SubmitHandler, useForm } from "react-hook-form";
-import ErrorMessage from "./utils/ErrorMessage";
 
 export default function ContactForm() {
   const searchParams = useSearchParams();
@@ -54,10 +55,9 @@ export default function ContactForm() {
           >
             Prénom <span className="text-rose-500">*</span>
           </label>
-          <input
+          <Input
             {...register("firstname", { required: true })}
             id="firstname"
-            className="form-input w-full"
             type="text"
             placeholder="Pierre"
           />
@@ -70,10 +70,9 @@ export default function ContactForm() {
           >
             Nom <span className="text-rose-500">*</span>
           </label>
-          <input
+          <Input
             {...register("lastname", { required: true })}
             id="lastname"
-            className="form-input w-full"
             type="text"
             placeholder="Dupont"
           />
@@ -86,10 +85,9 @@ export default function ContactForm() {
           >
             Email <span className="text-rose-500">*</span>
           </label>
-          <input
+          <Input
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             id="email"
-            className="form-input w-full"
             type="email"
             placeholder="pierre.d@example.com"
           />
@@ -102,13 +100,12 @@ export default function ContactForm() {
           >
             Numero de téléphone <span className="text-rose-500">*</span>
           </label>
-          <input
+          <Input
             {...register("phoneNumber", {
               required: true,
               pattern: /^(0\d{1}[1-9]{8}|(\d{2}\s?){4}\d{2})$/,
             })}
             id="phoneNumber"
-            className="form-input w-full"
             type="tel"
             placeholder="0612345678"
           />
@@ -121,11 +118,7 @@ export default function ContactForm() {
           >
             Message <span className="text-rose-500">*</span>
           </label>
-          <textarea
-            {...register("message", { required: true })}
-            id="message"
-            className="form-input w-full"
-          />
+          <Textarea {...register("message", { required: true })} id="message" />
           <ErrorMessage>{errors.message?.message}</ErrorMessage>
         </div>
         <div>
@@ -138,7 +131,7 @@ export default function ContactForm() {
           <select
             {...register("sourceOfDiscovery")}
             id="sourceOfDiscovery"
-            className="form-select w-full py-2 text-sm"
+            className="flex h-10 w-full rounded-md border-transparent bg-slate-800 px-3 py-1.5 text-base text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
           >
             <option value={undefined}>Sélectionner une option</option>
             <option value="Instagram">Instagram</option>
@@ -146,10 +139,10 @@ export default function ContactForm() {
             <option value="Bouche à oreille">Recherche Internet</option>
           </select>
         </div>
-        <button
+        <Button
           disabled={isSubmitSuccessful}
           type="submit"
-          className="btn group mt-6 w-full bg-buttercup-500 text-sm text-white shadow-sm hover:bg-buttercup-600"
+          className="group w-full"
         >
           {isSubmitting
             ? "Envoi en cours..."
@@ -159,7 +152,7 @@ export default function ContactForm() {
           <span className="ml-1 text-buttercup-200 tracking-normal transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
             -&gt;
           </span>
-        </button>
+        </Button>
       </form>
     </div>
   );
