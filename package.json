@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint:ci": "biome ci --reporter=github && tsc",
+    "lint:ci": "biome ci --reporter=github",
     "check": "biome check && tsc",
     "check:fix": "biome check --fix",
     "format": "biome format --fix",

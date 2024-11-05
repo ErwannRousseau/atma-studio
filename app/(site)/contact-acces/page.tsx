@@ -1,3 +1,10 @@
+import ContactForm from "@/components/ContactForm";
+import GoogleMap from "@/components/GoogleMap";
+import Particles from "@/components/Particles";
+import Illustration from "@/public/images/conic-gradient2.svg";
+import Image from "next/image";
+import { Suspense } from "react";
+
 export const metadata = {
   title: "Contact & Accès",
   description:
@@ -6,14 +13,6 @@ export const metadata = {
     canonical: "/contact-acces",
   },
 };
-
-import Image from "next/image";
-
-import ContactForm from "@/components/ContactForm";
-import GoogleMap from "@/components/GoogleMap";
-import Particles from "@/components/Particles";
-import Illustration from "@/public/images/conic-gradient2.svg";
-import { Suspense } from "react";
 
 export default function ContactPage() {
   return (
