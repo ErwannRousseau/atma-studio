@@ -1,17 +1,10 @@
+/* Additional styles */
+@import "additional-styles/utility-patterns.css";
+@import "additional-styles/theme.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Additional styles */
-@import 'additional-styles/utility-patterns.css';
-@import 'additional-styles/theme.css';
-
-/* Additional Tailwind directives: https://tailwindcss.com/docs/functions-and-directives/#responsive */
-@layer utilities {
-  .rtl {
-    direction: rtl;
-  }
-}
 
 .transform-style-preserve {
   transform-style: preserve-3d;
