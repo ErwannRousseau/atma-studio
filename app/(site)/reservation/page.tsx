@@ -1,7 +1,9 @@
 import Link from "next/link";
 
+import { buttonVariants } from "@/components/ui/button";
 import BackArrowIcon from "@/components/utils/BackArrowIcon";
 import ZcalWidget from "@/components/utils/ZcalWidget";
+import { cn } from "@/lib/utils";
 
 export default function BookingPage() {
   return (
@@ -43,7 +45,10 @@ export default function BookingPage() {
       <div data-aos="fade-up" className="m-auto mt-8 w-fit">
         <Link
           href="/"
-          className="btn group w-full bg-gradient-to-r from-white/80 via-white to-white/80 text-slate-900 transition duration-150 ease-in-out hover:bg-white"
+          className={cn(
+            buttonVariants({ variant: "secondary" }),
+            "group w-full",
+          )}
         >
           Retourner à la page d&apos;accueil
           <span className="ml-1 w-4 transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
