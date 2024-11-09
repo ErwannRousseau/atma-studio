@@ -50,10 +50,11 @@ export default function Team({ team }: { team: TeamMember[] }) {
           <div className="text-center">
             {/* Testimonial image */}
             <div className="relative h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_40%,theme(colors.white))]">
-              <div className="-z-10 -translate-x-1/2 before:-z-20 after:-z-20 pointer-events-none absolute top-0 left-1/2 h-[480px] w-[480px] rounded-full before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-buttercup-200/50 before:to-20% before:to-transparent after:absolute after:inset-0 after:m-px after:rounded-full after:bg-buttercup-500/20">
+              <div className="-translate-x-1/2 -z-10 before:-z-20 after:-z-20 pointer-events-none absolute top-0 left-1/2 h-[480px] w-[480px] rounded-full before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-b before:from-buttercup-200/50 before:to-20% before:to-transparent after:absolute after:inset-0 after:m-px after:rounded-full after:bg-buttercup-500/20">
                 {team.map(({ image, name }, index) => (
                   <Transition
                     key={name}
+                    as="div"
                     show={active === index}
                     className="-z-10 absolute inset-0 h-full"
                     enter="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700 order-first"
@@ -65,14 +66,11 @@ export default function Team({ team }: { team: TeamMember[] }) {
                     beforeEnter={() => heightFix()}
                   >
                     <Image
-                      className="-translate-x-1/2 relative top-9 left-1/2 aspect-square rounded-full"
+                      className="-translate-x-1/2 relative top-11 left-1/2 rounded-full"
                       src={image.url}
                       width={90}
                       height={90}
-                      style={{
-                        objectFit: "cover",
-                      }}
-                      alt={`photo de profil de ${name}`}
+                      alt={name}
                     />
                   </Transition>
                 ))}

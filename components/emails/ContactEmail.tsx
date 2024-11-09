@@ -62,7 +62,7 @@ export const ContactEmail = ({
               <Text className="mt-2 pl-2">
                 Numéro de téléphone :{" "}
                 <Link
-                  href={`tel:+33${phoneNumber.substring(1)}`}
+                  href={`tel:+33${phoneNumber?.substring(1)}`}
                   className="text-blue-600 no-underline"
                 >
                   {phoneNumber}

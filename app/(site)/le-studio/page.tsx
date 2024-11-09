@@ -1,5 +1,3 @@
-import { revalidatePath } from "next/cache";
-
 import EquipmentsList from "@/components/EquipmentsList";
 import HeroStudio from "@/components/HeroStudio";
 import StudioPres from "@/components/StudioPres";
@@ -18,7 +16,6 @@ export const metadata = {
 export default async function StudioPage() {
   const { presentation, team, imagePresentation, equipmentsCategories } =
     await getStudioPageData();
-  revalidatePath("/le-studio");
 
   return (
     <>

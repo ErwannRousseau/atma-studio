@@ -9,7 +9,7 @@ export const openMapsApp = () => {
   const userConfirmed = window.confirm(confirmationMessage);
 
   if (userConfirmed) {
-    if (userAgent.includes("Mac" || "iPhone")) {
+    if (userAgent.includes("Mac") || userAgent.includes("iPhone")) {
       const appleMapsUrl = `maps://maps.apple.com/?q=${address}`;
       window.open(appleMapsUrl, "_blank");
       return;
