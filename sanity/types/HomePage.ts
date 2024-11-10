@@ -1,5 +1,5 @@
 import type { ImageSanity } from "./ImageSanity";
-import type { BlockContent } from "./objects/blockContent";
+import type { BlockContent } from "./objects/BlockContent";
 
 export type ActualityItem = {
   date?: string;

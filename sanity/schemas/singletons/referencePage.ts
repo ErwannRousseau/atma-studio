@@ -1,10 +1,12 @@
 import { User2 } from "lucide-react";
+import { Flame } from "lucide-react";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const referencePage = defineType({
   name: "referencePage",
   type: "document",
   title: "Nos Références",
+  icon: Flame,
   fields: [
     defineField({
       name: "references",

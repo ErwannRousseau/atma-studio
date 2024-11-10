@@ -1,6 +1,6 @@
 import HeroServices from "@/components/HeroServices";
 import ServicesList from "@/components/ServicesList";
-import { getServicesPageData } from "@/sanity/lib/queries";
+import { getServicesPageData } from "@/sanity/lib/dataFetchers";
 
 export const metadata = {
   title: "Nos services",

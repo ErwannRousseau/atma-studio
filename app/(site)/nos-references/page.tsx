@@ -1,6 +1,6 @@
 import ArtistsList from "@/components/ArtistsList";
 import HeroReferences from "@/components/HeroReferences";
-import { getReferencesPageData } from "@/sanity/lib/queries";
+import { getReferencesPageData } from "@/sanity/lib/dataFetchers";
 
 export const metadata = {
   title: "Nos références",
