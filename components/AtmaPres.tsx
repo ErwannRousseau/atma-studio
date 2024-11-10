@@ -1,16 +1,17 @@
-import Image from "next/image";
-
-import Particles from "./Particles";
-
-import type { History } from "@/sanity/types/HomePage";
-import type { ImageSanity } from "@/sanity/types/ImageSanity";
-
 import Illustration from "@/public/images/glow-top.svg";
+import type { ImageSanity } from "@/sanity/types/ImageSanity";
+import type { BlockContent } from "@/sanity/types/objects/blockContent";
+import { PortableText } from "next-sanity";
+import Image from "next/image";
+import Particles from "./Particles";
 
 export default function AtmaPres({
   history,
   image,
-}: { history: History[]; image: ImageSanity }) {
+}: {
+  history: BlockContent;
+  image: ImageSanity;
+}) {
   return (
     <section>
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
@@ -38,16 +39,7 @@ export default function AtmaPres({
                 className="order-1 flex-col justify-center md:order-none md:flex md:w-7/12 lg:w-1/2"
                 data-aos="fade-down"
               >
-                <h3
-                  className={`${history[0].style} inline-flex bg-gradient-to-r from-buttercup-500 to-buttercup-200 bg-clip-text pb-3 text-left text-transparent`}
-                >
-                  {history[0].children[0].text}
-                </h3>
-                {history.slice(1).map(({ children, _key }) => (
-                  <p key={_key} className="text-justify text-slate-100">
-                    {children[0].text}
-                  </p>
-                ))}
+                <PortableText value={history} />
               </div>
               {/* Image */}
               <div

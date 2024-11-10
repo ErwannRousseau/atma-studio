@@ -8,8 +8,7 @@ export const homePage = defineType({
     defineField({
       name: "history",
       title: "Histoire",
-      type: "array",
-      of: [{ type: "block" }],
+      type: "blockContent",
       validation: (Rule) =>
         Rule.required().error("L'histoire est obligatoire."),
     }),

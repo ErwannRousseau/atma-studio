@@ -1,12 +1,5 @@
 import type { ImageSanity } from "./ImageSanity";
-
-export type History = {
-  _key: string;
-  style: string;
-  children: {
-    text: string;
-  }[];
-};
+import type { BlockContent } from "./objects/blockContent";
 
 export type ActualityItem = {
   date?: string;
@@ -17,10 +10,8 @@ export type ActualityItem = {
   description?: string;
 };
 
-export type Actualities = ActualityItem[];
-
 export interface HomePageData {
-  history: History[];
+  history: BlockContent;
   image: ImageSanity;
-  actualitySection: Actualities;
+  actualitySection: ActualityItem[];
 }
