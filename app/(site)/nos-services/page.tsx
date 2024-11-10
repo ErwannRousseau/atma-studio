@@ -18,7 +18,6 @@ export default async function ServicesPage() {
     <>
       <HeroServices />
       <ServicesList servicesList={servicesList} />
-      {/* <Pricing /> */}
     </>
   );
 }
