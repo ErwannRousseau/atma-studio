@@ -1,5 +1,3 @@
-import { revalidatePath } from "next/cache";
-
 import ArtistsList from "@/components/ArtistsList";
 import HeroReferences from "@/components/HeroReferences";
 import { getReferencesPageData } from "@/sanity/lib/queries";
@@ -15,7 +13,6 @@ export const metadata = {
 
 export default async function ReferencesPage() {
   const { referencesList } = await getReferencesPageData();
-  revalidatePath("/nos-references");
 
   return (
     <>

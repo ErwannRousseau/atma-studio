@@ -1,7 +1,4 @@
-import { revalidatePath } from "next/cache";
-
 import HeroServices from "@/components/HeroServices";
-// import Pricing from '@/components/Pricing';
 import ServicesList from "@/components/ServicesList";
 import { getServicesPageData } from "@/sanity/lib/queries";
 
@@ -16,12 +13,11 @@ export const metadata = {
 
 export default async function ServicesPage() {
   const { servicesList } = await getServicesPageData();
-  revalidatePath("/nos-services");
+
   return (
     <>
       <HeroServices />
       <ServicesList servicesList={servicesList} />
-      {/* <Pricing /> */}
     </>
   );
 }
