@@ -1,10 +1,8 @@
-import { revalidatePath } from "next/cache";
-
 import EquipmentsList from "@/components/EquipmentsList";
 import HeroStudio from "@/components/HeroStudio";
 import StudioPres from "@/components/StudioPres";
 import Team from "@/components/Team";
-import { getStudioPageData } from "@/sanity/lib/queries";
+import { getStudioPageData } from "@/sanity/lib/dataFetchers";
 
 export const metadata = {
   title: "Le studio",
@@ -18,7 +16,6 @@ export const metadata = {
 export default async function StudioPage() {
   const { presentation, team, imagePresentation, equipmentsCategories } =
     await getStudioPageData();
-  revalidatePath("/le-studio");
 
   return (
     <>

@@ -1,23 +1,7 @@
 import { groq } from "next-sanity";
 
-import type { HomePageData } from "../types/HomePage";
-import type { ReferencePageData } from "../types/ReferencesPage";
-import type { ServicesPageData } from "../types/ServicesPage";
-import type { StudioPageData } from "../types/StudioPage";
-
-import { client } from "./client";
-
-// Get homePage Data
-export async function getHomePageData(): Promise<HomePageData> {
-  return client.fetch(
-    groq`*[_type == "homepage"][0]{
-  history[]{
-     style,
-     _key,
-    children[]{
-      text
-    }
-  },
+export const HOME_QUERY = groq`*[_type == "homepage"][0]{
+  history,
   "image": image.asset->{url, altText},
   actualitySection[]{
     "image": image.asset->{url, altText},
@@ -28,14 +12,9 @@ export async function getHomePageData(): Promise<HomePageData> {
     date
   }
 }
- `,
-  );
-}
+ `;
 
-// Get studioPage Data
-export async function getStudioPageData(): Promise<StudioPageData> {
-  return client.fetch(
-    groq`*[_type == "studioPage"][0] {
+export const STUDIO_QUERY = groq`*[_type == "studioPage"][0] {
   presentation[]{
     children[]{
       text
@@ -60,36 +39,24 @@ export async function getStudioPageData(): Promise<StudioPageData> {
     }
   }
 }
-`,
-  );
-}
+`;
 
-// Get referencesPage Data
-export async function getReferencesPageData(): Promise<ReferencePageData> {
-  return client.fetch(
-    groq`*[_type == "referencePage"][0]{
-     referencesList[]{
-       link,
-       artistName,
-       _key,
-       "image": image.asset->{url, altText}
-     }
-   }
- `,
-  );
+export const REFERENCES_QUERY = groq`*[_type == "referencePage"][0]{
+  referencesList[]{
+    link,
+    artistName,
+    _key,
+    "image": image.asset->{url, altText}
+  }
 }
+`;
 
-// Get servicesPage Data
-export async function getServicesPageData(): Promise<ServicesPageData> {
-  return client.fetch(
-    groq`*[_type == "servicesPage"][0]{
-     servicesList[]{
-       "image" : images.asset->{url, altText},
-       description,
-       _key,
-       title
-     }
-   }
- `,
-  );
+export const SERVICES_QUERY = groq`*[_type == "servicesPage"][0]{
+  servicesList[]{
+    "image" : images.asset->{url, altText},
+    description,
+    _key,
+    title
+  }
 }
+`;

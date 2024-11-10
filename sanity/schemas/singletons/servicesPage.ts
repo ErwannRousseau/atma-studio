@@ -1,10 +1,12 @@
 import { Settings } from "lucide-react";
+import { ScrollText } from "lucide-react";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const servicesPage = defineType({
   name: "servicesPage",
   type: "document",
   title: "Nos Services",
+  icon: ScrollText,
   fields: [
     defineField({
       name: "title",

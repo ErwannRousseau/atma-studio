@@ -25,6 +25,7 @@ const config: Config = {
           900: "#773910",
           950: "#441c04",
         },
+        ring: "#f3a710",
       },
       fontFamily: {
         inter: ["var(--font-inter)", "sans-serif"],
@@ -80,8 +81,13 @@ const config: Config = {
         "4/3": "4 / 3",
         "4/3.5": "4 / 3.5",
       },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/typography")],
 };
 export default config;

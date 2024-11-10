@@ -2,17 +2,18 @@
  * This configuration is used to for the Sanity Studio that’s mounted on the `/app/studio/[[...index]]/page.tsx` route
  */
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-// ...other imports
 
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { media } from "sanity-plugin-media";
-import { deskTool } from "sanity/desk";
-
+import { structureTool } from "sanity/structure";
 import { apiVersion, dataset, projectId } from "./sanity/env";
+import { pageStructure, singletonPlugin } from "./sanity/plugins/settings";
 import { schema } from "./sanity/schema";
-
-import { myStructure } from "@/sanity/desk/myStructure";
+import { homePage } from "./sanity/schemas/singletons/homePage";
+import { referencePage } from "./sanity/schemas/singletons/referencePage";
+import { servicesPage } from "./sanity/schemas/singletons/servicesPage";
+import { studioPage } from "./sanity/schemas/singletons/studioPage";
 
 export default defineConfig({
   basePath: "/admin",
@@ -21,9 +22,20 @@ export default defineConfig({
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
   plugins: [
-    deskTool({ structure: myStructure }),
-    // Vision is a tool that lets you query your content with GROQ in the studio
-    // https://www.sanity.io/docs/the-vision-plugin
+    structureTool({
+      structure: pageStructure([
+        homePage,
+        referencePage,
+        servicesPage,
+        studioPage,
+      ]),
+    }),
+    singletonPlugin([
+      homePage.name,
+      referencePage.name,
+      servicesPage.name,
+      studioPage.name,
+    ]),
     media(),
     visionTool({ defaultApiVersion: apiVersion }),
   ],

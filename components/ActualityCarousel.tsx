@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import ActualityCard from "./ActualityCard";
 
@@ -11,11 +11,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/utils/CarouselEmbla";
-import type { Actualities } from "@/sanity/types/HomePage";
+import type { ActualityItem } from "@/sanity/types/HomePage";
 
 export default function ActualityCarouselV2({
   actualities,
-}: { actualities: Actualities }) {
+}: { actualities: ActualityItem[] }) {
   const [activeActuality, setActiveActuality] = useState<
     string | undefined | null
   >(null);

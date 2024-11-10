@@ -4,7 +4,9 @@ import Link from "next/link";
 
 import Particles from "./Particles";
 
+import { cn } from "@/lib/utils";
 import Illustration from "@/public/images/glow-bottom.svg";
+import { buttonVariants } from "./ui/button";
 
 export default function HeroHome() {
   return (
@@ -32,7 +34,12 @@ export default function HeroHome() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6" data-aos="fade-down">
               <div className="relative inline-flex before:absolute before:inset-0 before:bg-buttercup-500 before:blur-md">
-                <div className="btn-sm group relative py-0.5 text-buttercup-50 shadow transition duration-150 ease-in-out [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-slate-800/50 hover:text-white">
+                <div
+                  className={cn(
+                    buttonVariants({ size: "sm" }),
+                    "group relative overflow-hidden [background:linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.500))_padding-box,_linear-gradient(theme(colors.buttercup.500),_theme(colors.buttercup.200)_75%,_theme(colors.transparent)_100%)_border-box] before:pointer-events-none before:absolute before:inset-0 before:rounded-full before:bg-slate-800/50",
+                  )}
+                >
                   <p className="relative inline-flex items-center">
                     Studio d&apos;enregistrement
                   </p>
@@ -61,7 +68,10 @@ export default function HeroHome() {
               <div>
                 <Link
                   href="/reservation"
-                  className="btn group w-full bg-gradient-to-r from-white/80 via-white to-white/80 text-slate-900 transition duration-150 ease-in-out hover:bg-white"
+                  className={cn(
+                    buttonVariants({ variant: "secondary" }),
+                    "group w-full",
+                  )}
                 >
                   Réservez une session
                   <span className="ml-1 text-buttercup-500 tracking-normal transition-transform duration-150 ease-in-out group-hover:translate-x-0.5">
@@ -71,8 +81,11 @@ export default function HeroHome() {
               </div>
               <div>
                 <Link
-                  className="btn w-full bg-slate-900 bg-opacity-25 text-slate-200 transition duration-150 ease-in-out hover:bg-opacity-30 hover:text-white"
                   href="/nos-references"
+                  className={cn(
+                    buttonVariants({ variant: "outline" }),
+                    "group w-full",
+                  )}
                 >
                   <Sparkles className="mr-3 shrink-0" />
                   <span>Voir nos artistes</span>
@@ -80,8 +93,11 @@ export default function HeroHome() {
               </div>
               <div>
                 <Link
-                  className="btn w-full bg-slate-900 bg-opacity-25 text-slate-200 transition duration-150 ease-in-out hover:bg-opacity-30 hover:text-white"
                   href="/contact-acces?subject=Mix%20à%20distance"
+                  className={cn(
+                    buttonVariants({ variant: "outline" }),
+                    "group w-full",
+                  )}
                 >
                   <Sliders className="mr-3 shrink-0 fill-slate-300" />
                   <span>Mix à distance</span>
