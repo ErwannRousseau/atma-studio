@@ -1,15 +1,16 @@
+import { Home } from "lucide-react";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const homePage = defineType({
   name: "homepage",
   type: "document",
   title: "Accueil",
+  icon: Home,
   fields: [
     defineField({
       name: "history",
       title: "Histoire",
-      type: "array",
-      of: [{ type: "block" }],
+      type: "blockContent",
       validation: (Rule) =>
         Rule.required().error("L'histoire est obligatoire."),
     }),
@@ -33,6 +34,21 @@ export const homePage = defineType({
       ],
     }),
   ],
+  preview: {
+    select: {
+      title: "history",
+      media: "image",
+    },
+    prepare(selection) {
+      const { title, media } = selection;
+      return {
+        title: title
+          ? title[0]?.children[0]?.text
+          : "Pas de titre fournit dans le block `Histoire`",
+        media,
+      };
+    },
+  },
 });
 
 export const actualityItem = defineType({

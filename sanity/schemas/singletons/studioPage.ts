@@ -1,10 +1,12 @@
 import { Briefcase } from "lucide-react";
+import { KeyboardMusic } from "lucide-react";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const studioPage = defineType({
   name: "studioPage",
   title: "Le Studio",
   type: "document",
+  icon: KeyboardMusic,
   fields: [
     defineField({
       name: "presentation",
