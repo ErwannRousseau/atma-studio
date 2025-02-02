@@ -12,12 +12,12 @@ export const metadata = {
 };
 
 export default async function ReferencesPage() {
-  const { referencesList } = await getReferencesPageData();
+  const { data } = await getReferencesPageData();
 
   return (
     <>
       <HeroReferences />
-      <ArtistsList referencesList={referencesList} />
+      <ArtistsList referencesList={data.referencesList} />
     </>
   );
 }
