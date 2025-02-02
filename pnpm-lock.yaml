@@ -31,7 +31,7 @@ importers:
         version: 1.10.41(@sanity/types@3.63.0)(react@18.3.1)
       '@sanity/vision':
         specifier: ^3.63.0
-        version: 3.63.0(@babel/runtime@7.26.0)(@codemirror/lint@6.8.2)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.3)(codemirror@6.0.1(@lezer/common@1.2.3))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        version: 3.63.0(@babel/runtime@7.26.0)(@codemirror/lint@6.8.2)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.3)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@vercel/analytics':
         specifier: ^1.3.2
         version: 1.3.2(next@15.0.3(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -43,7 +43,7 @@ importers:
         version: 3.0.0-beta.6
       autoprefixer:
         specifier: ^10.4.20
-        version: 10.4.20(postcss@8.4.47)
+        version: 10.4.20(postcss@8.5.1)
       canvas-confetti:
         specifier: ^1.9.3
         version: 1.9.3
@@ -69,8 +69,8 @@ importers:
         specifier: ^9.8.10
         version: 9.8.10(@sanity/client@6.27.2)(@sanity/icons@3.4.0(react@18.3.1))(@sanity/types@3.63.0)(@sanity/ui@2.8.22(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(next@15.0.3(@babel/core@7.26.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sanity@3.63.0(@types/node@22.9.0)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.36.0))(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       postcss:
-        specifier: ^8.4.47
-        version: 8.4.47
+        specifier: ^8.5.1
+        version: 8.5.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -775,8 +775,14 @@ packages:
       '@codemirror/view': ^6.0.0
       '@lezer/common': ^1.0.0
 
+  '@codemirror/autocomplete@6.18.4':
+    resolution: {integrity: sha512-sFAphGQIqyQZfP2ZBsSHV7xQvo9Py0rV0dW7W3IMRdS+zDuNb2l3no78CvUaWKGfzFjI4FTrLdUSj86IGb2hRA==}
+
   '@codemirror/commands@6.7.1':
     resolution: {integrity: sha512-llTrboQYw5H4THfhN4U3qCnSZ1SOJ60ohhz+SzU0ADGtwlc533DtklQP0vSFaQuCPDn3BPpOd1GbbnUtwNjsrw==}
+
+  '@codemirror/commands@6.8.0':
+    resolution: {integrity: sha512-q8VPEFaEP4ikSlt6ZxjB3zW72+7osfAYW9i8Zu943uqbKuz6utc1+F170hyLUCUltXORjQXRyYQNfkckzA/bPQ==}
 
   '@codemirror/lang-javascript@6.2.2':
     resolution: {integrity: sha512-VGQfY+FCc285AhWuwjYxQyUQcYurWlxdKYT4bqwr3Twnd5wP5WSeu52t4tvvuWmljT4EmgEgZCqSieokhtY8hg==}
@@ -784,20 +790,32 @@ packages:
   '@codemirror/language@6.10.3':
     resolution: {integrity: sha512-kDqEU5sCP55Oabl6E7m5N+vZRoc0iWqgDVhEKifcHzPzjqCegcO4amfrYVL9PmPZpl4G0yjkpTpUO/Ui8CzO8A==}
 
+  '@codemirror/language@6.10.8':
+    resolution: {integrity: sha512-wcP8XPPhDH2vTqf181U8MbZnW+tDyPYy0UzVOa+oHORjyT+mhhom9vBd7dApJwoDz9Nb/a8kHjJIsuA/t8vNFw==}
+
   '@codemirror/lint@6.8.2':
     resolution: {integrity: sha512-PDFG5DjHxSEjOXk9TQYYVjZDqlZTFaDBfhQixHnQOEVDDNHUbEh/hstAjcQJaA6FQdZTD1hquXTK0rVBLADR1g==}
 
   '@codemirror/search@6.5.7':
     resolution: {integrity: sha512-6+iLsXvITWKHYlkgHPCs/qiX4dNzn8N78YfhOFvPtPYCkuXqZq10rAfsUMhOq7O/1VjJqdXRflyExlfVcu/9VQ==}
 
+  '@codemirror/search@6.5.8':
+    resolution: {integrity: sha512-PoWtZvo7c1XFeZWmmyaOp2G0XVbOnm+fJzvghqGAktBW3cufwJUWvSCcNG0ppXiBEM05mZu6RhMtXPv2hpllig==}
+
   '@codemirror/state@6.4.1':
     resolution: {integrity: sha512-QkEyUiLhsJoZkbumGZlswmAhA7CBU02Wrz7zvH4SrcifbsqwlXShVXg65f3v/ts57W3dqyamEriMhij1Z3Zz4A==}
+
+  '@codemirror/state@6.5.1':
+    resolution: {integrity: sha512-3rA9lcwciEB47ZevqvD8qgbzhM9qMb8vCcQCNmDfVRPQG4JT9mSb0Jg8H7YjKGGQcFnLN323fj9jdnG59Kx6bg==}
 
   '@codemirror/theme-one-dark@6.1.2':
     resolution: {integrity: sha512-F+sH0X16j/qFLMAfbciKTxVOwkdAS336b7AXTKOZhy8BR3eH/RelsnLgLFINrpST63mmN2OuwUt0W2ndUgYwUA==}
 
   '@codemirror/view@6.34.2':
     resolution: {integrity: sha512-d6n0WFvL970A9Z+l9N2dO+Hk9ev4hDYQzIx+B9tCyBP0W5wPEszi1rhuyFesNSkLZzXbQE5FPH7F/z/TMJfoPA==}
+
+  '@codemirror/view@6.36.2':
+    resolution: {integrity: sha512-DZ6ONbs8qdJK0fdN7AB82CgI6tYXf4HWk1wSVa0+9bhVznCuuvhQtX8bFBoy3dv8rZSQqUd8GvhVAcielcidrA==}
 
   '@dnd-kit/accessibility@3.1.0':
     resolution: {integrity: sha512-ea7IkhKvlJUv9iSHJOnxinBcoOI3ppGnnL+VDJ75O45Nss6HtZd8IdN8touXPDtASfeI2T2LImb8VOZcL47wjQ==}
@@ -1450,6 +1468,10 @@ packages:
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
     engines: {node: '>=6.0.0'}
 
+  '@jridgewell/gen-mapping@0.3.8':
+    resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
+    engines: {node: '>=6.0.0'}
+
   '@jridgewell/resolve-uri@3.1.2':
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
     engines: {node: '>=6.0.0'}
@@ -1481,6 +1503,9 @@ packages:
 
   '@lezer/lr@1.4.2':
     resolution: {integrity: sha512-pu0K1jCIdnQ12aWNaAVU5bzi7Bd1w54J3ECgANPmYLtQKP0HBj2cE/5coBD66MT10xbtIuUr7tg0Shbsvk0mDA==}
+
+  '@marijn/find-cluster-break@1.0.2':
+    resolution: {integrity: sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g==}
 
   '@next/env@14.2.10':
     resolution: {integrity: sha512-dZIu93Bf5LUtluBXIv4woQw2cZVZ2DJTjax5/5DOs3lzEOeKLy7GxRSr4caK9/SCPdaW6bCgpye6+n4Dh9oJPw==}
@@ -2096,6 +2121,7 @@ packages:
 
   '@sanity/block-tools@3.63.0':
     resolution: {integrity: sha512-aKi2KYMKeHTDcgeifIrnLfQmp/h2k4XKG+rLwp7hLy5inaUU5U/DCPrp5o7fQaRrrIUSXoRnE6E0KNPU2CD+RQ==}
+    deprecated: Renamed - use `@portabletext/block-tools` instead. `@sanity/block-tools` will no longer receive updates.
 
   '@sanity/cli@3.63.0':
     resolution: {integrity: sha512-Q2iuJl0xVEup49sSJsbFst0NNGG7nGYE9Cw592NZSotmzoPVppYfgYEuih04TT7WMl0IlYs7pWL2DHtDJnsX5A==}
@@ -4085,9 +4111,11 @@ packages:
 
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.isequal@4.5.0:
     resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    deprecated: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
 
   lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
@@ -4285,8 +4313,13 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanoid@5.0.8:
-    resolution: {integrity: sha512-TcJPw+9RV9dibz1hHUzlLVy8N4X9TnwirAjrU08Juo6BNKggzVfP2ZJ/3ZUSq15Xl5i85i+Z89XBO90pB2PghQ==}
+  nanoid@3.3.8:
+    resolution: {integrity: sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
+  nanoid@5.0.9:
+    resolution: {integrity: sha512-Aooyr6MXU6HpvvWXKoVoXwKMs/KyVakWwg7xQfv5/S/RIgJMy0Ifa45H9qqYy7pTCszrHzP21Uk4PZq2HpEM8Q==}
     engines: {node: ^18 || >=20}
     hasBin: true
 
@@ -4673,8 +4706,8 @@ packages:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.4.47:
-    resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
+  postcss@8.5.1:
+    resolution: {integrity: sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   prettier@3.3.3:
@@ -6722,11 +6755,25 @@ snapshots:
       '@codemirror/view': 6.34.2
       '@lezer/common': 1.2.3
 
+  '@codemirror/autocomplete@6.18.4':
+    dependencies:
+      '@codemirror/language': 6.10.8
+      '@codemirror/state': 6.5.1
+      '@codemirror/view': 6.36.2
+      '@lezer/common': 1.2.3
+
   '@codemirror/commands@6.7.1':
     dependencies:
       '@codemirror/language': 6.10.3
       '@codemirror/state': 6.4.1
       '@codemirror/view': 6.34.2
+      '@lezer/common': 1.2.3
+
+  '@codemirror/commands@6.8.0':
+    dependencies:
+      '@codemirror/language': 6.10.8
+      '@codemirror/state': 6.5.1
+      '@codemirror/view': 6.36.2
       '@lezer/common': 1.2.3
 
   '@codemirror/lang-javascript@6.2.2':
@@ -6748,6 +6795,15 @@ snapshots:
       '@lezer/lr': 1.4.2
       style-mod: 4.1.2
 
+  '@codemirror/language@6.10.8':
+    dependencies:
+      '@codemirror/state': 6.5.1
+      '@codemirror/view': 6.36.2
+      '@lezer/common': 1.2.3
+      '@lezer/highlight': 1.2.1
+      '@lezer/lr': 1.4.2
+      style-mod: 4.1.2
+
   '@codemirror/lint@6.8.2':
     dependencies:
       '@codemirror/state': 6.4.1
@@ -6760,18 +6816,34 @@ snapshots:
       '@codemirror/view': 6.34.2
       crelt: 1.0.6
 
+  '@codemirror/search@6.5.8':
+    dependencies:
+      '@codemirror/state': 6.5.1
+      '@codemirror/view': 6.36.2
+      crelt: 1.0.6
+
   '@codemirror/state@6.4.1': {}
+
+  '@codemirror/state@6.5.1':
+    dependencies:
+      '@marijn/find-cluster-break': 1.0.2
 
   '@codemirror/theme-one-dark@6.1.2':
     dependencies:
-      '@codemirror/language': 6.10.3
-      '@codemirror/state': 6.4.1
-      '@codemirror/view': 6.34.2
+      '@codemirror/language': 6.10.8
+      '@codemirror/state': 6.5.1
+      '@codemirror/view': 6.36.2
       '@lezer/highlight': 1.2.1
 
   '@codemirror/view@6.34.2':
     dependencies:
       '@codemirror/state': 6.4.1
+      style-mod: 4.1.2
+      w3c-keyname: 2.2.8
+
+  '@codemirror/view@6.36.2':
+    dependencies:
+      '@codemirror/state': 6.5.1
       style-mod: 4.1.2
       w3c-keyname: 2.2.8
 
@@ -7235,13 +7307,20 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
       '@jridgewell/trace-mapping': 0.3.25
 
+  '@jridgewell/gen-mapping@0.3.8':
+    dependencies:
+      '@jridgewell/set-array': 1.2.1
+      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/trace-mapping': 0.3.25
+    optional: true
+
   '@jridgewell/resolve-uri@3.1.2': {}
 
   '@jridgewell/set-array@1.2.1': {}
 
   '@jridgewell/source-map@0.3.6':
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
     optional: true
 
@@ -7269,6 +7348,8 @@ snapshots:
   '@lezer/lr@1.4.2':
     dependencies:
       '@lezer/common': 1.2.3
+
+  '@marijn/find-cluster-break@1.0.2': {}
 
   '@next/env@14.2.10': {}
 
@@ -7805,7 +7886,7 @@ snapshots:
 
   '@sanity/bifur-client@0.4.1':
     dependencies:
-      nanoid: 3.3.7
+      nanoid: 3.3.8
       rxjs: 7.8.1
 
   '@sanity/block-tools@3.63.0(debug@4.3.7)':
@@ -8004,7 +8085,7 @@ snapshots:
       '@sanity/diff-match-patch': 3.1.1
       hotscript: 1.0.13
       mendoza: 3.0.7
-      nanoid: 5.0.8
+      nanoid: 5.0.9
       rxjs: 7.8.1
     optionalDependencies:
       xstate: 5.18.2
@@ -8018,7 +8099,7 @@ snapshots:
       hotscript: 1.0.13
       lodash: 4.17.21
       mendoza: 3.0.7
-      nanoid: 5.0.8
+      nanoid: 5.0.9
       rxjs: 7.8.1
     transitivePeerDependencies:
       - debug
@@ -8185,7 +8266,7 @@ snapshots:
       '@types/uuid': 8.3.4
       uuid: 8.3.2
 
-  '@sanity/vision@3.63.0(@babel/runtime@7.26.0)(@codemirror/lint@6.8.2)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.3)(codemirror@6.0.1(@lezer/common@1.2.3))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@sanity/vision@3.63.0(@babel/runtime@7.26.0)(@codemirror/lint@6.8.2)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.2.3)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@codemirror/autocomplete': 6.18.2(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.2)(@lezer/common@1.2.3)
       '@codemirror/commands': 6.7.1
@@ -8201,7 +8282,7 @@ snapshots:
       '@sanity/color': 3.0.6
       '@sanity/icons': 3.4.0(react@18.3.1)
       '@sanity/ui': 2.8.22(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@uiw/react-codemirror': 4.23.6(@babel/runtime@7.26.0)(@codemirror/autocomplete@6.18.2(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.2)(@lezer/common@1.2.3))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.7)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.34.2)(codemirror@6.0.1(@lezer/common@1.2.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@uiw/react-codemirror': 4.23.6(@babel/runtime@7.26.0)(@codemirror/autocomplete@6.18.2(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.2)(@lezer/common@1.2.3))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.7)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.34.2)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       is-hotkey-esm: 1.0.0
       json-2-csv: 5.5.6
       json5: 2.2.3
@@ -8497,7 +8578,7 @@ snapshots:
       '@codemirror/state': 6.4.1
       '@codemirror/view': 6.34.2
 
-  '@uiw/react-codemirror@4.23.6(@babel/runtime@7.26.0)(@codemirror/autocomplete@6.18.2(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.2)(@lezer/common@1.2.3))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.7)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.34.2)(codemirror@6.0.1(@lezer/common@1.2.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@uiw/react-codemirror@4.23.6(@babel/runtime@7.26.0)(@codemirror/autocomplete@6.18.2(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.2)(@lezer/common@1.2.3))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.7)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.34.2)(codemirror@6.0.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@babel/runtime': 7.26.0
       '@codemirror/commands': 6.7.1
@@ -8505,7 +8586,7 @@ snapshots:
       '@codemirror/theme-one-dark': 6.1.2
       '@codemirror/view': 6.34.2
       '@uiw/codemirror-extensions-basic-setup': 4.23.6(@codemirror/autocomplete@6.18.2(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.2)(@lezer/common@1.2.3))(@codemirror/commands@6.7.1)(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.7)(@codemirror/state@6.4.1)(@codemirror/view@6.34.2)
-      codemirror: 6.0.1(@lezer/common@1.2.3)
+      codemirror: 6.0.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
@@ -8654,14 +8735,14 @@ snapshots:
 
   attr-accept@2.2.5: {}
 
-  autoprefixer@10.4.20(postcss@8.4.47):
+  autoprefixer@10.4.20(postcss@8.5.1):
     dependencies:
       browserslist: 4.24.2
       caniuse-lite: 1.0.30001679
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.1.1
-      postcss: 8.4.47
+      postcss: 8.5.1
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -8880,17 +8961,15 @@ snapshots:
 
   clsx@2.1.1: {}
 
-  codemirror@6.0.1(@lezer/common@1.2.3):
+  codemirror@6.0.1:
     dependencies:
-      '@codemirror/autocomplete': 6.18.2(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.2)(@lezer/common@1.2.3)
-      '@codemirror/commands': 6.7.1
-      '@codemirror/language': 6.10.3
+      '@codemirror/autocomplete': 6.18.4
+      '@codemirror/commands': 6.8.0
+      '@codemirror/language': 6.10.8
       '@codemirror/lint': 6.8.2
-      '@codemirror/search': 6.5.7
-      '@codemirror/state': 6.4.1
-      '@codemirror/view': 6.34.2
-    transitivePeerDependencies:
-      - '@lezer/common'
+      '@codemirror/search': 6.5.8
+      '@codemirror/state': 6.5.1
+      '@codemirror/view': 6.36.2
 
   color-convert@1.9.3:
     dependencies:
@@ -10360,7 +10439,9 @@ snapshots:
 
   nanoid@3.3.7: {}
 
-  nanoid@5.0.8: {}
+  nanoid@3.3.8: {}
+
+  nanoid@5.0.9: {}
 
   negotiator@0.6.3: {}
 
@@ -10691,28 +10772,28 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-import@15.1.0(postcss@8.4.47):
+  postcss-import@15.1.0(postcss@8.5.1):
     dependencies:
-      postcss: 8.4.47
+      postcss: 8.5.1
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.47):
+  postcss-js@4.0.1(postcss@8.5.1):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.47
+      postcss: 8.5.1
 
-  postcss-load-config@4.0.2(postcss@8.4.47):
+  postcss-load-config@4.0.2(postcss@8.5.1):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.6.0
     optionalDependencies:
-      postcss: 8.4.47
+      postcss: 8.5.1
 
-  postcss-nested@6.2.0(postcss@8.4.47):
+  postcss-nested@6.2.0(postcss@8.5.1):
     dependencies:
-      postcss: 8.4.47
+      postcss: 8.5.1
       postcss-selector-parser: 6.1.2
 
   postcss-selector-parser@6.0.10:
@@ -10729,19 +10810,19 @@ snapshots:
 
   postcss@8.4.31:
     dependencies:
-      nanoid: 3.3.7
+      nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
   postcss@8.4.38:
     dependencies:
-      nanoid: 3.3.7
+      nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.4.47:
+  postcss@8.5.1:
     dependencies:
-      nanoid: 3.3.7
+      nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -11766,11 +11847,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.1.1
-      postcss: 8.4.47
-      postcss-import: 15.1.0(postcss@8.4.47)
-      postcss-js: 4.0.1(postcss@8.4.47)
-      postcss-load-config: 4.0.2(postcss@8.4.47)
-      postcss-nested: 6.2.0(postcss@8.4.47)
+      postcss: 8.5.1
+      postcss-import: 15.1.0(postcss@8.5.1)
+      postcss-js: 4.0.1(postcss@8.5.1)
+      postcss-load-config: 4.0.2(postcss@8.5.1)
+      postcss-nested: 6.2.0(postcss@8.5.1)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.8
       sucrase: 3.35.0
@@ -12061,7 +12142,7 @@ snapshots:
   vite@4.5.5(@types/node@22.9.0)(terser@5.36.0):
     dependencies:
       esbuild: 0.18.20
-      postcss: 8.4.47
+      postcss: 8.5.1
       rollup: 3.29.5
     optionalDependencies:
       '@types/node': 22.9.0
