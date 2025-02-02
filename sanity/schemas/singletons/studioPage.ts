@@ -11,8 +11,7 @@ export const studioPage = defineType({
     defineField({
       name: "presentation",
       title: "Présentation",
-      type: "array",
-      of: [{ type: "block" }],
+      type: "blockContent",
       validation: (Rule) => Rule.required().error("Un contenu est obligatoire"),
     }),
     defineField({
@@ -39,6 +38,21 @@ export const studioPage = defineType({
         Rule.required().error("Un membre d'équipe est obligatoire"),
     },
   ],
+  preview: {
+    select: {
+      title: "presentation",
+      media: "image",
+    },
+    prepare(selection) {
+      const { title, media } = selection;
+      return {
+        title: title
+          ? title[0]?.children[0]?.text
+          : "Pas de titre fournit dans le block `Présentation`",
+        media,
+      };
+    },
+  },
 });
 
 export const equipmentsCategories = defineType({

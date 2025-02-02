@@ -13,4 +13,5 @@ export const client = createClient({
     enabled: false,
     studioUrl: "/admin",
   },
+  token: process.env.SANITY_API_READ_TOKEN,
 });

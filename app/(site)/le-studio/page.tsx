@@ -14,18 +14,17 @@ export const metadata = {
 };
 
 export default async function StudioPage() {
-  const { presentation, team, imagePresentation, equipmentsCategories } =
-    await getStudioPageData();
+  const { data } = await getStudioPageData();
 
   return (
     <>
       <HeroStudio />
       <StudioPres
-        presentation={presentation}
-        imagePresentation={imagePresentation}
+        presentation={data.presentation}
+        imagePresentation={data.imagePresentation}
       />
-      <EquipmentsList equipmentsCategories={equipmentsCategories} />
-      <Team team={team} />
+      <EquipmentsList equipmentsCategories={data.equipmentsCategories} />
+      <Team team={data.team} />
     </>
   );
 }

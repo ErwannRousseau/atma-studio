@@ -12,12 +12,12 @@ export const metadata = {
 };
 
 export default async function ServicesPage() {
-  const { servicesList } = await getServicesPageData();
+  const { data } = await getServicesPageData();
 
   return (
     <>
       <HeroServices />
-      <ServicesList servicesList={servicesList} />
+      <ServicesList servicesList={data.servicesList} />
     </>
   );
 }
