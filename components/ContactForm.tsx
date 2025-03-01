@@ -7,6 +7,7 @@ import ErrorMessage from "@/components/utils/ErrorMessage";
 import { confettiFireworks } from "@/lib/confetti";
 import { type TEmailSchema, emailSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { sendGTMEvent } from "@next/third-parties/google";
 import { useSearchParams } from "next/navigation";
 import { type SubmitHandler, useForm } from "react-hook-form";
 
@@ -30,6 +31,7 @@ export default function ContactForm() {
     },
     resolver: zodResolver(emailSchema),
   });
+
   const onSubmit: SubmitHandler<TEmailSchema> = async (data) => {
     try {
       const response = await fetch("/api/email", {
@@ -37,6 +39,13 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       });
       if (response.status === 200) {
+        sendGTMEvent({
+          event: "form_submission",
+          formType: "contact",
+          formSource: subject || "direct",
+          sourceOfDiscovery: data.sourceOfDiscovery || "not specified",
+        });
+
         confettiFireworks();
         reset();
       }

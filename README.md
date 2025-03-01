@@ -18,7 +18,7 @@ Deployed on Vercel here : [Atma Studio](https://studio-atma.com)
   - [📝 Project Summary](#-project-summary)
   - [🚀 Run Locally](#-run-locally)
   - [⚙️ Setting Up](#️-setting-up)
-    - [Your Environment Variable](#your-environment-variable)
+    - [The Environment Variables](#the-environment-variables)
   - [🙌 Contributors](#-contributors)
   - [📄 License](#-license)
 
@@ -47,51 +47,43 @@ Deployed on Vercel here : [Atma Studio](https://studio-atma.com)
 
 ## 🚀 Run Locally
 
-1.Clone the atma-studio repository:
+1. Clone the atma-studio repository:
 
-```sh
-git clone https://github.com/atma-studio/atma-studio
-```
+    ```sh
+    git clone https://github.com/atma-studio/atma-studio
+    ```
 
-2.Install the dependencies with one of the package managers listed below:
+2. Install the dependencies with one of the package managers listed below:
 
-```bash
-pnpm install
-bun install
-npm install
-yarn install
-```
+    ```bash
+    pnpm install
+    bun install
+    npm install
+    yarn install
+    ```
 
-3.Start the development mode:
+3. Start the development mode:
 
-```bash
-pnpm run dev
-bun run dev
-npm run run dev
-yarn run dev
-```
+    ```bash
+    pnpm run dev
+    bun run dev
+    npm run run dev
+    yarn run dev
+    ```
 
 ## ⚙️ Setting Up
 
-#### Your Environment Variable
+### The Environment Variables
 
 - Step 1 :
 
-    Create a `.env.local`
+    ```bash
+    cp .env.example .env.local
+    ```
 
 - Step 2 :
   
-    Copy paste this env varibales :
-
-```env
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
-NEXT_PUBLIC_SANITY_PROJECT_ID=
-NEXT_PUBLIC_SANITY_DATASET=production
-SANITY_API_READ_TOKEN=
-RESEND_API_KEY=
-NEXT_PUBLIC_GOOGLE_ADS_ID=
-NEXT_PUBLIC_MAP_ID=
-```
+    retrieve the values on [Vercel](https://vercel.com/atma-studio/studio-atma/settings/environment-variables)
 
 ## 🙌 Contributors
 
