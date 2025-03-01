@@ -4,6 +4,7 @@ import Particles from "@/components/Particles";
 import Illustration from "@/public/images/conic-gradient2.svg";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Image from "next/image";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Contact & Accès",
@@ -56,7 +57,9 @@ export default function ContactPage() {
                 </h1>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-16">
-                <ContactForm />
+                <Suspense>
+                  <ContactForm />
+                </Suspense>
                 <GoogleMap />
               </div>
             </div>
